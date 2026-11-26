@@ -441,6 +441,124 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
 .price-strip .ps-item span{font-size:13px;color:var(--muted)}
 .card-link{display:inline-block;margin-top:12px;font-weight:700;font-size:14px;text-decoration:none}
 @media (max-width:820px){.teaser-grid{grid-template-columns:1fr}.price-strip{flex-direction:column;align-items:flex-start}}
+/* Nota solo visible en celular dentro de la demo */
+.demo-mobile-note{display:none}
+/* ===== Adaptación móvil completa (celular) ===== */
+@media (max-width:640px){
+  html,body{overflow-x:clip}
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  /* Barra superior: marca arriba y navegación en filas de botones grandes y tocables */
+  .topbar-in{flex-wrap:wrap;padding:8px 0 10px;gap:8px}
+  .brand{font-size:18px}
+  .brand img{width:32px;height:32px}
+  .nav{position:relative;order:3;flex:1 1 100%;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start}
+  .nav>a,.nav-drop{flex:1 1 30%}
+  .nav a,.nav-drop-btn{width:100%;justify-content:center;padding:9px 6px;font-size:13.5px;min-height:44px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+  .nav-drop{display:flex}
+  .nav-drop-btn{border:1px solid var(--line)}
+  .nav a.nav-cta{margin-left:0;background:var(--green);border-color:var(--green);color:#fff}
+  .nav a[aria-current="page"],.nav-drop-btn[aria-current="page"]{background:var(--green-soft);color:var(--green-d)}
+  .nav-drop{position:static}
+  .drop-panel{left:0;right:0;top:calc(100% + 6px);min-width:0;width:auto}
+  .drop-panel a{padding:11px 12px;border:0;background:transparent;border-radius:9px;justify-content:flex-start;text-align:left;width:auto;min-height:0}
+  .drop-panel a:hover{background:var(--surface2)}
+  /* Hero y botones a ancho completo */
+  .hero{padding:30px 0 40px}
+  .hero-grid{gap:24px}
+  .hero h1{font-size:31px}
+  .hero p.lead{font-size:16.5px;margin:14px 0 20px}
+  .hero-ctas{flex-direction:column;align-items:stretch;flex-wrap:nowrap}
+  .hero-ctas .btn{width:100%}
+  .btn{min-height:50px}
+  .hero-img{border-radius:14px}
+  .hero-note{font-size:13.5px}
+  section{padding:40px 0}
+  .sec-head{margin-bottom:20px}
+  .sec-head h2{font-size:25px}
+  .card,.step,.buy-card{padding:18px}
+  .price-ctas{flex-direction:column;align-items:stretch}
+  .price-ctas .btn{width:100%}
+  /* Barra de vista (Demo / Portafolio / etc.) */
+  .viewbar-in{padding:12px 0;gap:10px}
+  .viewbar h1{font-size:24px}
+  .back-link{width:100%;justify-content:center;min-height:46px}
+  /* Precios resumen: dos columnas compactas */
+  .price-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;padding:18px}
+  .price-strip .btn{grid-column:1 / -1;width:100%}
+  /* Botones flotantes: círculos compactos que no tapan el contenido */
+  .wa-float,.chat-btn{width:54px;height:54px;min-height:54px;padding:0;border-radius:50%;justify-content:center;gap:0}
+  .wa-float{right:14px;bottom:max(14px,env(safe-area-inset-bottom))}
+  .chat-btn{left:14px;bottom:max(14px,env(safe-area-inset-bottom));font-size:0}
+  .wa-float .wa-txt{display:none}
+  .chat-btn svg,.wa-float svg{width:24px;height:24px}
+  /* Panel del asistente: casi toda la pantalla, sin zoom automático del input */
+  .chat-panel{left:8px;right:8px;width:auto;bottom:calc(78px + env(safe-area-inset-bottom));max-height:calc(100dvh - 150px)}
+  .chat-form input{font-size:16px}
+  .chat-chips{padding-bottom:12px}
+  .chip{min-height:42px}
+  footer{padding-bottom:88px}
+  /* ===== Demo en celular: marco ligero y panel reordenado ===== */
+  .demo-mobile-note{display:block;background:var(--green-soft);color:var(--green-d);border-radius:10px;padding:10px 13px;font-weight:600;font-size:13.5px;margin-top:14px}
+  .laptop-lid{padding:20px 4px 4px;border-radius:14px 14px 4px 4px}
+  .laptop-base{height:10px;margin:0 -3px}
+  .bbar{padding:6px 8px;gap:5px}
+  .bnav{display:none}
+  .burl{font-size:10.5px;padding:4px 8px;min-width:0}
+  .live-pill{font-size:9px;gap:4px}
+  .appbar{padding:8px 10px;gap:8px}
+  .appbar-logo{width:26px;height:26px;font-size:13px;border-radius:7px}
+  .appbar-brand b{font-size:13px}
+  .appbar-brand span{font-size:10.5px}
+  .bell{width:28px;height:28px}
+  .app-user .avatar{width:28px;height:28px;font-size:10.5px}
+  .app-shell{min-height:0}
+  .app-side{padding:8px}
+  .ctabs{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .ctab{font-size:12.5px;padding:8px 9px;min-height:44px;background:var(--surface);border:1px solid var(--line);border-radius:9px}
+  .ctab[aria-selected="true"]{background:var(--green);border-color:var(--green)}
+  .cpane{padding:12px}
+  .pane-head{margin-bottom:10px}
+  .pane-head h3{font-size:15.5px}
+  .pane-head span{font-size:11px}
+  .ckpis{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+  .ckpi{padding:10px 11px}
+  .ckpi b{font-size:20px}
+  .bars{height:60px}
+  .bars-lab span{font-size:8.5px}
+  .trow{grid-template-columns:1fr auto;column-gap:10px;padding:9px 2px}
+  .trow .who{grid-column:1;grid-row:1}
+  .trow time{grid-column:1;grid-row:2;padding-left:35px}
+  .trow .st-pill{grid-column:2;grid-row:1 / span 2;align-self:center}
+  .c-appr{flex-wrap:wrap;padding:10px 11px}
+  .c-appr>span:first-child{flex:1 1 100%}
+  .c-appr button{width:100%;min-height:42px;font-size:13.5px}
+  .c-appr .st{margin-left:auto}
+  .side-card{padding:4px 12px 8px}
+  .wa-item{padding:10px 11px}
+  .wa-msgs{padding:10px}
+  .cb{max-width:92%;font-size:13px}
+  .wa-composer{padding:8px 10px}
+  .wa-summary{padding:12px}
+  .chart-box{padding:10px 10px 6px}
+  .chart-box svg{height:auto}
+  .chart-legend{flex-wrap:wrap;gap:6px 14px}
+  .task{padding:12px}
+  .task-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .chip-btn{min-height:44px;width:100%;padding:8px 6px}
+  .progress-row{gap:8px;margin-bottom:10px}
+  .benefit{font-size:12.5px;padding:9px 12px}
+  .demo-cta{padding:18px;flex-direction:column;align-items:stretch;gap:12px}
+  .demo-cta .btn{width:100%}
+  .demo-specs{justify-content:flex-start;flex-direction:column;gap:8px;margin-top:14px}
+  /* Portafolio y cierre */
+  .tpl img{height:150px}
+  .tpl-body{padding:16px 18px 18px}
+  .tpl-foot{flex-wrap:wrap}
+  .final{padding:26px 18px}
+  .final .btn{width:100%}
+  details p{font-size:14.5px}
+}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .cpane.active{animation:none}
@@ -580,9 +698,10 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
   <section id="demo" style="padding-top:24px" data-view="demo">
     <div class="wrap">
       <div class="sec-head demo-sec-head">
-        <span class="demo-kicker"><i></i>Demo interactiva · Vista de escritorio</span>
+        <span class="demo-kicker"><i></i>Demo interactiva · PC, laptop y celular</span>
         <h2>Así se ve tu panel en la computadora</h2>
-        <p>Esto es lo que verías al abrir tu panel en una PC o laptop: navega los módulos de la izquierda, aprueba un permiso, confirma un pedido y mira cómo se actualizan los indicadores en tiempo real.</p>
+        <p>Esto es lo que verías al abrir tu panel en una PC o laptop: cambia entre los módulos, aprueba un permiso, confirma un pedido y mira cómo se actualizan los indicadores en tiempo real.</p>
+        <p class="demo-mobile-note">Estás en celular: la demo se adapta a tu pantalla. Toca los módulos de arriba para explorar cada panel, igual que en la computadora.</p>
       </div>
       <div class="laptop">
         <div class="laptop-lid">
