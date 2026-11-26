@@ -388,6 +388,15 @@ form.report input,form.report select,form.report textarea{border:1.5px solid var
 .quote-card ul{margin:12px 0 0;padding-left:18px}
 .quote-card .btn-primary{background:var(--amber);color:#1A1400}
 .quote-card .btn-primary:hover{filter:brightness(1.08)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:16px}
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--green)}
+.price-card .p-label{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--green-d);margin-bottom:8px}
+.price-amount{font-family:"Archivo";font-weight:900;font-size:36px;line-height:1;letter-spacing:-.02em}
+.price-amount small{font-size:15px;font-weight:700;color:var(--muted);letter-spacing:0}
+.price-card p{margin:10px 0 0;color:var(--muted);font-size:14px}
+.price-note{font-size:13px;color:var(--muted);margin:0 2px 16px}
+.launch-badge{display:inline-block;background:var(--amber);color:#241A00;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;margin-bottom:12px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px}
 summary{cursor:pointer;font-weight:700;padding:14px 18px;min-height:48px;display:flex;align-items:center}
 details p{margin:0;padding:0 18px 16px;color:var(--muted);font-size:15px}
@@ -438,6 +447,7 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
       <a href="#ideas">Ideas prefabricadas</a>
       <a href="#demo">Demo en vivo</a>
       <a href="#como">Cómo trabajamos</a>
+      <a href="#cotizar">Precios</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#whatsapp">WhatsApp</a>
       <a class="nav-cta" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20web%2Fapp%20para%20mi%20negocio." target="_blank" rel="noopener">Cotizar por WhatsApp</a>
@@ -458,6 +468,7 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
           <a class="btn btn-primary" href="mailto:ventas@pixelandina.online?subject=Quiero%20cotizar%20una%20web%20o%20app%20para%20mi%20negocio&amp;body=Hola%20PixelAndina%2C%20quiero%20cotizar%20un%20proyecto%20para%20mi%20negocio.%0A%0A-%20Mi%20negocio%20es%3A%0A-%20Necesito%3A%20(web%20%2F%20app%20%2F%20cat%C3%A1logo%20%2F%20otro)%0A-%20Mi%20idea%20es%3A">Cotizar por correo</a>
           <a class="btn btn-ghost" href="#demo">Probar la consola en vivo</a>
         </div>
+        <p class="hero-note"><strong style="color:var(--ink)">Precios de lanzamiento:</strong> landing desde <strong style="color:var(--ink)">$29</strong> · web de negocio desde <strong style="color:var(--ink)">$69</strong> · tablero/app simple desde <strong style="color:var(--ink)">$129</strong> · soporte <strong style="color:var(--ink)">$5/mes</strong>. <a href="#cotizar">Ver precios</a></p>
         <p class="hero-note">Escríbenos por WhatsApp al <a href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20web%2Fapp%20para%20mi%20negocio." target="_blank" rel="noopener">+593 93 946 2496</a> o a <a href="mailto:ventas@pixelandina.online?subject=Consulta%20sobre%20un%20proyecto">ventas@pixelandina.online</a>: cuéntanos tu idea y te respondemos con propuesta y precio.</p>
       </div>
       <div class="hero-img">
@@ -1064,18 +1075,42 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
         <li>Usuarios y contraseñas por persona, si tu proyecto los necesita</li>
         <li>Capacitación corta para ti y tu equipo</li>
         <li>Ajustes de arranque incluidos</li>
-        <li>Soporte por correo después de la entrega</li>
+        <li>Soporte después de la entrega desde $5/mes</li>
       </ul>
     </div>
   </section>
 
-  <!-- COTIZAR -->
+  <!-- COTIZAR / PRECIOS DE LANZAMIENTO -->
   <section id="cotizar" style="padding-top:8px">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Cotiza tu proyecto</h2>
-        <p>Cada web y cada app es distinta, por eso no vendemos paquetes cerrados: cotizamos según lo que tu negocio realmente necesita, sea un proyecto creado desde cero o la adaptación de una de nuestras apps prefabricadas.</p>
+        <span class="launch-badge">Precios de lanzamiento</span>
+        <h2>Precios para empezar hoy</h2>
+        <p>Precios de lanzamiento aprobados, pensados para entrar fácil: eliges el punto de partida y te confirmamos el precio cerrado por escrito antes de empezar, según el alcance de tu negocio.</p>
       </div>
+      <div class="price-grid" aria-label="Precios de lanzamiento de PixelAndina">
+        <div class="price-card">
+          <span class="p-label">Landing</span>
+          <span class="price-amount"><small>desde</small> $29</span>
+          <p>Una página de aterrizaje clara y rápida para presentar una oferta, captar contactos y llevar a tus clientes directo a WhatsApp.</p>
+        </div>
+        <div class="price-card featured">
+          <span class="p-label">Web de negocio</span>
+          <span class="price-amount"><small>desde</small> $69</span>
+          <p>El sitio completo de tu negocio: servicios, fotos, ubicación y contacto en un clic, pensado para celular y computadora.</p>
+        </div>
+        <div class="price-card">
+          <span class="p-label">Tablero / app simple</span>
+          <span class="price-amount"><small>desde</small> $129</span>
+          <p>Un tablero o app simple para ordenar tu operación: asistencia, ventas, visitas, pedidos o reportes, adaptado a tu forma de trabajar.</p>
+        </div>
+        <div class="price-card">
+          <span class="p-label">Soporte</span>
+          <span class="price-amount">$5<small> /mes</small></span>
+          <p>Acompañamiento mensual para mantener tu web o app funcionando, con ajustes menores y ayuda por WhatsApp y correo.</p>
+        </div>
+      </div>
+      <p class="price-note">Los valores “desde” son el punto de partida de lanzamiento. Si tu proyecto necesita más secciones, funciones o usuarios, te lo decimos en la cotización — sin costo y sin compromiso — y el precio final queda cerrado antes de empezar.</p>
       <div class="quote-card">
         <div>
           <h3>Cotización sin costo y sin compromiso</h3>
@@ -1119,7 +1154,7 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
           <h3 style="font-size:17px;margin-bottom:10px">Así te recibimos</h3>
           <p class="wa-greeting">“Hola, gracias por escribir a PixelAndina. Cuéntanos qué necesita tu negocio y te orientamos.”</p>
           <ul class="wa-quick">
-            <li><b>Precios</b>Se cotizan según el alcance de tu proyecto, con precio cerrado antes de empezar.</li>
+            <li><b>Precios de lanzamiento</b>Landing desde $29 · Web de negocio desde $69 · Tablero/app simple desde $129 · Soporte $5/mes. El precio final se confirma cerrado antes de empezar.</li>
             <li><b>Demos</b>Puedes ver y probar nuestras demos en esta misma página, en la consola en vivo.</li>
             <li><b>Atención</b>En línea desde Guayaquil, Ecuador, en español y en tu mismo horario.</li>
           </ul>
@@ -1139,7 +1174,7 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
       </details>
       <details>
         <summary>¿Cuánto cuesta una web o una app?</summary>
-        <p>Depende de lo que necesites: no es lo mismo una página de presentación que una app con usuarios y reportes. Escríbenos tu idea y recibes una cotización sin costo, con precio cerrado y todo lo que incluye, antes de decidir.</p>
+        <p>Nuestros precios de lanzamiento son: <strong>landing desde $29</strong>, <strong>web de negocio desde $69</strong> y <strong>tablero/app simple desde $129</strong>. El soporte mensual es de <strong>$5/mes</strong>. Son valores “desde”: según el alcance de tu proyecto, te confirmamos el precio cerrado y todo lo que incluye en una cotización sin costo, antes de decidir.</p>
       </details>
       <details>
         <summary>No sé nada de tecnología, ¿igual puedo pedir una?</summary>
@@ -1159,7 +1194,7 @@ footer{padding:26px 0 90px;color:var(--muted);font-size:13px;text-align:center}
       </details>
       <details>
         <summary>¿Y después de la entrega?</summary>
-        <p>Te acompañamos en el arranque con ajustes incluidos y soporte por correo. Si más adelante quieres crecer tu web o app con nuevas funciones, las cotizamos como un encargo nuevo, con el mismo precio cerrado por escrito.</p>
+        <p>Te acompañamos en el arranque con ajustes incluidos. Después puedes mantener el soporte por <strong>$5/mes</strong>. Si más adelante quieres crecer tu web o app con nuevas funciones, las cotizamos como un encargo nuevo, con el mismo precio cerrado por escrito.</p>
       </details>
     </div>
   </section>
