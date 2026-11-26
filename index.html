@@ -158,6 +158,44 @@ form.report input,form.report select,form.report textarea{border:1.5px solid var
 .ficha-grid div{padding:14px 16px;border-top:1px solid var(--line)}
 .ficha-grid b{display:block;font-size:13px;color:var(--green-d);margin-bottom:4px}
 .ficha-grid p{margin:0;font-size:14px;color:var(--muted)}
+/* Conceptos prefabricados */
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
+.concept{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column}
+.concept-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
+.concept h3{font-size:17px}
+.prio{font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;background:var(--amber-soft);color:#7A5200;white-space:nowrap}
+@media (prefers-color-scheme: dark){.prio{color:var(--amber)}}
+.prio.high{background:var(--green-soft);color:var(--green-d)}
+.concept .lead-line{margin:0 0 14px;color:var(--muted);font-size:14px}
+.phone{width:158px;margin:0 auto 16px;border:2px solid var(--ink);border-radius:24px;padding:8px 7px 10px;background:var(--bg);box-shadow:var(--shadow)}
+.phone .notch{width:52px;height:5px;border-radius:99px;background:var(--ink);opacity:.55;margin:0 auto 8px}
+.ph-head{font-family:"Archivo";font-weight:800;font-size:11px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
+.ph-head span{font-family:"Public Sans";font-weight:700;font-size:9px;color:var(--green-d);background:var(--green-soft);padding:2px 6px;border-radius:99px}
+.m-bubble{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:5px 7px;font-size:9.5px;line-height:1.35;margin-bottom:5px}
+.m-bubble.me{background:var(--green-soft);border-color:transparent;margin-left:22px}
+.m-bubble.them{margin-right:22px}
+.m-img{height:34px;border-radius:7px;background:linear-gradient(135deg,var(--amber-soft),var(--green-soft));display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--muted);margin-bottom:5px}
+.m-btn{display:block;text-align:center;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;border-radius:99px;padding:5px 4px;margin-top:6px}
+.m-row{display:flex;justify-content:space-between;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 7px;font-size:9.5px;margin-bottom:5px}
+.m-row b{font-size:9.5px}
+.m-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
+.m-dot.off{background:var(--line)}
+.m-tiles{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.m-tile{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 7px;font-size:9.5px;font-weight:600;line-height:1.3}
+.m-tile small{display:block;font-weight:500;color:var(--muted);font-size:8.5px}
+.m-check{font-size:9.5px;margin-bottom:4px;line-height:1.35}
+.m-check::before{content:"✓ ";color:var(--green);font-weight:800}
+.m-bar{height:6px;border-radius:99px;background:var(--surface2);overflow:hidden;margin:3px 0 7px}
+.m-bar i{display:block;height:100%;background:var(--green);border-radius:99px}
+.m-kpirow{display:flex;gap:5px;margin-bottom:6px}
+.m-kpi{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 6px;text-align:center}
+.m-kpi b{display:block;font-family:"Archivo";font-size:12px}
+.m-kpi span{font-size:8px;color:var(--muted)}
+.concept dl{margin:0;display:grid;gap:10px}
+.concept dt{font-size:12px;font-weight:800;color:var(--green-d);text-transform:uppercase;letter-spacing:.04em}
+.concept dd{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.concept .pot{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:13px}
+.concept .pot b{color:var(--ink)}
 /* Proceso */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
@@ -294,66 +332,185 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     <div class="wrap">
       <div class="ideas-band">
       <div class="sec-head" style="margin-bottom:16px">
-        <span class="kicker" style="margin-bottom:10px">Apps prefabricadas · A partir de tus imágenes</span>
-        <h2>Tienes muchas ideas: mándalas en imágenes y te mostramos cómo se verían</h2>
-        <p>Más que una explicación larga, lo importante es <strong>cómo se vería</strong>. Si tienes ideas de apps prefabricadas, envíanos las imágenes tal como las tengas —un boceto, una foto de un cuaderno, una captura o una referencia de cada pantalla— y con eso armamos la propuesta visual de cada una. No necesitas saber de tecnología ni escribir una descripción completa.</p>
+        <span class="kicker" style="margin-bottom:10px">Apps prefabricadas · Conceptos en preparación</span>
+        <h2>Tus ideas, convertidas en conceptos de apps prefabricadas</h2>
+        <p>Estas son las ideas que estamos preparando como apps prefabricadas adaptables: cada una parte de un problema real de negocios y familias, y se muestra con una vista previa original de cómo se vería en el celular. Todavía son <strong>conceptos en preparación</strong>, no productos terminados: al adaptarla a tu negocio lleva tu nombre, tus colores y tus datos. La única demo ya construida y funcional es la de <a href="#demo">operaciones en campo</a>, más abajo.</p>
       </div>
 
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>Envías tus imágenes</h3><p>Una o varias por idea. Si son muchas ideas, mándalas en grupo: una línea por idea diciendo de qué trata basta para ordenarlas.</p></div>
-        <div class="step"><div class="num">2</div><h3>Armamos cómo se vería</h3><p>Convertimos cada imagen en pantallas claras: pantalla principal, cómo se navega y qué toca el usuario en cada paso, como si la app ya existiera.</p></div>
-        <div class="step"><div class="num">3</div><h3>Completamos la ficha</h3><p>Debajo de cada propuesta dejamos por escrito qué problema resuelve, para quién sería y qué tan vendible es como prefabricada.</p></div>
-        <div class="step"><div class="num">4</div><h3>Elegimos las primeras</h3><p>Priorizamos las de más potencial para construirlas primero y dejamos las demás en el portafolio, listas para adaptar a otro cliente.</p></div>
+      <div class="concept-grid">
+
+        <article class="concept">
+          <div class="concept-top"><h3>Ventas por WhatsApp para emprendedores</h3><span class="prio high">Prioridad 1</span></div>
+          <p class="lead-line">El chat de siempre, pero con catálogo, respuestas rápidas y pedidos ordenados.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Mi Tienda <span>En línea</span></div>
+            <div class="m-bubble them">Hola, ¿este producto está disponible?</div>
+            <div class="m-img">Foto del producto</div>
+            <div class="m-bubble me">¡Sí! Está disponible. ¿Te reservo uno?</div>
+            <div class="m-bubble them">Sí, por favor. Retiro en tienda.</div>
+            <div class="m-row"><b>Pedidos de hoy</b><span>3 nuevos</span></div>
+            <span class="m-btn">Ver resumen de pedidos</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Emprendedores que pierden ventas por responder tarde o de forma desordenada en WhatsApp.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Tiendas, emprendimientos y vendedores que atienden solos su negocio.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: alto.</b> Es el dolor más claro para negocios pequeños en Ecuador y la región; sería la primera demo a construir.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Control de asistencia y horarios</h3><span class="prio high">Prioridad 2</span></div>
+          <p class="lead-line">Reloj virtual para marcar entrada y salida, con permisos, horarios y sucursales.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Asistencia <span>Local Centro</span></div>
+            <div class="m-kpirow"><div class="m-kpi"><b>08:02</b><span>Entrada</span></div><div class="m-kpi"><b>12</b><span>En turno</span></div></div>
+            <div class="m-row"><b>Entrada de jornada</b><span class="m-dot"></span></div>
+            <div class="m-row"><b>Salida a almuerzo</b><span class="m-dot"></span></div>
+            <div class="m-row"><b>Permiso solicitado</b><span class="m-dot off"></span></div>
+            <div class="m-row"><b>Fin de jornada</b><span class="m-dot off"></span></div>
+            <span class="m-btn">Marcar con reloj virtual</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Planillas y registros manuales de asistencia que se pierden, se alteran o toman horas en cuadrar.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Pymes con personal en uno o varios locales que necesitan orden sin sistemas complicados.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: alto.</b> Es un servicio que un negocio paga mes a mes, con cobro recurrente potencial.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>App interna sin papeleo</h3><span class="prio high">Prioridad 3</span></div>
+          <p class="lead-line">Todos los procesos internos de la empresa en una sola app, sin carpetas ni planillas sueltas.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Mi Empresa <span>Inicio</span></div>
+            <div class="m-tiles">
+              <div class="m-tile">Asistencia<small>Marcar y consultar</small></div>
+              <div class="m-tile">Turnos<small>Horarios del equipo</small></div>
+              <div class="m-tile">Documentos<small>Sin carpetas físicas</small></div>
+              <div class="m-tile">Pedidos internos<small>Solicitudes al área</small></div>
+              <div class="m-tile">Avisos<small>Comunicados</small></div>
+              <div class="m-tile">Formularios<small>Registros digitales</small></div>
+            </div>
+            <span class="m-btn">Abrir módulo</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Carpetas, planillas y procesos internos dispersos que nadie encuentra cuando los necesita.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Empresas pequeñas y medianas con equipos operativos que hoy se coordinan en papel.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: alto</b> como proyecto a medida; es más grande que una demo simple y se construye por módulos.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Organizador familiar</h3><span class="prio">Prioridad 4</span></div>
+          <p class="lead-line">Calendario compartido, listas, documentos, presupuesto y comidas de la familia en un solo lugar.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Nuestra familia <span>Hoy</span></div>
+            <div class="m-row"><b>Clase de natación</b><span>10:30</span></div>
+            <div class="m-row"><b>Cena en familia</b><span>19:30</span></div>
+            <div class="m-tiles">
+              <div class="m-tile">Calendario<small>Eventos de la semana</small></div>
+              <div class="m-tile">Listas<small>Compras y pendientes</small></div>
+              <div class="m-tile">Documentos<small>Todo guardado</small></div>
+              <div class="m-tile">Presupuesto<small>Gastos de la casa</small></div>
+            </div>
+            <span class="m-btn">Agregar evento</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>La carga mental y el desorden en casa: nadie sabe qué toca hoy ni dónde está cada documento.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Familias con hijos y rutinas compartidas que hoy se coordinan por chats sueltos.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> El mercado es amplio, pero cobrar a familias es más difícil que cobrar a negocios.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Notas de voz y reuniones en español</h3><span class="prio">Prioridad 5</span></div>
+          <p class="lead-line">Graba o sube un audio y obtén la transcripción limpia, con decisiones y tareas claras.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Reunión de hoy <span>42 min</span></div>
+            <div class="m-bar"><i style="width:35%"></i></div>
+            <div class="m-check"><b>Quién dijo qué</b> — intervenciones identificadas por persona</div>
+            <div class="m-check"><b>Decisiones</b> — acuerdos de la reunión, en lista</div>
+            <div class="m-check"><b>Tareas</b> — pendientes con responsable</div>
+            <div class="m-bubble">Transcripción limpia en español, lista para leer y compartir.</div>
+            <span class="m-btn">Grabar o subir audio</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Reuniones y audios largos que quedan sin resumen ni acuerdos accionables.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Profesionales, docentes, equipos de trabajo y creadores de contenido.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio-alto.</b> Depende de los costos de transcripción con IA, que se cotizan por proyecto.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Creador de materiales educativos</h3><span class="prio">Prioridad 6</span></div>
+          <p class="lead-line">Plantillas listas para fichas, presentaciones, guías y actividades, sin empezar de cero.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Mis materiales <span>Plantillas</span></div>
+            <div class="m-tiles">
+              <div class="m-tile">Fichas<small>Para imprimir</small></div>
+              <div class="m-tile">Presentaciones<small>Clases y cursos</small></div>
+              <div class="m-tile">Guías<small>Paso a paso</small></div>
+              <div class="m-tile">Actividades<small>Ejercicios listos</small></div>
+            </div>
+            <div class="m-row"><b>Guía de la semana</b><span>Lista ✓</span></div>
+            <span class="m-btn">Crear material nuevo</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Docentes y formadores que tardan horas creando materiales desde una hoja en blanco.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Docentes, formadores y academias pequeñas que preparan clases cada semana.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> Puede venderse como servicio de diseño más un paquete de plantillas adaptables.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Kit digital de talento humano</h3><span class="prio">Prioridad 7</span></div>
+          <p class="lead-line">Guía descargable con checklists de cultura, contratación y gestión de personas.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Kit de RR. HH. <span>Guía</span></div>
+            <div class="m-check"><b>Contratación</b> — pasos para elegir bien a tu equipo</div>
+            <div class="m-check"><b>Cultura</b> — acuerdos y valores del negocio</div>
+            <div class="m-check"><b>Gestión</b> — seguimiento y decisiones con tu gente</div>
+            <div class="m-row"><b>Guía 1 · Fundamentos</b><span>Descargar</span></div>
+            <span class="m-btn">Ver contenido del kit</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Pymes sin estructura de recursos humanos que improvisan la contratación y la gestión de su equipo.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Dueños de negocio y jefes de equipos pequeños que quieren ordenar su gestión de personas.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> Es más un contenido y servicio de acompañamiento que una app.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Academia de RR. HH. con IA</h3><span class="prio">Prioridad 8</span></div>
+          <p class="lead-line">Cursos cortos para actualizar equipos de talento humano: capacitación, datos y automatización.</p>
+          <div class="phone" aria-hidden="true">
+            <div class="notch"></div>
+            <div class="ph-head">Academia <span>Cursos</span></div>
+            <div class="m-row"><b>Diseño de capacitaciones</b><span>Curso</span></div>
+            <div class="m-bar"><i style="width:60%"></i></div>
+            <div class="m-row"><b>Datos para RR. HH.</b><span>Curso</span></div>
+            <div class="m-bar"><i style="width:25%"></i></div>
+            <div class="m-row"><b>Automatización con IA</b><span>Curso</span></div>
+            <div class="m-bar"><i style="width:0%"></i></div>
+            <span class="m-btn">Ver ruta de cursos</span>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Equipos de recursos humanos que necesitan actualizarse rápido en capacitación, datos e IA.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Profesionales y áreas de talento humano de empresas en crecimiento.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> Requiere producir contenido y construir credibilidad antes de venderlo.</p>
+        </article>
+
       </div>
 
-      <div class="ficha" aria-label="Formato de ficha que tendrá cada idea">
-        <div class="ficha-head">Así quedará cada idea cuando recibamos tus imágenes</div>
-        <div class="ficha-grid">
-          <div><b>Cómo se vería</b><p>La imagen que enviaste junto a las pantallas propuestas: inicio, menú y la acción principal, en formato celular.</p></div>
-          <div><b>Qué problema resuelve</b><p>La necesidad concreta del día a día que esa app atiende, en una o dos líneas.</p></div>
-          <div><b>Para quién sería</b><p>El tipo de negocio o cliente que la compraría y la usaría a diario.</p></div>
-          <div><b>Qué tan vendible es</b><p>Si se puede adaptar a varios negocios cambiando nombre, colores y datos, o si es para un nicho puntual.</p></div>
-        </div>
-      </div>
-
-      <h3 style="font-size:17px;margin:24px 0 4px">Portafolio de ideas por cargar</h3>
-      <p style="margin:0;color:var(--muted);font-size:14px">Espacio listo para muchas ideas. Cada casilla se reemplaza por tu imagen y su ficha en cuanto la recibamos; por ahora no hay ideas inventadas cargadas aquí.</p>
-
-      <div class="idea-slots" aria-label="Espacio para tus próximas ideas prefabricadas">
-        <div class="idea-slot">
-          <div class="frame"><i>1</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Lista para la primera imagen que envíes.</p>
-        </div>
-        <div class="idea-slot">
-          <div class="frame"><i>2</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Aquí irá su ficha: problema, para quién y potencial.</p>
-        </div>
-        <div class="idea-slot">
-          <div class="frame"><i>3</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Las mejores pasarán al catálogo de prefabricadas.</p>
-        </div>
-        <div class="idea-slot">
-          <div class="frame"><i>4</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Espacio para otra de tus ideas, sin límite de grupo.</p>
-        </div>
-        <div class="idea-slot">
-          <div class="frame"><i>5</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Se ordena junto a las demás para priorizar.</p>
-        </div>
-        <div class="idea-slot">
-          <div class="frame"><i>6</i>Tu imagen aquí<small>Formato celular<br>Cómo se vería la pantalla principal</small></div>
-          <h3>Idea por evaluar</h3>
-          <p>Si tienes más, agregamos más espacios al recibirlas.</p>
-        </div>
-      </div>
-
-      <p style="margin:20px 2px 0;color:var(--muted)">¿Ya tienes las imágenes? Adjúntalas en un correo —puedes mandar varias ideas en el mismo mensaje— y cuéntanos en una línea de qué trata cada una.</p>
-      <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="mailto:ventas@pixelandina.online?subject=Mis%20ideas%20de%20apps%20prefabricadas%20en%20im%C3%A1genes&amp;body=Hola%20PixelAndina%2C%20les%20env%C3%ADo%20las%20im%C3%A1genes%20de%20mis%20ideas%20de%20apps%20prefabricadas.%0A%0AQuiero%20que%20me%20muestren%20principalmente%20c%C3%B3mo%20se%20ver%C3%ADa%20cada%20una.%0A%0A-%20Idea%201%20(de%20qu%C3%A9%20trata)%3A%0A-%20Idea%202%20(de%20qu%C3%A9%20trata)%3A%0A-%20Idea%203%20(de%20qu%C3%A9%20trata)%3A%0A%0AAdjunto%20las%20im%C3%A1genes%20de%20c%C3%B3mo%20se%20ver%C3%ADan%3A">Enviar mis imágenes e ideas</a><a class="btn btn-ghost" href="#demo">Ver el único ejemplo ya armado ↓</a></p>
+      <p style="margin:20px 2px 0;color:var(--muted)">¿Te interesa alguno de estos conceptos para tu negocio, o tienes otra idea en imágenes? Escríbenos y lo conversamos: cada concepto se cotiza como adaptación a tu negocio, con precio cerrado antes de empezar.</p>
+      <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="mailto:ventas@pixelandina.online?subject=Me%20interesa%20un%20concepto%20prefabricado%20de%20PixelAndina&amp;body=Hola%20PixelAndina%2C%20me%20interesa%20uno%20de%20sus%20conceptos%20prefabricados.%0A%0A-%20El%20concepto%20que%20me%20interesa%20es%3A%0A-%20Mi%20negocio%20es%3A%0A-%20Lo%20que%20necesito%20es%3A">Quiero un concepto para mi negocio</a><a class="btn btn-ghost" href="#demo">Ver la demo ya construida ↓</a></p>
       </div>
     </div>
   </section>
@@ -363,7 +520,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     <div class="wrap">
       <div class="sec-head">
         <h2>Ejemplo prefabricado ya armado: app de operaciones en campo</h2>
-        <p>Este es, por ahora, el <strong>único ejemplo prefabricado construido</strong> en la página —así se verá cada idea tuya cuando la armemos desde tus imágenes—. Es una <strong>demo funcional</strong> pensada para una empresa ficticia, <strong>“Servicios Andina”</strong>, que coordina visitas en campo. Pruébala aquí mismo: cambia estados, filtra por responsable, crea un reporte y mira cómo se mueve el panel. Si te gusta para tu negocio, la adaptamos con tus nombres, tus colores y tus datos; y si necesitas algo totalmente distinto, lo creamos a pedido.</p>
+        <p>Este es, por ahora, el <strong>único ejemplo prefabricado construido</strong> en la página; los demás conceptos de arriba están en preparación. Es una <strong>demo funcional</strong> pensada para una empresa ficticia, <strong>“Servicios Andina”</strong>, que coordina visitas en campo. Pruébala aquí mismo: cambia estados, filtra por responsable, crea un reporte y mira cómo se mueve el panel. Si te gusta para tu negocio, la adaptamos con tus nombres, tus colores y tus datos; y si necesitas algo totalmente distinto, lo creamos a pedido.</p>
       </div>
 
       <div class="demo-shell" aria-label="Demo interactiva de la app de operaciones en campo">
@@ -471,7 +628,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
 
         </div>
       </div>
-      <p style="color:var(--muted);font-size:14px;margin:16px 2px 0"><strong style="color:var(--ink)">Más ideas en camino:</strong> las próximas apps prefabricadas saldrán de las imágenes e ideas que estamos reuniendo. Cada una se mostrará aquí con cómo se vería, qué problema resuelve y para quién sería. ¿Tienes una idea en mente? <a href="#ideas">Mándanos tus imágenes</a> y la armamos contigo.</p>
+      <p style="color:var(--muted);font-size:14px;margin:16px 2px 0"><strong style="color:var(--ink)">¿Buscas otro tipo de app?</strong> Revisa los <a href="#ideas">8 conceptos prefabricados en preparación</a>: ventas por WhatsApp, control de asistencia, organizador familiar y más. Cada uno se adapta a tu negocio con tus nombres, colores y datos.</p>
     </div>
   </section>
 
