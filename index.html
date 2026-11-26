@@ -266,6 +266,155 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
   .chat-panel{left:14px;bottom:78px}
   .wa-float{right:14px;bottom:14px;padding:12px 16px}
 }
+/* ===== Demo realista: laptop + panel de escritorio ===== */
+.demo-sec-head{max-width:680px}
+.demo-kicker{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:800;color:var(--green-d);margin-bottom:14px}
+.demo-kicker i{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
+.laptop{max-width:1040px;margin:6px auto 0}
+.laptop-lid{position:relative;background:#101613;border:1px solid #2A332D;border-radius:22px 22px 6px 6px;padding:26px 12px 12px;box-shadow:0 30px 60px rgba(10,20,14,.28),0 4px 14px rgba(10,20,14,.18)}
+.laptop-cam{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#2E3B33;box-shadow:inset 0 0 2px 1px #0A0F0C,0 0 0 3px #171E1A}
+.laptop-cam::after{content:"";position:absolute;inset:2px;border-radius:50%;background:#3D5A78}
+.laptop-base{height:16px;margin:0 -14px;background:linear-gradient(180deg,#3A443D 0%,#232B26 55%,#171D19 100%);border-radius:3px 3px 16px 16px;position:relative;box-shadow:0 18px 28px rgba(10,20,14,.25)}
+.laptop-base::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:130px;height:6px;background:#10140F;border-radius:0 0 10px 10px}
+.console{border-radius:8px;box-shadow:none;border:0;font-size:13.5px;background:var(--surface)}
+/* Barra del navegador */
+.bbar{gap:8px;padding:7px 12px;background:#E9EDE6;border-bottom:1px solid #D5DCD0}
+@media (prefers-color-scheme: dark){.bbar{background:#232D27;border-bottom-color:#33413A}}
+.bbar i{width:11px;height:11px}
+.bnav{display:inline-flex;gap:2px;color:#7A877C;font-size:15px;font-weight:700;line-height:1;margin-left:4px}
+.bnav span{padding:2px 5px;border-radius:5px}
+.bnav .off{opacity:.35}
+.burl{max-width:430px;margin:0 auto;text-align:center;font-size:12px;padding:5px 14px;border-radius:7px;display:flex;align-items:center;justify-content:center;gap:6px}
+.burl svg{width:10px;height:10px;flex:none;color:var(--green-d)}
+.live-pill{font-size:10px;letter-spacing:.04em}
+/* Barra de la aplicación */
+.appbar{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.appbar-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.appbar-logo{width:30px;height:30px;border-radius:8px;background:var(--green);color:#fff;font-family:"Archivo";font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;flex:none}
+.appbar-brand b{font-family:"Archivo";font-size:14.5px;display:block;line-height:1.15;white-space:nowrap}
+.appbar-brand span{font-size:11.5px;color:var(--muted);display:block;line-height:1.2;white-space:nowrap}
+.app-search{flex:1;max-width:340px;margin-left:auto;background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap;overflow:hidden}
+.app-search svg{width:13px;height:13px;flex:none}
+.appbar-right{display:flex;align-items:center;gap:12px;margin-left:auto}
+.app-search + .appbar-right{margin-left:0}
+.bell{position:relative;width:32px;height:32px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none}
+.bell svg{width:15px;height:15px}
+.bell::after{content:"";position:absolute;top:6px;right:7px;width:7px;height:7px;border-radius:50%;background:var(--red);border:1.5px solid var(--surface)}
+.app-user{display:flex;align-items:center;gap:9px}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--green-d);color:#fff;font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+.app-user b{font-size:12.5px;display:block;line-height:1.15}
+.app-user span{font-size:11px;color:var(--muted);display:block;line-height:1.2}
+/* Estructura con barra lateral */
+.app-shell{display:grid;grid-template-columns:196px 1fr;min-height:430px}
+.app-side{border-right:1px solid var(--line);background:var(--surface2);padding:14px 10px;display:flex;flex-direction:column;gap:2px}
+.side-label{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding:2px 10px 8px}
+.ctabs{display:flex;flex-direction:column;gap:3px;padding:0;flex-wrap:nowrap}
+.ctab{border:0;background:transparent;color:var(--ink);border-radius:8px;padding:9px 10px;font-weight:600;font-size:13px;cursor:pointer;min-height:40px;display:flex;align-items:center;gap:9px;text-align:left;width:100%}
+.ctab svg{width:16px;height:16px;flex:none;color:var(--muted)}
+.ctab:hover{background:var(--surface)}
+.ctab[aria-selected="true"]{background:var(--green);color:#fff}
+.ctab[aria-selected="true"] svg{color:#fff}
+.ctab .side-badge{margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:800;border-radius:99px;padding:1px 6px}
+.ctab[aria-selected="true"] .side-badge{background:#fff;color:var(--red)}
+.side-foot{margin-top:auto;border-top:1px solid var(--line);padding:12px 10px 2px;font-size:11.5px;color:var(--muted);line-height:1.45}
+.side-foot b{color:var(--ink);display:block;font-size:12px;margin-bottom:2px}
+.app-main{min-width:0;background:var(--surface)}
+.cpane{padding:18px 20px 20px}
+.pane-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.pane-head h3{font-size:16.5px}
+.pane-head span{font-size:12px;color:var(--muted)}
+/* KPI de escritorio */
+.ckpis{gap:10px;margin-bottom:14px}
+.ckpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.ckpi b{font-size:23px;letter-spacing:-.01em}
+.ckpi>span{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:block;margin-top:2px}
+.delta{display:block;font-style:normal;font-size:11px;font-weight:700;margin-top:5px}
+.delta.up{color:var(--green-d)}
+.delta.down{color:var(--red)}
+.delta.flat{color:var(--muted)}
+.mk-sec{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+.chart-box{border:1px solid var(--line);border-radius:10px;padding:12px 14px 8px;background:var(--surface)}
+.bars{height:74px;border-bottom:1px solid var(--line);padding:0 2px}
+.bars i{border-radius:3px 3px 0 0}
+/* Tabla de equipo */
+.trow{display:grid;grid-template-columns:1fr auto auto;gap:6px 14px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);font-size:13px}
+.trow:last-child{border-bottom:0}
+.trow .who{display:flex;align-items:center;gap:9px;min-width:0}
+.trow .who .avatar{width:26px;height:26px;font-size:10px}
+.trow .who b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trow .who span{color:var(--muted);font-size:12px;white-space:nowrap}
+.trow time{color:var(--muted);font-size:12px;font-weight:600;white-space:nowrap}
+.st-pill{font-size:11px;font-weight:800;border-radius:99px;padding:3px 9px;white-space:nowrap}
+.st-in{background:var(--green-soft);color:var(--green-d)}
+.st-late{background:var(--amber-soft);color:#7A5200}
+@media (prefers-color-scheme: dark){.st-late{color:var(--amber)}}
+/* Aprobaciones */
+.c-appr{border-radius:9px;padding:9px 12px;font-size:13px}
+.c-appr button{padding:6px 14px;min-height:34px;font-size:12.5px}
+/* Actividad reciente */
+.feed{gap:0}
+.feed li{background:transparent;border-radius:0;padding:9px 2px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.45}
+.feed li:last-child{border-bottom:0}
+.feed li time{font-size:10.5px;letter-spacing:.03em;text-transform:uppercase}
+.side-card{border:1px solid var(--line);border-radius:10px;padding:6px 14px 10px;background:var(--surface)}
+.side-card h3{font-size:13px !important;margin:10px 0 2px}
+/* WhatsApp Web */
+.wa-grid{grid-template-columns:216px 1fr 176px;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.wa-list{border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column}
+.wa-search{margin:10px;background:var(--surface2);border-radius:8px;padding:7px 11px;font-size:12px;color:var(--muted);display:flex;gap:7px;align-items:center}
+.wa-search svg{width:12px;height:12px;flex:none}
+.wa-item{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:10px 12px;margin-bottom:0}
+.wa-item .who{display:flex;align-items:center;gap:8px}
+.wa-item .avatar{width:30px;height:30px;font-size:10.5px;background:var(--surface2);color:var(--green-d);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+.wa-item time{margin-left:auto;font-size:10.5px;color:var(--muted);font-weight:600}
+.wa-item[aria-selected="true"]{background:var(--surface2);border-color:var(--line)}
+.wa-chat{border:0;border-radius:0;padding:0;background:color-mix(in srgb, var(--amber-soft) 34%, var(--surface2));display:flex;flex-direction:column}
+.wa-chat-head{display:flex;align-items:center;gap:10px;background:var(--surface);border-bottom:1px solid var(--line);padding:9px 14px}
+.wa-chat-head .avatar{width:32px;height:32px;font-size:11px}
+.wa-chat-head b{font-size:13.5px;display:block;line-height:1.2}
+.wa-chat-head span{font-size:11.5px;color:var(--green-d);font-weight:600;display:block;line-height:1.25}
+.wa-msgs{padding:14px;display:flex;flex-direction:column}
+.cb{border:0;border-radius:8px;box-shadow:0 1px 1px rgba(20,30,22,.10);font-size:13px;padding:7px 10px 5px;max-width:82%}
+.cb time{display:block;text-align:right;font-size:10px;color:var(--muted);margin-top:3px;font-weight:600}
+.cb time .ticks{color:#2FA3C7;font-weight:800;letter-spacing:-2px;margin-left:3px}
+.cb.me{background:var(--green-soft)}
+.wa-composer{display:flex;align-items:center;gap:9px;background:var(--surface);border-top:1px solid var(--line);padding:9px 14px;margin-top:auto}
+.wa-composer .fake-input{flex:1;background:var(--surface2);border-radius:99px;padding:8px 14px;font-size:12.5px;color:var(--muted)}
+.wa-composer .send{width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.wa-composer .send svg{width:15px;height:15px}
+.wa-summary{border-left:1px solid var(--line);background:var(--surface);padding:14px}
+.wa-summary h3{font-size:13px !important;margin-bottom:12px}
+.fstage b{font-size:17px}
+.fstage span{font-size:11.5px}
+/* Dashboard */
+.chart-svg-wrap{position:relative}
+.chart-legend{display:flex;gap:16px;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:6px}
+.chart-legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
+.appr{border-radius:8px;font-size:12.5px}
+/* Pie de la demo */
+.benefit{border-radius:9px;font-size:13px;padding:10px 14px;margin-top:16px;display:flex;gap:9px;align-items:center}
+.benefit svg{width:16px;height:16px;flex:none}
+.demo-cta{max-width:1040px;margin:26px auto 0;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.demo-cta div{flex:1;min-width:230px}
+.demo-cta b{font-family:"Archivo";font-size:17px;display:block}
+.demo-cta p{margin:3px 0 0;color:var(--muted);font-size:14px}
+.demo-specs{display:flex;gap:8px 22px;flex-wrap:wrap;max-width:1040px;margin:16px auto 0;font-size:13px;color:var(--muted);font-weight:600;justify-content:center}
+.demo-specs span{display:inline-flex;align-items:center;gap:7px}
+.demo-specs svg{width:14px;height:14px;color:var(--green-d);flex:none}
+@media (max-width:900px){
+  .app-shell{grid-template-columns:1fr}
+  .app-side{border-right:0;border-bottom:1px solid var(--line);padding:10px}
+  .side-label,.side-foot{display:none}
+  .ctabs{display:grid;grid-template-columns:1fr 1fr}
+  .wa-grid{grid-template-columns:1fr}
+  .wa-list{border-right:0;border-bottom:1px solid var(--line)}
+  .wa-summary{border-left:0;border-top:1px solid var(--line)}
+  .app-search{display:none}
+  .app-user .u-meta{display:none}
+  .laptop-lid{padding:22px 7px 7px;border-radius:16px 16px 5px 5px}
+  .laptop-base{margin:0 -6px}
+  .cpane{padding:14px}
+}
 /* Vistas (SPA por hash) */
 .view-hidden{display:none !important}
 .viewbar{border-bottom:1px solid var(--line);background:var(--surface)}
@@ -430,73 +579,109 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
   <!-- DEMO -->
   <section id="demo" style="padding-top:24px" data-view="demo">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>Míralo funcionando</h2>
-        <p>Una consola de ejemplo, como la que usaría tu equipo. Cambia de pestaña, aprueba un permiso, confirma un pedido y mira cómo se actualizan los indicadores.</p>
+      <div class="sec-head demo-sec-head">
+        <span class="demo-kicker"><i></i>Demo interactiva · Vista de escritorio</span>
+        <h2>Así se ve tu panel en la computadora</h2>
+        <p>Esto es lo que verías al abrir tu panel en una PC o laptop: navega los módulos de la izquierda, aprueba un permiso, confirma un pedido y mira cómo se actualizan los indicadores en tiempo real.</p>
       </div>
-      <div class="console" aria-label="Consola interactiva de ejemplo">
-        <div class="bbar"><i></i><i></i><i></i><span class="burl">app.pixelandina.online/consola</span><span class="live-pill"><i></i>EN VIVO · SIMULADO</span></div>
-        <div class="ctabs" role="tablist" aria-label="Paneles de la consola">
-          <button class="ctab" role="tab" aria-selected="true" data-cpane="rrhh">Talento Humano</button>
-          <button class="ctab" role="tab" aria-selected="false" data-cpane="wa">Ventas por WhatsApp</button>
-          <button class="ctab" role="tab" aria-selected="false" data-cpane="dash">Dashboards</button>
-          <button class="ctab" role="tab" aria-selected="false" data-cpane="ops">Operaciones</button>
-        </div>
+      <div class="laptop">
+        <div class="laptop-lid">
+          <span class="laptop-cam" aria-hidden="true"></span>
+          <div class="console" aria-label="Consola interactiva de ejemplo, mostrada dentro de la pantalla de una laptop">
+            <div class="bbar"><i></i><i></i><i></i><span class="bnav" aria-hidden="true"><span>‹</span><span class="off">›</span><span>⟳</span></span><span class="burl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></svg>app.tunegocio.com/panel</span><span class="live-pill"><i></i>EN VIVO</span></div>
+            <div class="appbar">
+              <div class="appbar-brand">
+                <span class="appbar-logo">T</span>
+                <div><b>Panel de tu negocio</b><span>Sucursal Centro · Guayaquil</span></div>
+              </div>
+              <div class="app-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>Buscar empleado, pedido, local…</div>
+              <div class="appbar-right">
+                <span class="bell"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 22c1.25 0 2.4-.68 3-1.75H9c.6 1.07 1.75 1.75 3 1.75Zm7-5.29-1.65-1.65c-.44-.44-.68-1.03-.68-1.65V10c0-3.42-2.09-5.61-4.67-6V3.5A1.5 1.5 0 0 0 10.5 2 1.5 1.5 0 0 0 9 3.5V4C6.42 4.39 4.33 6.58 4.33 10v3.41c0 .62-.25 1.21-.68 1.65L2 16.71V19h18v-2.29Z" transform="translate(1 0)"/></svg></span>
+                <div class="app-user"><span class="avatar">AD</span><div class="u-meta"><b>Admin</b><span>Propietario</span></div></div>
+              </div>
+            </div>
+            <div class="app-shell">
+              <aside class="app-side">
+                <div class="side-label">Módulos</div>
+                <div class="ctabs" role="tablist" aria-label="Módulos del panel">
+                  <button class="ctab" role="tab" aria-selected="true" data-cpane="rrhh"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4ZM8 11a4 4 0 1 0-.6-7.96A5.98 5.98 0 0 1 9 7a5.98 5.98 0 0 1-1.6 3.96c.2.02.4.04.6.04Zm8 2c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4Zm-7.4.41C7.3 13.15 2 14 2 17v3h4v-3c0-1.66 1.13-2.83 2.6-3.59Z" transform="translate(-1 0)"/></svg>Talento Humano<span class="side-badge">3</span></button>
+                  <button class="ctab" role="tab" aria-selected="false" data-cpane="wa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.94 2 11.8c0 1.55.47 3.05 1.35 4.36L2 21l5.02-1.3A11.4 11.4 0 0 0 12 20.6c5.52 0 10-3.94 10-8.8S17.52 3 12 3Z"/></svg>Ventas WhatsApp</button>
+                  <button class="ctab" role="tab" aria-selected="false" data-cpane="dash"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20V10h3v10H4Zm6.5 0V4h3v16h-3ZM17 20v-7h3v7h-3Z"/></svg>Dashboards</button>
+                  <button class="ctab" role="tab" aria-selected="false" data-cpane="ops"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm-2 14-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8Z"/></svg>Operaciones</button>
+                </div>
+                <div class="side-foot"><b>Tu panel incluye</b>Usuarios para tu equipo, respaldo automático y soporte por WhatsApp.</div>
+              </aside>
+              <div class="app-main">
 
         <div class="cpane active" id="cp-rrhh" role="tabpanel">
+          <div class="pane-head"><h3>Talento Humano</h3><span>Resumen de hoy · Miércoles, jornada completa</span></div>
           <div class="cgrid">
             <div>
               <div class="ckpis">
-                <div class="ckpi"><b><span class="count" data-count="24">0</span></b><span>Empleados activos</span></div>
-                <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del mes</span></div>
-                <div class="ckpi"><b id="kpi-permisos">3</b><span>Permisos por aprobar</span></div>
-                <div class="ckpi"><b><span class="count" data-count="5">0</span></b><span>En capacitación</span></div>
+                <div class="ckpi"><b><span class="count" data-count="24">0</span></b><span>Empleados activos</span><em class="delta up">▲ +2 este mes</em></div>
+                <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del mes</span><em class="delta up">▲ +3 pts vs. mes anterior</em></div>
+                <div class="ckpi"><b id="kpi-permisos">3</b><span>Permisos por aprobar</span><em class="delta flat">Pendientes de tu revisión</em></div>
+                <div class="ckpi"><b><span class="count" data-count="5">0</span></b><span>En capacitación</span><em class="delta flat">Curso: atención al cliente</em></div>
               </div>
-              <div class="mk-sec">Asistencia por día (%)</div>
-              <div class="bars"><i style="height:88%"></i><i style="height:95%"></i><i style="height:72%" class="low"></i><i style="height:91%"></i><i style="height:97%"></i><i style="height:58%" class="mid"></i></div>
-              <div class="bars-lab"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span></div>
+              <div class="mk-sec">Asistencia de la semana (%)</div>
+              <div class="chart-box">
+                <div class="bars"><i style="height:88%"></i><i style="height:95%"></i><i style="height:72%" class="low"></i><i style="height:91%"></i><i style="height:97%"></i><i style="height:58%" class="mid"></i></div>
+                <div class="bars-lab"><span>Lun · 88%</span><span>Mar · 95%</span><span>Mié · 72%</span><span>Jue · 91%</span><span>Vie · 97%</span><span>Sáb · 58%</span></div>
+              </div>
+              <div class="mk-sec">Equipo de hoy</div>
+              <div>
+                <div class="trow"><span class="who"><span class="avatar">MF</span><span><b>María Fernanda</b> <span>· Ventas</span></span></span><time>Entrada 08:02</time><span class="st-pill st-in">A tiempo</span></div>
+                <div class="trow"><span class="who"><span class="avatar">CA</span><span><b>Carlos Andrés</b> <span>· Bodega</span></span></span><time>Entrada 08:17</time><span class="st-pill st-late">Atraso 17 min</span></div>
+                <div class="trow"><span class="who"><span class="avatar">LP</span><span><b>Lucía Paredes</b> <span>· Caja</span></span></span><time>Entrada 07:58</time><span class="st-pill st-in">A tiempo</span></div>
+              </div>
               <div class="mk-sec">Permisos por aprobar — pruébalos</div>
               <div class="c-appr"><span><b>María Fernanda</b> · Permiso médico · Jueves</span><button type="button" data-appr>Aprobar</button></div>
               <div class="c-appr"><span><b>Carlos Andrés</b> · Día personal · Viernes</span><button type="button" data-appr>Aprobar</button></div>
               <div class="c-appr"><span><b>Lucía Paredes</b> · Cita médica · Lunes</span><button type="button" data-appr>Aprobar</button></div>
             </div>
-            <div>
-              <h3 style="font-size:15px;margin-bottom:10px">Actividad entrando ahora</h3>
+            <div class="side-card">
+              <h3>Actividad reciente</h3>
               <ul class="feed" id="feed"></ul>
-              <p class="feed-note">Eventos simulados, como pasarían en el panel real de tu negocio.</p>
+              <p class="feed-note">Se actualiza sola, como en el panel real de tu negocio.</p>
             </div>
           </div>
           <div class="benefit">La asistencia se cuadra sola y los permisos se aprueban en un clic.</div>
         </div>
 
         <div class="cpane" id="cp-wa" role="tabpanel">
+          <div class="pane-head"><h3>Ventas por WhatsApp</h3><span>Bandeja compartida de tu equipo · Estilo WhatsApp Web</span></div>
           <div class="wa-grid">
-            <div>
-              <button class="wa-item" type="button" aria-selected="true" data-conv="c1"><span class="unread">2</span><b>Cliente · María G.</b><span>¿Sigue disponible el producto?</span></button>
-              <button class="wa-item" type="button" aria-selected="false" data-conv="c2"><span class="unread">1</span><b>Cliente · Jorge T.</b><span>¿Hacen envíos al norte?</span></button>
-              <button class="wa-item" type="button" aria-selected="false" data-conv="c3"><b>Cliente · Ana P.</b><span>¡Recibido, gracias!</span></button>
+            <div class="wa-list">
+              <div class="wa-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>Buscar un chat</div>
+              <button class="wa-item" type="button" aria-selected="true" data-conv="c1"><span class="who"><span class="avatar">MG</span><b>María G.</b><time>10:24</time></span><span>¿Sigue disponible el producto?</span><span class="unread">2</span></button>
+              <button class="wa-item" type="button" aria-selected="false" data-conv="c2"><span class="who"><span class="avatar">JT</span><b>Jorge T.</b><time>09:51</time></span><span>¿Hacen envíos al norte?</span><span class="unread">1</span></button>
+              <button class="wa-item" type="button" aria-selected="false" data-conv="c3"><span class="who"><span class="avatar">AP</span><b>Ana P.</b><time>Ayer</time></span><span>¡Recibido, gracias!</span></button>
             </div>
             <div class="wa-chat">
+              <div class="wa-chat-head"><span class="avatar">MG</span><div><b>María G.</b><span>en línea · Cliente frecuente</span></div></div>
+              <div class="wa-msgs">
               <div class="wa-conv active" id="conv-c1">
-                <div class="cb">Hola, ¿este producto sigue disponible?</div>
-                <div class="cb me">¡Hola, María! Sí, queda disponible. ¿Te lo reservo?</div>
-                <div class="cb">Sí, por favor. Lo retiro hoy en la tienda.</div>
-                <div class="cb me">Listo: <b>Pedido #104</b> · 1 producto · Retiro en tienda.<br><button type="button" class="cb-btn" data-confirm>Confirmar pedido</button></div>
+                <div class="cb">Hola, ¿este producto sigue disponible?<time>10:21</time></div>
+                <div class="cb me">¡Hola, María! Sí, queda disponible. ¿Te lo reservo?<time>10:22<span class="ticks">✓✓</span></time></div>
+                <div class="cb">Sí, por favor. Lo retiro hoy en la tienda.<time>10:24</time></div>
+                <div class="cb me">Listo: <b>Pedido #104</b> · 1 producto · Retiro en tienda.<br><button type="button" class="cb-btn" data-confirm>Confirmar pedido</button><time>10:24<span class="ticks">✓✓</span></time></div>
               </div>
               <div class="wa-conv" id="conv-c2">
-                <div class="cb">Hola, ¿hacen envíos al norte de la ciudad?</div>
-                <div class="cb me">¡Hola, Jorge! Sí, enviamos al norte con costo según la zona. ¿Qué producto te interesa?</div>
-                <div class="cb">El del catálogo, el segundo.</div>
-                <div class="cb me">Perfecto, te preparo la cotización con el envío incluido.</div>
+                <div class="cb">Hola, ¿hacen envíos al norte de la ciudad?<time>09:48</time></div>
+                <div class="cb me">¡Hola, Jorge! Sí, enviamos al norte con costo según la zona. ¿Qué producto te interesa?<time>09:50<span class="ticks">✓✓</span></time></div>
+                <div class="cb">El del catálogo, el segundo.<time>09:51</time></div>
+                <div class="cb me">Perfecto, te preparo la cotización con el envío incluido.<time>09:51<span class="ticks">✓✓</span></time></div>
               </div>
               <div class="wa-conv" id="conv-c3">
-                <div class="cb me">Tu pedido #098 ya salió a entrega.</div>
-                <div class="cb">¡Recibido, gracias! Todo perfecto.</div>
-                <div class="cb me">¡Gracias por tu compra, Ana! Quedamos atentos.</div>
+                <div class="cb me">Tu pedido #098 ya salió a entrega.<time>Ayer<span class="ticks">✓✓</span></time></div>
+                <div class="cb">¡Recibido, gracias! Todo perfecto.<time>Ayer</time></div>
+                <div class="cb me">¡Gracias por tu compra, Ana! Quedamos atentos.<time>Ayer<span class="ticks">✓✓</span></time></div>
               </div>
+              </div>
+              <div class="wa-composer"><span class="fake-input">Escribe un mensaje…</span><span class="send"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4 21.8 12 3.4 3.6l-.01 6.53L14 12 3.39 13.87l.01 6.53Z"/></svg></span></div>
             </div>
-            <div>
-              <h3 style="font-size:15px;margin-bottom:10px">Embudo de ventas</h3>
+            <div class="wa-summary">
+              <h3>Embudo de ventas</h3>
               <div class="fstage"><b>5</b><span>Chats nuevos</span><div class="pbar"><i style="width:100%;background:#1B7A4D"></i></div></div>
               <div class="fstage"><b>3</b><span>Cotizando</span><div class="pbar"><i style="width:60%;background:#D98E0B"></i></div></div>
               <div class="fstage"><b id="fn-pedido">2</b><span>Pedidos confirmados</span><div class="pbar"><i style="width:40%;background:#175CD3"></i></div></div>
@@ -507,21 +692,32 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
         </div>
 
         <div class="cpane" id="cp-dash" role="tabpanel">
+          <div class="pane-head"><h3>Dashboard general</h3><span>Actualizado hoy · Todos los locales</span></div>
           <div class="ckpis">
-            <div class="ckpi"><b><span class="count" data-count="4280" data-fmt="money">0</span></b><span>Ventas del mes</span></div>
-            <div class="ckpi"><b><span class="count" data-count="186">0</span></b><span>Pedidos</span></div>
-            <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del equipo</span></div>
-            <div class="ckpi"><b><span class="count" data-count="31">0</span>/39</b><span>Visitas completadas</span></div>
+            <div class="ckpi"><b><span class="count" data-count="4280" data-fmt="money">0</span></b><span>Ventas del mes</span><em class="delta up">▲ +12,4% vs. mes anterior</em></div>
+            <div class="ckpi"><b><span class="count" data-count="186">0</span></b><span>Pedidos</span><em class="delta up">▲ +18 esta semana</em></div>
+            <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del equipo</span><em class="delta up">▲ +3 pts vs. mes anterior</em></div>
+            <div class="ckpi"><b><span class="count" data-count="31">0</span>/39</b><span>Visitas completadas</span><em class="delta flat">1 con novedad por revisar</em></div>
           </div>
           <div class="cgrid">
             <div>
-              <div class="mk-sec">Ventas por semana</div>
-              <svg viewBox="0 0 320 120" width="100%" height="120" role="img" aria-label="Gráfico de líneas de ventas semanales en ascenso">
-                <polyline class="draw" points="6,96 58,84 110,88 162,60 214,48 266,26 314,16" fill="none" stroke="#D98E0B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="314" cy="16" r="5" fill="#D98E0B"/>
-                <line x1="6" y1="106" x2="314" y2="106" stroke="var(--line)" stroke-width="1"/>
-              </svg>
-              <div class="bars-lab"><span>Semana 1</span><span>Semana 2</span><span>Semana 3</span><span>Semana 4</span><span>Semana 5</span><span>Semana 6</span></div>
+              <div class="mk-sec">Ventas por semana (USD)</div>
+              <div class="chart-box">
+                <svg viewBox="0 0 340 132" width="100%" height="132" role="img" aria-label="Gráfico de líneas de ventas semanales en ascenso, de 520 a 1.180 dólares">
+                  <g stroke="var(--line)" stroke-width="1">
+                    <line x1="34" y1="14" x2="330" y2="14"/><line x1="34" y1="44" x2="330" y2="44"/><line x1="34" y1="74" x2="330" y2="74"/><line x1="34" y1="104" x2="330" y2="104"/>
+                  </g>
+                  <g font-size="8.5" fill="var(--muted)" font-weight="600">
+                    <text x="0" y="17">$1.200</text><text x="6" y="47">$900</text><text x="6" y="77">$600</text><text x="6" y="107">$300</text>
+                  </g>
+                  <polygon points="40,88 92,78 144,81 196,58 248,47 300,28 326,20 326,104 40,104" fill="#D98E0B" opacity=".13"/>
+                  <polyline class="draw" points="40,88 92,78 144,81 196,58 248,47 300,28 326,20" fill="none" stroke="#D98E0B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <g fill="#D98E0B"><circle cx="40" cy="88" r="3.5"/><circle cx="144" cy="81" r="3.5"/><circle cx="248" cy="47" r="3.5"/><circle cx="326" cy="20" r="4.5"/></g>
+                  <g font-size="9" font-weight="800" fill="var(--ink)"><rect x="282" y="2" width="52" height="15" rx="4" fill="var(--surface)" stroke="var(--line)"/><text x="290" y="13">$1.180</text></g>
+                </svg>
+                <div class="bars-lab"><span></span><span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span><span>Sem 5</span><span>Sem 6</span></div>
+                <div class="chart-legend"><span><i style="background:#D98E0B"></i>Ventas 2026</span><span>Mejor semana: la 6, con $1.180</span></div>
+              </div>
             </div>
             <div>
               <div class="mk-sec">Asistencia por local (%)</div>
@@ -537,14 +733,30 @@ footer{padding:30px 0 96px;color:var(--muted);font-size:13px;text-align:center}
         </div>
 
         <div class="cpane" id="cp-ops" role="tabpanel">
+          <div class="pane-head"><h3>Operaciones del día</h3><span>Visitas y servicios en campo · Toca un estado para cambiarlo</span></div>
           <div class="progress-row">
             <strong>Avance del día</strong>
             <div class="progress-track"><div class="progress-fill" id="op-fill" style="width:0%"></div></div>
             <span id="op-num" style="font-weight:700"></span>
           </div>
           <div id="op-list"></div>
-          <div class="benefit">Cada visita con responsable y estado: el día completo sin llamar a nadie.</div>
+          <div class="benefit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.6-4-4 1.7-1.7 2.3 2.3 5.7-5.7 1.7 1.7-7.4 7.4Z"/></svg>Cada visita con responsable y estado: el día completo sin llamar a nadie.</div>
         </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-base" aria-hidden="true"></div>
+      </div>
+      <div class="demo-specs">
+        <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.6-4-4 1.7-1.7 2.3 2.3 5.7-5.7 1.7 1.7-7.4 7.4Z"/></svg>Se ve igual en PC, laptop y celular</span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.6-4-4 1.7-1.7 2.3 2.3 5.7-5.7 1.7 1.7-7.4 7.4Z"/></svg>Con los colores y el logo de tu negocio</span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.6-4-4 1.7-1.7 2.3 2.3 5.7-5.7 1.7 1.7-7.4 7.4Z"/></svg>Tu equipo entra con usuario propio</span>
+      </div>
+      <div class="demo-cta">
+        <div><b>¿Quieres un panel así para tu negocio?</b><p>Partimos de esta misma base y la adaptamos a tu operación: desde $129, con entrega estimada de 5 a 7 días.</p></div>
+        <a class="btn btn-wa" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20vi%20la%20demo%20del%20panel%20y%20quiero%20uno%20as%C3%AD%20para%20mi%20negocio." target="_blank" rel="noopener">Quiero un panel así</a>
+        <a class="btn btn-ghost" href="#portafolio">Ver plantillas</a>
       </div>
       <p class="demo-note">Nombres y cifras de la consola son ficticios: es una simulación de cómo sería tu panel.</p>
     </div>
