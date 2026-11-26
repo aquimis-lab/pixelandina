@@ -140,6 +140,69 @@ form.report input,form.report select,form.report textarea{border:1.5px solid var
 .kpi b{font-family:"Archivo";font-size:26px;display:block}
 .kpi span{font-size:13px;color:var(--muted)}
 .empty{color:var(--muted);font-size:14px;padding:8px 0}
+/* Consola en vivo */
+.console{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;text-align:left}
+.console .bbar{background:var(--surface2);border-color:var(--line)}
+.console .burl{background:var(--surface);border-color:var(--line);color:var(--muted)}
+.live-pill{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;color:var(--red);white-space:nowrap}
+.live-pill i{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ctabs{display:flex;gap:6px;padding:12px 14px 0;flex-wrap:wrap}
+.ctab{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:44px}
+.ctab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.cpane{display:none;padding:18px}
+.cpane.active{display:block;animation:fadein .3s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.cgrid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px}
+.ckpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:6px}
+.ckpi{background:var(--surface2);border-radius:12px;padding:12px}
+.ckpi b{font-family:"Archivo";font-size:24px;display:block;line-height:1.1}
+.ckpi>span{font-size:12px;color:var(--muted)}
+.feed{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.feed li{background:var(--surface2);border-radius:10px;padding:9px 11px;font-size:13px;animation:fadein .3s ease}
+.feed li time{display:block;font-size:11px;color:var(--muted);font-weight:700}
+.feed-note{font-size:12px;color:var(--muted);margin-top:8px}
+.c-appr{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:8px 11px;margin-top:7px;font-size:13px;background:var(--surface)}
+.c-appr button{background:var(--green);color:#fff;border:0;border-radius:99px;padding:6px 13px;font-weight:700;cursor:pointer;min-height:36px}
+.c-appr.done{opacity:.65}
+.c-appr .st{font-weight:800;color:var(--green-d);white-space:nowrap}
+.wa-grid{display:grid;grid-template-columns:210px 1fr 180px;gap:14px}
+.wa-item{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;color:var(--ink)}
+.wa-item b{display:block;font-size:13.5px}
+.wa-item span{font-size:12px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wa-item .unread{background:var(--green);color:#fff;border-radius:99px;font-size:10px;font-weight:800;padding:1px 7px;float:right}
+.wa-item[aria-selected="true"]{border-color:var(--green);background:var(--green-soft)}
+.wa-chat{border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--surface2)}
+.wa-conv{display:none}
+.wa-conv.active{display:block}
+.cb{max-width:85%;border-radius:12px;padding:8px 11px;font-size:13.5px;margin-bottom:7px;background:var(--surface);border:1px solid var(--line);line-height:1.4}
+.cb.me{margin-left:auto;background:var(--green-soft);border-color:transparent}
+.cb .cb-btn{display:inline-block;margin-top:6px;background:var(--green);color:#fff;border:0;border-radius:99px;padding:7px 14px;font-weight:700;cursor:pointer;min-height:38px;font-size:13px}
+.cb .cb-btn[disabled]{background:var(--surface2);color:var(--green-d);cursor:default}
+.fstage{margin-bottom:12px}
+.fstage b{font-family:"Archivo";font-size:19px;margin-right:6px}
+.fstage span{font-size:12px;color:var(--muted)}
+.benefit{background:var(--green-soft);color:var(--green-d);border-radius:12px;padding:11px 14px;font-weight:700;font-size:14px;margin-top:16px}
+.console .bars-lab span{color:var(--muted)}
+.console .mk-sec{color:var(--ink)}
+.draw{stroke-dasharray:640;stroke-dashoffset:640}
+.cpane.active .draw{animation:drawline 1.8s ease forwards}
+@keyframes drawline{to{stroke-dashoffset:0}}
+.xlist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.xlist li{padding-left:24px;position:relative}
+.xlist li::before{content:"✕";position:absolute;left:0;color:var(--red);font-weight:800}
+.xlist.ok li::before{content:"✓";color:var(--green)}
+.social-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:26px}
+.social-strip div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.social-strip b{display:block;margin-bottom:3px}
+.social-strip span{font-size:13.5px;color:var(--muted)}
+@media (max-width:820px){.cgrid,.wa-grid{grid-template-columns:1fr}.ckpis{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-reduced-motion: reduce){
+  .cpane.active{animation:none}
+  .live-pill i{animation:none}
+  .feed li{animation:none}
+  .cpane.active .draw{animation:none;stroke-dashoffset:0}
+}
 /* Ideas */
 .ideas-band{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px}
 .idea-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:18px}
@@ -158,14 +221,26 @@ form.report input,form.report select,form.report textarea{border:1.5px solid var
 .ficha-grid div{padding:14px 16px;border-top:1px solid var(--line)}
 .ficha-grid b{display:block;font-size:13px;color:var(--green-d);margin-bottom:4px}
 .ficha-grid p{margin:0;font-size:14px;color:var(--muted)}
+/* Demanda */
+.demand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.demand{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.demand b{font-family:"Archivo";font-weight:900;font-size:30px;line-height:1.1;display:block;color:var(--green-d)}
+.demand p{margin:8px 0 0;font-size:14px}
+.demand .src{display:block;margin-top:10px;font-size:12px;color:var(--muted);font-weight:700}
+.demand-note{font-size:13px;color:var(--muted);margin-top:14px}
 /* Conceptos prefabricados */
-.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:16px}
 .concept{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column}
+.concept.wide{margin-top:20px}
+.concept.wide h3{font-size:22px}
+.wide-in{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:start}
+@media (max-width:820px){.wide-in{grid-template-columns:1fr}}
 .concept-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
 .concept h3{font-size:17px}
-.prio{font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;background:var(--amber-soft);color:#7A5200;white-space:nowrap}
-@media (prefers-color-scheme: dark){.prio{color:var(--amber)}}
-.prio.high{background:var(--green-soft);color:var(--green-d)}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.bdg{font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;background:var(--surface2);color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.bdg-hot{background:var(--amber);color:#241A00;border-color:transparent}
+.bdg-star{background:var(--green);color:#fff;border-color:transparent}
 .concept .lead-line{margin:0 0 14px;color:var(--muted);font-size:14px}
 .phone{width:158px;margin:0 auto 16px;border:2px solid var(--ink);border-radius:24px;padding:8px 7px 10px;background:var(--bg);box-shadow:var(--shadow)}
 .phone .notch{width:52px;height:5px;border-radius:99px;background:var(--ink);opacity:.55;margin:0 auto 8px}
@@ -196,6 +271,106 @@ form.report input,form.report select,form.report textarea{border:1.5px solid var
 .concept dd{margin:2px 0 0;font-size:14px;color:var(--muted)}
 .concept .pot{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:13px}
 .concept .pot b{color:var(--ink)}
+/* Mockups web (marco de navegador) */
+.mock{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin:0 0 16px;background:#FFFFFF;color:#22302A;font-size:12px;line-height:1.4;text-align:left}
+.bbar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#EDF1EA;border-bottom:1px solid #D8E0D2}
+.bbar i{width:9px;height:9px;border-radius:50%;background:#C6D2C0;flex:none}
+.bbar i:nth-child(1){background:#E0655A}.bbar i:nth-child(2){background:#E8A317}.bbar i:nth-child(3){background:#3DBE7E}
+.burl{flex:1;background:#fff;border:1px solid #D8E0D2;border-radius:99px;padding:3px 12px;font-size:11px;color:#55665B;font-weight:600;white-space:nowrap;overflow:hidden}
+.mk-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mk-kpis.c3{grid-template-columns:repeat(3,1fr)}
+.mk-kpi{background:#fff;border:1px solid #E1E9DC;border-radius:10px;padding:8px 10px}
+.mk-kpi b{font-family:"Archivo";font-size:16px;display:block;line-height:1.15}
+.mk-kpi span{font-size:10px;color:#66766B}
+.mk-sec{font-family:"Archivo";font-weight:800;font-size:12px;margin:12px 0 6px}
+.bars{display:flex;align-items:flex-end;gap:6px;height:62px}
+.bars i{flex:1;background:#1B7A4D;border-radius:4px 4px 0 0;min-height:8px}
+.bars i.low{background:#D98E0B}
+.bars i.mid{background:#7FBF9B}
+.bars-lab{display:flex;gap:6px;margin-top:4px}
+.bars-lab span{flex:1;text-align:center;font-size:9px;color:#66766B}
+.appr{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border:1px solid #E1E9DC;border-radius:9px;padding:6px 9px;margin-top:6px;font-size:11px}
+.appr .ok{background:#1B7A4D;color:#fff;border-radius:99px;padding:3px 9px;font-weight:700;font-size:10px;white-space:nowrap}
+.appr .tag2{background:#FDF0D3;color:#7A5200;border-radius:99px;padding:3px 8px;font-weight:700;font-size:10px;white-space:nowrap}
+.mk-table{width:100%;border-collapse:collapse;font-size:11px;background:#fff}
+.mk-table th,.mk-table td{border:1px solid #E4EBDF;padding:5px 7px;text-align:left}
+.mk-table th{background:#EFF4EA;font-family:"Archivo";font-size:10.5px}
+.mk-table .cell-on{background:#DDEEE2;font-weight:700;color:#125C39;text-align:center}
+.mk-table .cell-off{background:#FDE8E5;color:#B42318;text-align:center;font-weight:700}
+.mk-table .cell-mid{text-align:center;color:#66766B}
+.pbar{height:7px;background:#E4E9E0;border-radius:99px;overflow:hidden}
+.pbar i{display:block;height:100%;border-radius:99px}
+/* Panel RR. HH. */
+.rrhh{display:grid;grid-template-columns:118px 1fr}
+.rrhh-side{background:#14342A;color:#CFE8DA;padding:12px 10px;display:flex;flex-direction:column;gap:3px}
+.rrhh-side b{color:#fff;font-family:"Archivo";font-size:12px;margin-bottom:7px}
+.rrhh-side span{padding:5px 8px;border-radius:7px;font-size:11px}
+.rrhh-side span.on{background:#1B7A4D;color:#fff;font-weight:700}
+.rrhh-main{padding:12px 14px;background:#F7FAF5}
+/* Dashboard oscuro */
+.dash{background:#131C26;color:#DCE7F2}
+.dash .bbar{background:#0D141D;border-color:#24344A}
+.dash .burl{background:#16222F;border-color:#24344A;color:#8FA6BC}
+.dash-main{padding:12px 14px}
+.dash .mk-kpi{background:#1B2836;border-color:#2A3C52;color:#EAF2FA}
+.dash .mk-kpi span{color:#8FA6BC}
+.dash .mk-table{background:#1B2836;color:#DCE7F2}
+.dash .mk-table th,.dash .mk-table td{border-color:#2A3C52}
+.dash .mk-table th{background:#22344A;color:#BFD2E8}
+.dash-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:12px}
+@media (max-width:560px){.dash-grid{grid-template-columns:1fr}.rrhh{grid-template-columns:92px 1fr}.mk-kpis{grid-template-columns:repeat(2,1fr)}}
+/* Asistencia */
+.asist-main{padding:14px;background:#F2F9F6}
+.clockrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.clockbox{background:#0E3B2E;color:#fff;border-radius:14px;padding:12px 18px;text-align:center}
+.clockbox b{font-family:"Archivo";font-weight:900;font-size:38px;line-height:1;display:block;letter-spacing:.02em}
+.clockbox span{font-size:11px;color:#A9D8C0}
+.clock-btn{display:inline-block;background:#1B7A4D;color:#fff;font-weight:800;font-size:13px;border-radius:99px;padding:10px 18px}
+.branch{display:flex;gap:6px;flex-wrap:wrap}
+.branch span{border:1.5px solid #BFD8C8;background:#fff;border-radius:99px;padding:5px 11px;font-size:11px;font-weight:700}
+.branch span.on{background:#0E3B2E;color:#fff;border-color:#0E3B2E}
+/* App interna */
+.interna-main{padding:12px 14px;background:#FBF6EE}
+.notice{background:#FDF0D3;border:1px solid #EFD9A0;border-radius:10px;padding:8px 11px;font-size:11.5px;margin-bottom:10px}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mod{border-radius:12px;padding:10px;font-size:11.5px;font-weight:700;line-height:1.3}
+.mod small{display:block;font-weight:500;font-size:10px;opacity:.75;margin-top:2px}
+@media (max-width:560px){.mod-grid{grid-template-columns:repeat(2,1fr)}}
+/* Notas de voz */
+.voz{display:grid;grid-template-columns:118px 1fr}
+.voz-audio{background:#2B2320;color:#F5E9E2;padding:14px 12px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.playbtn{width:42px;height:42px;border-radius:50%;background:#E0655A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px}
+.wave{display:flex;align-items:center;gap:2px;height:44px;width:100%}
+.wave i{flex:1;background:#E0655A;border-radius:2px;min-height:4px}
+.wave i.dim{background:#6B5A52}
+.voz-text{padding:12px 14px;background:#FFF9F5}
+.voz-text .who{font-weight:800;font-size:10.5px;color:#B44436}
+.voz-text p{margin:0 0 8px;font-size:11.5px}
+@media (max-width:560px){.voz{grid-template-columns:1fr}}
+/* Materiales educativos */
+.edu{padding:12px;background:#FFF6E8;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.edu-tile{border-radius:12px;padding:11px 10px;font-weight:800;font-size:12px;line-height:1.3;min-height:64px}
+.edu-tile small{display:block;font-weight:600;font-size:10px;opacity:.75;margin-top:3px}
+@media (max-width:560px){.edu{grid-template-columns:repeat(2,1fr)}}
+/* Academia */
+.acad-main{padding:12px 14px;background:#F2F6FD}
+.course{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #DCE6F5;border-radius:11px;padding:8px 10px;margin-top:7px}
+.course .cover{width:38px;height:38px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-family:"Archivo";font-weight:900;color:#fff;font-size:13px}
+.course b{font-size:12px;display:block}
+.course span{font-size:10.5px;color:#66766B}
+.course .pbar{margin-top:5px}
+/* Kit */
+.kit{padding:12px 14px;background:#FDF6E0}
+.doc-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border:1px solid #EBDFAE;border-radius:9px;padding:7px 10px;margin-top:6px;font-size:11.5px}
+.doc-row .dl{background:#D98E0B;color:#fff;border-radius:99px;padding:3px 10px;font-weight:700;font-size:10px;white-space:nowrap}
+/* Familia */
+.fam{padding:12px;background:#FFF4EC}
+.fam-week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:9px}
+.fam-day{border-radius:9px;padding:6px 4px;text-align:center;font-size:9.5px;font-weight:700;line-height:1.3;min-height:46px}
+.fam-day b{display:block;font-size:10.5px}
+.fam-tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.fam-tile{border-radius:11px;padding:9px 10px;font-size:11.5px;font-weight:700;line-height:1.3}
+.fam-tile small{display:block;font-weight:500;font-size:10px;opacity:.75}
 /* Proceso */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
@@ -241,6 +416,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     <a class="brand" href="#inicio"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJQaXhlbEFuZGluYSI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9InBhLWNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0Ii8+PC9jbGlwUGF0aD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMjVDMzkiLz4KICA8ZyBjbGlwLXBhdGg9InVybCgjcGEtY2xpcCkiPgogICAgPCEtLSBzb2w6IHVuIHDDrXhlbCDDoW1iYXIgLS0+CiAgICA8cmVjdCB4PSI0OCIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI0U4QTMxNyIvPgogICAgPCEtLSBtb250YcOxYSB0cmFzZXJhIC0tPgogICAgPGcgZmlsbD0iIzNEQkU3RSI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIzMiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMjQiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjMyIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQ4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjU2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIzMiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI1NiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMjQiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICA8L2c+CiAgICA8IS0tIG1vbnRhw7FhIGRlbGFudGVyYSAtLT4KICAgIDxnIGZpbGw9IiNFQUYyRUMiPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iOCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMCIgeT0iNDAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjE2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIwIiB5PSI0OCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjgiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMTYiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iOCIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICAgIDwhLS0gY3VtYnJlcyBuZXZhZGFzIC0tPgogICAgPGcgZmlsbD0iI0ZGRkZGRiI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="" width="36" height="36" />Pixel<span>Andina</span></a>
     <nav class="nav" aria-label="Secciones">
       <a href="#servicios">Servicios</a>
+      <a href="#demanda">Demanda</a>
       <a href="#ideas">Ideas prefabricadas</a>
       <a href="#demo">Demo en vivo</a>
       <a href="#como">Cómo trabajamos</a>
@@ -257,11 +433,11 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
       <div>
         <span class="kicker">PixelAndina · Webs y apps a pedido, y apps prefabricadas adaptables</span>
         <h1>La web o la app que tu negocio necesita, <em>creada a tu medida</em>.</h1>
-        <p class="lead">En <strong>PixelAndina</strong> diseñamos y construimos sitios web y aplicaciones para negocios que quieren verse profesionales y trabajar mejor. Tú nos cuentas la idea; nosotros la convertimos en una web o app lista para usar, sin que tengas que saber de tecnología.</p>
+        <p class="lead">En <strong>PixelAndina</strong> diseñamos y construimos sitios web y aplicaciones para negocios que quieren verse profesionales y trabajar mejor. Nuestro foco hoy: <strong>talento humano digital para pymes</strong>, <strong>dashboards</strong> que reemplazan planillas y <strong>ventas por WhatsApp</strong>. Tú nos cuentas la idea; nosotros la convertimos en una web o app lista para usar, sin que tengas que saber de tecnología.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="mailto:ventas@pixelandina.online?subject=Quiero%20cotizar%20una%20web%20o%20app%20para%20mi%20negocio&amp;body=Hola%20PixelAndina%2C%20quiero%20cotizar%20un%20proyecto%20para%20mi%20negocio.%0A%0A-%20Mi%20negocio%20es%3A%0A-%20Necesito%3A%20(web%20%2F%20app%20%2F%20cat%C3%A1logo%20%2F%20otro)%0A-%20Mi%20idea%20es%3A">Cotizar mi proyecto</a>
           <a class="btn btn-ghost" href="#ideas">Ver cómo serían tus ideas</a>
-          <a class="btn btn-ghost" href="#demo">Ver una demo en vivo</a>
+          <a class="btn btn-ghost" href="#demo">Probar la consola en vivo</a>
         </div>
         <p class="hero-note">Escríbenos a <a href="mailto:ventas@pixelandina.online?subject=Consulta%20sobre%20un%20proyecto">ventas@pixelandina.online</a>: cuéntanos tu idea y te respondemos con propuesta y precio.</p>
       </div>
@@ -275,6 +451,130 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
       <div class="stat"><b>Acompañamiento real</b><span>Te entregamos todo funcionando, con capacitación corta y ajustes incluidos al inicio.</span></div>
     </div>
   </div>
+
+  <!-- CONSOLA EN VIVO -->
+  <section id="demo" style="padding-top:30px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Consola en vivo · Datos ficticios de ejemplo</span>
+        <h2>Así trabaja un negocio con su panel PixelAndina</h2>
+        <p>Nada de tarjetas planas ni maquetas de celular: esta es una consola web como la que usaría tu equipo todos los días. Cambia de pestaña, aprueba un permiso, confirma un pedido, mueve una visita y mira cómo se actualizan los indicadores. Todo es simulado y se adapta a tu negocio.</p>
+      </div>
+      <div class="console" aria-label="Consola interactiva de ejemplo">
+        <div class="bbar"><i></i><i></i><i></i><span class="burl">app.pixelandina.online/consola</span><span class="live-pill"><i></i>EN VIVO · SIMULADO</span></div>
+        <div class="ctabs" role="tablist" aria-label="Paneles de la consola">
+          <button class="ctab" role="tab" aria-selected="true" data-cpane="rrhh">Talento Humano</button>
+          <button class="ctab" role="tab" aria-selected="false" data-cpane="wa">Ventas por WhatsApp</button>
+          <button class="ctab" role="tab" aria-selected="false" data-cpane="dash">Dashboards</button>
+          <button class="ctab" role="tab" aria-selected="false" data-cpane="ops">Operaciones</button>
+        </div>
+
+        <div class="cpane active" id="cp-rrhh" role="tabpanel">
+          <div class="cgrid">
+            <div>
+              <div class="ckpis">
+                <div class="ckpi"><b><span class="count" data-count="24">0</span></b><span>Empleados activos</span></div>
+                <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del mes</span></div>
+                <div class="ckpi"><b id="kpi-permisos">3</b><span>Permisos por aprobar</span></div>
+                <div class="ckpi"><b><span class="count" data-count="5">0</span></b><span>En capacitación</span></div>
+              </div>
+              <div class="mk-sec" style="font-size:13px">Asistencia por día (%)</div>
+              <div class="bars"><i style="height:88%"></i><i style="height:95%"></i><i style="height:72%" class="low"></i><i style="height:91%"></i><i style="height:97%"></i><i style="height:58%" class="mid"></i></div>
+              <div class="bars-lab"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span></div>
+              <div class="mk-sec" style="font-size:13px">Permisos por aprobar — pruébalos</div>
+              <div class="c-appr"><span><b>María Fernanda</b> · Permiso médico · Jueves</span><button type="button" data-appr>Aprobar</button></div>
+              <div class="c-appr"><span><b>Carlos Andrés</b> · Día personal · Viernes</span><button type="button" data-appr>Aprobar</button></div>
+              <div class="c-appr"><span><b>Lucía Paredes</b> · Cita médica · Lunes</span><button type="button" data-appr>Aprobar</button></div>
+            </div>
+            <div>
+              <h3 style="font-size:15px;margin-bottom:10px">Actividad entrando ahora</h3>
+              <ul class="feed" id="feed"></ul>
+              <p class="feed-note">Eventos simulados que entran solos, como pasaría en el panel real de tu negocio.</p>
+            </div>
+          </div>
+          <div class="benefit">Beneficio evidente: la asistencia se cuadra sola y los permisos se aprueban en un clic. Nadie pasa planillas a mano a fin de mes.</div>
+        </div>
+
+        <div class="cpane" id="cp-wa" role="tabpanel">
+          <div class="wa-grid">
+            <div>
+              <button class="wa-item" type="button" aria-selected="true" data-conv="c1"><span class="unread">2</span><b>Cliente · María G.</b><span>¿Sigue disponible el producto?</span></button>
+              <button class="wa-item" type="button" aria-selected="false" data-conv="c2"><span class="unread">1</span><b>Cliente · Jorge T.</b><span>¿Hacen envíos al norte?</span></button>
+              <button class="wa-item" type="button" aria-selected="false" data-conv="c3"><b>Cliente · Ana P.</b><span>¡Recibido, gracias!</span></button>
+            </div>
+            <div class="wa-chat">
+              <div class="wa-conv active" id="conv-c1">
+                <div class="cb">Hola, ¿este producto sigue disponible?</div>
+                <div class="cb me">¡Hola, María! Sí, queda disponible. ¿Te lo reservo?</div>
+                <div class="cb">Sí, por favor. Lo retiro hoy en la tienda.</div>
+                <div class="cb me">Listo: <b>Pedido #104</b> · 1 producto · Retiro en tienda.<br><button type="button" class="cb-btn" data-confirm>Confirmar pedido</button></div>
+              </div>
+              <div class="wa-conv" id="conv-c2">
+                <div class="cb">Hola, ¿hacen envíos al norte de la ciudad?</div>
+                <div class="cb me">¡Hola, Jorge! Sí, enviamos al norte con costo según la zona. ¿Qué producto te interesa?</div>
+                <div class="cb">El del catálogo, el segundo.</div>
+                <div class="cb me">Perfecto, te preparo la cotización con el envío incluido.</div>
+              </div>
+              <div class="wa-conv" id="conv-c3">
+                <div class="cb me">Tu pedido #098 ya salió a entrega.</div>
+                <div class="cb">¡Recibido, gracias! Todo perfecto.</div>
+                <div class="cb me">¡Gracias por tu compra, Ana! Quedamos atentos.</div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size:15px;margin-bottom:10px">Embudo de ventas</h3>
+              <div class="fstage"><b>5</b><span>Chats nuevos</span><div class="pbar"><i style="width:100%;background:#1B7A4D"></i></div></div>
+              <div class="fstage"><b>3</b><span>Cotizando</span><div class="pbar"><i style="width:60%;background:#D98E0B"></i></div></div>
+              <div class="fstage"><b id="fn-pedido">2</b><span>Pedidos confirmados</span><div class="pbar"><i style="width:40%;background:#175CD3"></i></div></div>
+              <div class="fstage"><b>8</b><span>Entregados esta semana</span><div class="pbar"><i style="width:80%;background:#125C39"></i></div></div>
+            </div>
+          </div>
+          <div class="benefit">Beneficio evidente: ningún chat se queda sin responder ni se pierde entre mensajes; cada cliente avanza por el embudo hasta el pedido.</div>
+        </div>
+
+        <div class="cpane" id="cp-dash" role="tabpanel">
+          <div class="ckpis">
+            <div class="ckpi"><b><span class="count" data-count="4280" data-fmt="money">0</span></b><span>Ventas del mes</span></div>
+            <div class="ckpi"><b><span class="count" data-count="186">0</span></b><span>Pedidos</span></div>
+            <div class="ckpi"><b><span class="count" data-count="92">0</span>%</b><span>Asistencia del equipo</span></div>
+            <div class="ckpi"><b><span class="count" data-count="31">0</span>/39</b><span>Visitas completadas</span></div>
+          </div>
+          <div class="cgrid">
+            <div>
+              <div class="mk-sec" style="font-size:13px">Ventas por semana</div>
+              <svg viewBox="0 0 320 120" width="100%" height="120" role="img" aria-label="Gráfico de líneas de ventas semanales en ascenso">
+                <polyline class="draw" points="6,96 58,84 110,88 162,60 214,48 266,26 314,16" fill="none" stroke="#D98E0B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="314" cy="16" r="5" fill="#D98E0B"/>
+                <line x1="6" y1="106" x2="314" y2="106" stroke="var(--line)" stroke-width="1"/>
+              </svg>
+              <div class="bars-lab"><span>Semana 1</span><span>Semana 2</span><span>Semana 3</span><span>Semana 4</span><span>Semana 5</span><span>Semana 6</span></div>
+            </div>
+            <div>
+              <div class="mk-sec" style="font-size:13px">Asistencia por local (%)</div>
+              <div class="appr" style="background:var(--surface);border-color:var(--line);color:var(--ink)"><span>Local Centro</span><span class="tag2">96%</span></div>
+              <div class="appr" style="background:var(--surface);border-color:var(--line);color:var(--ink)"><span>Local Norte</span><span class="tag2">91%</span></div>
+              <div class="appr" style="background:var(--surface);border-color:var(--line);color:var(--ink)"><span>Local Sur</span><span class="tag2">88%</span></div>
+              <div class="mk-sec" style="font-size:13px">Operaciones de hoy</div>
+              <div class="progress-track" style="margin-bottom:6px"><div class="progress-fill" style="width:79%"></div></div>
+              <p style="font-size:13px;color:var(--muted);margin:0">31 de 39 visitas completadas · 1 con novedad</p>
+            </div>
+          </div>
+          <div class="benefit">Beneficio evidente: ventas, talento humano y operaciones en un solo dashboard. El dueño decide con el panorama completo, no con tres planillas distintas.</div>
+        </div>
+
+        <div class="cpane" id="cp-ops" role="tabpanel">
+          <div class="progress-row">
+            <strong>Avance del día</strong>
+            <div class="progress-track"><div class="progress-fill" id="op-fill" style="width:0%"></div></div>
+            <span id="op-num" style="font-weight:700"></span>
+          </div>
+          <div id="op-list"></div>
+          <div class="benefit">Beneficio evidente: cada visita tiene responsable, estado y novedad registrados; el administrador ve el día completo sin llamar a nadie.</div>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin:16px 2px 0">Todos los nombres, cifras y eventos de la consola son <strong style="color:var(--ink)">ficticios</strong>: es una simulación de cómo se sentiría tu panel ya adaptado. ¿Quieres verlo con los datos de ejemplo de tu negocio? <a href="mailto:ventas@pixelandina.online?subject=Quiero%20ver%20la%20consola%20con%20mi%20negocio&amp;body=Hola%20PixelAndina%2C%20quiero%20ver%20c%C3%B3mo%20ser%C3%ADa%20el%20panel%20para%20mi%20negocio.%0A%0A-%20Mi%20negocio%20es%3A%0A-%20Lo%20que%20m%C3%A1s%20me%20interesa%3A%20(talento%20humano%20%2F%20WhatsApp%20%2F%20dashboards%20%2F%20operaciones)">Escríbenos a ventas@pixelandina.online</a>.</p>
+    </div>
+  </section>
 
   <!-- SERVICIOS -->
   <section id="servicios">
@@ -294,19 +594,31 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
           <span class="tag">Apps a medida</span>
           <h3>App para tu operación</h3>
           <p>Una aplicación web pensada para tu forma de trabajar: agendas, pedidos, control de visitas, inventarios o reportes de tu equipo.</p>
-          <p class="ej">Abajo puedes probar una en vivo: nuestro ejemplo prefabricado para equipos que trabajan en campo.</p>
+          <p class="ej">Prueba la consola interactiva del inicio de esta página: incluye un panel de operaciones funcionando.</p>
         </div>
         <div class="card">
           <span class="tag">Prefabricadas</span>
           <h3>Apps listas para adaptar</h3>
           <p>Tenemos modelos de apps ya construidos que adaptamos a tu negocio: tu nombre, tus colores, tus datos y tu forma de trabajar.</p>
-          <p class="ej">Sales funcionando en menos tiempo que empezando de cero. El ejemplo en vivo de abajo es uno de ellos.</p>
+          <p class="ej">Sales funcionando en menos tiempo que empezando de cero. La consola del inicio muestra cómo se sienten al usarlas.</p>
         </div>
         <div class="card">
           <span class="tag">Ventas en línea</span>
           <h3>Catálogo y pedidos</h3>
           <p>Muestra tus productos con fotos y precios, y recibe los pedidos ordenados por WhatsApp o correo, sin chats desordenados.</p>
           <p class="ej">Para emprendimientos que hoy venden por redes sociales y mensajes sueltos.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Talento humano</span>
+          <h3>Talento humano digital para pymes</h3>
+          <p>Un panel web y de celular para llevar asistencia, horarios, permisos, documentos e ingreso de personal sin planillas ni papeles sueltos.</p>
+          <p class="ej">Nuestra oferta principal hoy: es de lo más demandado por las pymes. Mira el concepto completo en las ideas prefabricadas.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Dashboards</span>
+          <h3>Dashboards y paneles de control</h3>
+          <p>Tus números de ventas, asistencia u operación en un solo panel web: indicadores, gráficos y tablas que se entienden de un vistazo.</p>
+          <p class="ej">Para negocios que hoy deciden con planillas desordenadas y quieren ver todo claro, en computadora y celular.</p>
         </div>
         <div class="card">
           <span class="tag">Mejoras</span>
@@ -327,20 +639,93 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     </div>
   </section>
 
+  <!-- DEMANDA -->
+  <section id="demanda" style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Lo que el mercado está pidiendo ahora</h2>
+        <p>Investigamos la demanda actual antes de ordenar nuestras ideas. La señal es clara: las pymes están buscando digitalizar su talento humano, ver sus números en dashboards y vender por WhatsApp. Por eso esas tres ofertas van primero en esta página.</p>
+      </div>
+      <div class="demand-grid">
+        <div class="demand">
+          <b>USD 47.510 millones</b>
+          <p>Mercado global estimado de tecnología para recursos humanos en 2026, con proyección de USD 77.740 millones hacia 2031.</p>
+          <span class="src">Fuente: Mordor Intelligence</span>
+        </div>
+        <div class="demand">
+          <b>Las pymes, las que más crecen</b>
+          <p>El software de RR. HH. para pymes crece a un ritmo cercano al 11,5% anual y se espera que las pymes concentren más de la mitad de los nuevos contratos hacia 2030.</p>
+          <span class="src">Fuente: Mordor Intelligence</span>
+        </div>
+        <div class="demand">
+          <b>43% ya usa IA en RR. HH.</b>
+          <p>Porcentaje de organizaciones que usaron IA en actividades de recursos humanos en 2025, frente a 26% en 2024.</p>
+          <span class="src">Fuente: SHRM, citado por Fortune Business Insights</span>
+        </div>
+        <div class="demand">
+          <b>+USD 7.000 millones</b>
+          <p>Comercio electrónico en Ecuador en 2025. El reto citado para las empresas: digitalizar su oferta y modernizar sus procesos internos.</p>
+          <span class="src">Fuente: CECE / El Comercio</span>
+        </div>
+      </div>
+      <p class="demand-note">Cifras de estudios de mercado, citadas como referencia de demanda y no como promesa de resultados. En Ecuador, además, WhatsApp es el canal habitual para comunicarse con empresas, según compilaciones de la industria (cifra orientativa).</p>
+    </div>
+  </section>
+
   <!-- TUS IDEAS / PREFABRICADAS -->
   <section id="ideas" style="padding-top:8px">
     <div class="wrap">
       <div class="ideas-band">
       <div class="sec-head" style="margin-bottom:16px">
         <span class="kicker" style="margin-bottom:10px">Apps prefabricadas · Conceptos en preparación</span>
-        <h2>Tus ideas, convertidas en conceptos de apps prefabricadas</h2>
-        <p>Estas son las ideas que estamos preparando como apps prefabricadas adaptables: cada una parte de un problema real de negocios y familias, y se muestra con una vista previa original de cómo se vería en el celular. Todavía son <strong>conceptos en preparación</strong>, no productos terminados: al adaptarla a tu negocio lleva tu nombre, tus colores y tus datos. La única demo ya construida y funcional es la de <a href="#demo">operaciones en campo</a>, más abajo.</p>
+        <h2>Nuestros conceptos, ordenados por demanda: talento humano y dashboards primero</h2>
+        <p>Cada concepto tiene su propia cara: unos se ven como un <strong>panel web</strong> en la computadora, otros como <strong>app de celular</strong>, y varios funcionan en ambos. Todavía son <strong>conceptos en preparación</strong>, no productos terminados: al adaptarlos a tu negocio llevan tu nombre, tus colores y tus datos, y no afirmamos integraciones reales (como WhatsApp o IA) como ya funcionando. Y ya puedes probar la <a href="#demo">consola interactiva</a> del inicio de la página, con paneles de talento humano, WhatsApp, dashboards y operaciones usando datos de ejemplo.</p>
       </div>
+
+      <article class="concept wide">
+        <div class="concept-top"><h3>Talento humano digital para pymes</h3></div>
+        <div class="badges"><span class="bdg bdg-star">Oferta principal</span><span class="bdg bdg-hot">Alta demanda</span><span class="bdg">Para pymes</span><span class="bdg">Web + celular</span></div>
+        <p class="lead-line">El panel completo de tu equipo en la computadora y el celular: asistencia, horarios, permisos, documentos, ingreso y capacitación de personal, con reportes listos para decidir.</p>
+        <div class="wide-in">
+          <div class="mock" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">panel.tunegocio.ec/talento-humano</span></div>
+            <div class="rrhh">
+              <div class="rrhh-side">
+                <b>Mi Empresa</b>
+                <span class="on">Panel</span><span>Asistencia</span><span>Horarios</span><span>Permisos</span><span>Documentos</span><span>Capacitación</span><span>Reportes</span>
+              </div>
+              <div class="rrhh-main">
+                <div class="mk-kpis">
+                  <div class="mk-kpi"><b>24</b><span>Empleados activos</span></div>
+                  <div class="mk-kpi"><b>92%</b><span>Asistencia del mes</span></div>
+                  <div class="mk-kpi"><b>3</b><span>Permisos por aprobar</span></div>
+                  <div class="mk-kpi"><b>5</b><span>En capacitación</span></div>
+                </div>
+                <div class="mk-sec">Asistencia por día (%)</div>
+                <div class="bars"><i style="height:88%"></i><i style="height:95%"></i><i style="height:72%" class="low"></i><i style="height:91%"></i><i style="height:97%"></i><i style="height:58%" class="mid"></i></div>
+                <div class="bars-lab"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span></div>
+                <div class="mk-sec">Permisos por aprobar</div>
+                <div class="appr"><span><b>María Fernanda</b> · Permiso médico · Jueves</span><span class="ok">Aprobar</span></div>
+                <div class="appr"><span><b>Carlos Andrés</b> · Día personal · Viernes</span><span class="ok">Aprobar</span></div>
+                <div class="appr"><span><b>Nuevo ingreso</b> · Documentos completos</span><span class="tag2">En revisión</span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Qué problema resuelve</dt><dd>Pymes que llevan su personal en planillas, papeles y chats sueltos: la asistencia se cuadra a mano, los permisos se pierden y nadie ve el panorama completo del equipo.</dd></div>
+              <div><dt>Para quién sería</dt><dd>Empresas pequeñas y medianas con personal en uno o varios locales que quieren orden en su talento humano sin pagar un sistema gigante ni complicado.</dd></div>
+            </dl>
+            <p class="pot"><b>Potencial: el más alto de nuestro catálogo.</b> La tecnología de RR. HH. es de lo más demandado por las pymes hoy (ver los datos de demanda) y combina con la experiencia del estudio en formación y gestión de personas. Se vende como panel completo o por módulos.</p>
+          </div>
+        </div>
+      </article>
 
       <div class="concept-grid">
 
         <article class="concept">
-          <div class="concept-top"><h3>Ventas por WhatsApp para emprendedores</h3><span class="prio high">Prioridad 1</span></div>
+          <div class="concept-top"><h3>Ventas por WhatsApp para emprendedores</h3></div>
+          <div class="badges"><span class="bdg bdg-hot">Alta demanda</span><span class="bdg">Para emprendedores</span><span class="bdg">Celular</span></div>
           <p class="lead-line">El chat de siempre, pero con catálogo, respuestas rápidas y pedidos ordenados.</p>
           <div class="phone" aria-hidden="true">
             <div class="notch"></div>
@@ -349,6 +734,11 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
             <div class="m-img">Foto del producto</div>
             <div class="m-bubble me">¡Sí! Está disponible. ¿Te reservo uno?</div>
             <div class="m-bubble them">Sí, por favor. Retiro en tienda.</div>
+            <div class="m-tiles">
+              <div class="m-tile">Catálogo<small>12 productos con precio</small></div>
+              <div class="m-tile">Respuestas rápidas<small>Precios, horarios, envíos</small></div>
+            </div>
+            <div class="m-row" style="margin-top:5px"><b>Pedido #104 · Retiro en tienda</b><span>Confirmado ✓</span></div>
             <div class="m-row"><b>Pedidos de hoy</b><span>3 nuevos</span></div>
             <span class="m-btn">Ver resumen de pedidos</span>
           </div>
@@ -356,44 +746,97 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
             <div><dt>Qué problema resuelve</dt><dd>Emprendedores que pierden ventas por responder tarde o de forma desordenada en WhatsApp.</dd></div>
             <div><dt>Para quién sería</dt><dd>Tiendas, emprendimientos y vendedores que atienden solos su negocio.</dd></div>
           </dl>
-          <p class="pot"><b>Potencial: alto.</b> Es el dolor más claro para negocios pequeños en Ecuador y la región; sería la primera demo a construir.</p>
+          <p class="pot"><b>Potencial: alto.</b> Es el dolor más claro para negocios pequeños en Ecuador y la región; sería la primera demo a construir después del panel de talento humano.</p>
         </article>
 
         <article class="concept">
-          <div class="concept-top"><h3>Control de asistencia y horarios</h3><span class="prio high">Prioridad 2</span></div>
-          <p class="lead-line">Reloj virtual para marcar entrada y salida, con permisos, horarios y sucursales.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Asistencia <span>Local Centro</span></div>
-            <div class="m-kpirow"><div class="m-kpi"><b>08:02</b><span>Entrada</span></div><div class="m-kpi"><b>12</b><span>En turno</span></div></div>
-            <div class="m-row"><b>Entrada de jornada</b><span class="m-dot"></span></div>
-            <div class="m-row"><b>Salida a almuerzo</b><span class="m-dot"></span></div>
-            <div class="m-row"><b>Permiso solicitado</b><span class="m-dot off"></span></div>
-            <div class="m-row"><b>Fin de jornada</b><span class="m-dot off"></span></div>
-            <span class="m-btn">Marcar con reloj virtual</span>
+          <div class="concept-top"><h3>Dashboards: tus números en un solo panel</h3></div>
+          <div class="badges"><span class="bdg bdg-hot">Alta demanda</span><span class="bdg">Panel web</span><span class="bdg">Para pymes</span></div>
+          <p class="lead-line">Ventas, asistencia u operación: un panel web con indicadores, gráficos y tablas que se entiende de un vistazo, en vez de planillas sueltas.</p>
+          <div class="mock dash" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">panel.tunegocio.ec/dashboard</span></div>
+            <div class="dash-main">
+              <div class="mk-kpis">
+                <div class="mk-kpi"><b>$4.280</b><span>Ventas del mes</span></div>
+                <div class="mk-kpi"><b>186</b><span>Pedidos</span></div>
+                <div class="mk-kpi"><b>$23</b><span>Ticket promedio</span></div>
+                <div class="mk-kpi"><b>+12%</b><span>vs. mes anterior</span></div>
+              </div>
+              <div class="dash-grid">
+                <div>
+                  <div class="mk-sec" style="color:#BFD2E8">Ventas por semana</div>
+                  <svg viewBox="0 0 220 74" width="100%" height="74" role="img" aria-label="Gráfico de líneas de ventas por semana, en ascenso">
+                    <polyline points="4,58 40,50 76,54 112,36 148,30 184,16 216,10" fill="none" stroke="#E8A317" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="216" cy="10" r="4" fill="#E8A317"/>
+                    <line x1="4" y1="66" x2="216" y2="66" stroke="#2A3C52" stroke-width="1"/>
+                  </svg>
+                  <div class="bars-lab" style="color:#8FA6BC"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span></div>
+                </div>
+                <div>
+                  <div class="mk-sec" style="color:#BFD2E8">Lo más vendido</div>
+                  <table class="mk-table">
+                    <tr><th>Producto</th><th>Ventas</th></tr>
+                    <tr><td>Producto A</td><td>64</td></tr>
+                    <tr><td>Producto B</td><td>51</td></tr>
+                    <tr><td>Producto C</td><td>38</td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Negocios que deciden a ciegas porque sus datos viven en planillas desordenadas que nadie actualiza ni mira completas.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Pymes que ya registran ventas, asistencia o visitas en planillas y quieren ver todo claro, desde la computadora o el celular.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: alto.</b> Cada dashboard se vende como proyecto y puede crecer por áreas: primero ventas, luego talento humano y asistencia, después operaciones y reportes. Es el complemento natural del panel de talento humano.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Control de asistencia y horarios</h3></div>
+          <div class="badges"><span class="bdg bdg-hot">Alta demanda</span><span class="bdg">Para pymes</span><span class="bdg">Web + celular</span></div>
+          <p class="lead-line">Reloj virtual para marcar entrada y salida, con permisos, horarios y sucursales, visible en un panel web.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">asistencia.tunegocio.ec</span></div>
+            <div class="asist-main">
+              <div class="clockrow">
+                <div class="clockbox"><b>08:02</b><span>Hora de marcación</span></div>
+                <div>
+                  <span class="clock-btn">Marcar entrada</span>
+                  <div class="branch" style="margin-top:10px"><span class="on">Local Centro</span><span>Local Norte</span><span>Local Sur</span></div>
+                </div>
+              </div>
+              <table class="mk-table">
+                <tr><th>Persona</th><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th></tr>
+                <tr><td><b>María F.</b></td><td class="cell-on">✓</td><td class="cell-on">✓</td><td class="cell-on">✓</td><td class="cell-mid">—</td><td class="cell-mid">—</td></tr>
+                <tr><td><b>Carlos A.</b></td><td class="cell-on">✓</td><td class="cell-off">Tarde</td><td class="cell-on">✓</td><td class="cell-mid">—</td><td class="cell-mid">—</td></tr>
+                <tr><td><b>Lucía P.</b></td><td class="cell-on">✓</td><td class="cell-on">✓</td><td class="cell-off">Permiso</td><td class="cell-mid">—</td><td class="cell-mid">—</td></tr>
+              </table>
+            </div>
           </div>
           <dl>
             <div><dt>Qué problema resuelve</dt><dd>Planillas y registros manuales de asistencia que se pierden, se alteran o toman horas en cuadrar.</dd></div>
             <div><dt>Para quién sería</dt><dd>Pymes con personal en uno o varios locales que necesitan orden sin sistemas complicados.</dd></div>
           </dl>
-          <p class="pot"><b>Potencial: alto.</b> Es un servicio que un negocio paga mes a mes, con cobro recurrente potencial.</p>
+          <p class="pot"><b>Potencial: alto.</b> Es un servicio que un negocio paga mes a mes, con cobro recurrente potencial. También funciona como módulo del panel de talento humano.</p>
         </article>
 
         <article class="concept">
-          <div class="concept-top"><h3>App interna sin papeleo</h3><span class="prio high">Prioridad 3</span></div>
-          <p class="lead-line">Todos los procesos internos de la empresa en una sola app, sin carpetas ni planillas sueltas.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Mi Empresa <span>Inicio</span></div>
-            <div class="m-tiles">
-              <div class="m-tile">Asistencia<small>Marcar y consultar</small></div>
-              <div class="m-tile">Turnos<small>Horarios del equipo</small></div>
-              <div class="m-tile">Documentos<small>Sin carpetas físicas</small></div>
-              <div class="m-tile">Pedidos internos<small>Solicitudes al área</small></div>
-              <div class="m-tile">Avisos<small>Comunicados</small></div>
-              <div class="m-tile">Formularios<small>Registros digitales</small></div>
+          <div class="concept-top"><h3>App interna sin papeleo</h3></div>
+          <div class="badges"><span class="bdg">Para pymes</span><span class="bdg">Web + celular</span></div>
+          <p class="lead-line">Todos los procesos internos de la empresa en un solo panel, sin carpetas ni planillas sueltas.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">interna.tunegocio.ec/inicio</span></div>
+            <div class="interna-main">
+              <div class="notice"><b>Aviso del día:</b> el viernes cierra el registro de documentos del mes. Revisa tu módulo de documentos.</div>
+              <div class="mod-grid">
+                <div class="mod" style="background:#DDEEE2">Documentos<small>Sin carpetas físicas</small></div>
+                <div class="mod" style="background:#FDF0D3">Pedidos internos<small>Solicitudes al área</small></div>
+                <div class="mod" style="background:#E4ECFD">Avisos<small>Comunicados del equipo</small></div>
+                <div class="mod" style="background:#FDE8E5">Turnos<small>Horarios de la semana</small></div>
+                <div class="mod" style="background:#E7F3F8">Formularios<small>Registros digitales</small></div>
+                <div class="mod" style="background:#EFE9DC">Inventario<small>Existencias por local</small></div>
+              </div>
             </div>
-            <span class="m-btn">Abrir módulo</span>
           </div>
           <dl>
             <div><dt>Qué problema resuelve</dt><dd>Carpetas, planillas y procesos internos dispersos que nadie encuentra cuando los necesita.</dd></div>
@@ -403,62 +846,47 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
         </article>
 
         <article class="concept">
-          <div class="concept-top"><h3>Organizador familiar</h3><span class="prio">Prioridad 4</span></div>
-          <p class="lead-line">Calendario compartido, listas, documentos, presupuesto y comidas de la familia en un solo lugar.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Nuestra familia <span>Hoy</span></div>
-            <div class="m-row"><b>Clase de natación</b><span>10:30</span></div>
-            <div class="m-row"><b>Cena en familia</b><span>19:30</span></div>
-            <div class="m-tiles">
-              <div class="m-tile">Calendario<small>Eventos de la semana</small></div>
-              <div class="m-tile">Listas<small>Compras y pendientes</small></div>
-              <div class="m-tile">Documentos<small>Todo guardado</small></div>
-              <div class="m-tile">Presupuesto<small>Gastos de la casa</small></div>
-            </div>
-            <span class="m-btn">Agregar evento</span>
-          </div>
-          <dl>
-            <div><dt>Qué problema resuelve</dt><dd>La carga mental y el desorden en casa: nadie sabe qué toca hoy ni dónde está cada documento.</dd></div>
-            <div><dt>Para quién sería</dt><dd>Familias con hijos y rutinas compartidas que hoy se coordinan por chats sueltos.</dd></div>
-          </dl>
-          <p class="pot"><b>Potencial: medio.</b> El mercado es amplio, pero cobrar a familias es más difícil que cobrar a negocios.</p>
-        </article>
-
-        <article class="concept">
-          <div class="concept-top"><h3>Notas de voz y reuniones en español</h3><span class="prio">Prioridad 5</span></div>
+          <div class="concept-top"><h3>Notas de voz y reuniones en español</h3></div>
+          <div class="badges"><span class="bdg">Apoyo con IA</span><span class="bdg">Web + celular</span></div>
           <p class="lead-line">Graba o sube un audio y obtén la transcripción limpia, con decisiones y tareas claras.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Reunión de hoy <span>42 min</span></div>
-            <div class="m-bar"><i style="width:35%"></i></div>
-            <div class="m-check"><b>Quién dijo qué</b> — intervenciones identificadas por persona</div>
-            <div class="m-check"><b>Decisiones</b> — acuerdos de la reunión, en lista</div>
-            <div class="m-check"><b>Tareas</b> — pendientes con responsable</div>
-            <div class="m-bubble">Transcripción limpia en español, lista para leer y compartir.</div>
-            <span class="m-btn">Grabar o subir audio</span>
+          <div class="mock" aria-hidden="true">
+            <div class="voz">
+              <div class="voz-audio">
+                <span class="playbtn">▶</span>
+                <div class="wave"><i style="height:30%"></i><i style="height:55%"></i><i style="height:80%"></i><i style="height:45%"></i><i style="height:95%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:50%" class="dim"></i><i style="height:40%" class="dim"></i><i style="height:65%" class="dim"></i><i style="height:30%" class="dim"></i></div>
+                <span style="font-size:11px;font-weight:700">Reunión semanal · 42 min</span>
+              </div>
+              <div class="voz-text">
+                <span class="who">MARÍA — GERENCIA</span>
+                <p>«Cerramos el pedido del cliente nuevo; falta confirmar la fecha de entrega.»</p>
+                <span class="who">CARLOS — OPERACIONES</span>
+                <p>«Yo coordino la entrega y aviso al equipo el jueves.»</p>
+                <div class="m-check"><b>Tarea:</b> confirmar fecha de entrega — María</div>
+                <div class="m-check"><b>Tarea:</b> coordinar entrega — Carlos</div>
+              </div>
+            </div>
           </div>
           <dl>
             <div><dt>Qué problema resuelve</dt><dd>Reuniones y audios largos que quedan sin resumen ni acuerdos accionables.</dd></div>
             <div><dt>Para quién sería</dt><dd>Profesionales, docentes, equipos de trabajo y creadores de contenido.</dd></div>
           </dl>
-          <p class="pot"><b>Potencial: medio-alto.</b> Depende de los costos de transcripción con IA, que se cotizan por proyecto.</p>
+          <p class="pot"><b>Potencial: medio-alto.</b> Se vende como apoyo con IA, sin prometer magia: depende de los costos de transcripción, que se cotizan por proyecto.</p>
         </article>
 
         <article class="concept">
-          <div class="concept-top"><h3>Creador de materiales educativos</h3><span class="prio">Prioridad 6</span></div>
+          <div class="concept-top"><h3>Creador de materiales educativos</h3></div>
+          <div class="badges"><span class="bdg">Para docentes y formadores</span><span class="bdg">Panel web</span></div>
           <p class="lead-line">Plantillas listas para fichas, presentaciones, guías y actividades, sin empezar de cero.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Mis materiales <span>Plantillas</span></div>
-            <div class="m-tiles">
-              <div class="m-tile">Fichas<small>Para imprimir</small></div>
-              <div class="m-tile">Presentaciones<small>Clases y cursos</small></div>
-              <div class="m-tile">Guías<small>Paso a paso</small></div>
-              <div class="m-tile">Actividades<small>Ejercicios listos</small></div>
+          <div class="mock" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">materiales.tuacademia.ec/plantillas</span></div>
+            <div class="edu">
+              <div class="edu-tile" style="background:#FDE8E5">Fichas<small>Para imprimir</small></div>
+              <div class="edu-tile" style="background:#E4ECFD">Presentaciones<small>Clases y cursos</small></div>
+              <div class="edu-tile" style="background:#DDEEE2">Guías<small>Paso a paso</small></div>
+              <div class="edu-tile" style="background:#FDF0D3">Actividades<small>Ejercicios listos</small></div>
+              <div class="edu-tile" style="background:#E7F3F8">Evaluaciones<small>Con rúbrica</small></div>
+              <div class="edu-tile" style="background:#EFE9DC">Certificados<small>Para tus cursos</small></div>
             </div>
-            <div class="m-row"><b>Guía de la semana</b><span>Lista ✓</span></div>
-            <span class="m-btn">Crear material nuevo</span>
           </div>
           <dl>
             <div><dt>Qué problema resuelve</dt><dd>Docentes y formadores que tardan horas creando materiales desde una hoja en blanco.</dd></div>
@@ -468,43 +896,74 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
         </article>
 
         <article class="concept">
-          <div class="concept-top"><h3>Kit digital de talento humano</h3><span class="prio">Prioridad 7</span></div>
-          <p class="lead-line">Guía descargable con checklists de cultura, contratación y gestión de personas.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Kit de RR. HH. <span>Guía</span></div>
-            <div class="m-check"><b>Contratación</b> — pasos para elegir bien a tu equipo</div>
-            <div class="m-check"><b>Cultura</b> — acuerdos y valores del negocio</div>
-            <div class="m-check"><b>Gestión</b> — seguimiento y decisiones con tu gente</div>
-            <div class="m-row"><b>Guía 1 · Fundamentos</b><span>Descargar</span></div>
-            <span class="m-btn">Ver contenido del kit</span>
-          </div>
-          <dl>
-            <div><dt>Qué problema resuelve</dt><dd>Pymes sin estructura de recursos humanos que improvisan la contratación y la gestión de su equipo.</dd></div>
-            <div><dt>Para quién sería</dt><dd>Dueños de negocio y jefes de equipos pequeños que quieren ordenar su gestión de personas.</dd></div>
-          </dl>
-          <p class="pot"><b>Potencial: medio.</b> Es más un contenido y servicio de acompañamiento que una app.</p>
-        </article>
-
-        <article class="concept">
-          <div class="concept-top"><h3>Academia de RR. HH. con IA</h3><span class="prio">Prioridad 8</span></div>
+          <div class="concept-top"><h3>Academia de RR. HH. con IA</h3></div>
+          <div class="badges"><span class="bdg">Para equipos de RR. HH.</span><span class="bdg">Plataforma web</span></div>
           <p class="lead-line">Cursos cortos para actualizar equipos de talento humano: capacitación, datos y automatización.</p>
-          <div class="phone" aria-hidden="true">
-            <div class="notch"></div>
-            <div class="ph-head">Academia <span>Cursos</span></div>
-            <div class="m-row"><b>Diseño de capacitaciones</b><span>Curso</span></div>
-            <div class="m-bar"><i style="width:60%"></i></div>
-            <div class="m-row"><b>Datos para RR. HH.</b><span>Curso</span></div>
-            <div class="m-bar"><i style="width:25%"></i></div>
-            <div class="m-row"><b>Automatización con IA</b><span>Curso</span></div>
-            <div class="m-bar"><i style="width:0%"></i></div>
-            <span class="m-btn">Ver ruta de cursos</span>
+          <div class="mock" aria-hidden="true">
+            <div class="bbar"><i></i><i></i><i></i><span class="burl">academia.tuempresa.ec/mis-cursos</span></div>
+            <div class="acad-main">
+              <div class="course"><span class="cover" style="background:#1B7A4D">DC</span><div style="flex:1"><b>Diseño de capacitaciones</b><span>6 módulos · Tu avance</span><div class="pbar"><i style="width:60%;background:#1B7A4D"></i></div></div></div>
+              <div class="course"><span class="cover" style="background:#175CD3">DH</span><div style="flex:1"><b>Datos para RR. HH.</b><span>5 módulos · Tu avance</span><div class="pbar"><i style="width:25%;background:#175CD3"></i></div></div></div>
+              <div class="course"><span class="cover" style="background:#D98E0B">IA</span><div style="flex:1"><b>Automatización con IA</b><span>4 módulos · Por empezar</span><div class="pbar"><i style="width:0%"></i></div></div></div>
+              <div class="course"><span class="cover" style="background:#B42318">CE</span><div style="flex:1"><b>Certificado del curso</b><span>Al completar cada ruta</span></div></div>
+            </div>
           </div>
           <dl>
             <div><dt>Qué problema resuelve</dt><dd>Equipos de recursos humanos que necesitan actualizarse rápido en capacitación, datos e IA.</dd></div>
             <div><dt>Para quién sería</dt><dd>Profesionales y áreas de talento humano de empresas en crecimiento.</dd></div>
           </dl>
-          <p class="pot"><b>Potencial: medio.</b> Requiere producir contenido y construir credibilidad antes de venderlo.</p>
+          <p class="pot"><b>Potencial: medio.</b> Requiere producir contenido y construir credibilidad antes de venderlo; combina bien con el panel de talento humano.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Kit digital de talento humano</h3></div>
+          <div class="badges"><span class="bdg">Descargable</span><span class="bdg">Para pymes</span></div>
+          <p class="lead-line">Guía descargable con checklists de cultura, contratación y gestión de personas.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="kit">
+              <div class="m-check"><b>Contratación</b> — pasos para elegir bien a tu equipo</div>
+              <div class="m-check"><b>Cultura</b> — acuerdos y valores del negocio</div>
+              <div class="m-check"><b>Gestión</b> — seguimiento y decisiones con tu gente</div>
+              <div class="doc-row"><span><b>Guía 1</b> · Fundamentos de RR. HH.</span><span class="dl">Descargar</span></div>
+              <div class="doc-row"><span><b>Checklist</b> · Ingreso de personal nuevo</span><span class="dl">Descargar</span></div>
+              <div class="doc-row"><span><b>Plantilla</b> · Evaluación de desempeño</span><span class="dl">Descargar</span></div>
+            </div>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>Pymes sin estructura de recursos humanos que improvisan la contratación y la gestión de su equipo.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Dueños de negocio y jefes de equipos pequeños que quieren ordenar su gestión de personas.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> Es más un contenido y servicio de acompañamiento que una app; sirve como puerta de entrada al panel de talento humano.</p>
+        </article>
+
+        <article class="concept">
+          <div class="concept-top"><h3>Organizador familiar</h3></div>
+          <div class="badges"><span class="bdg">Para familias</span><span class="bdg">Web + celular</span></div>
+          <p class="lead-line">Calendario compartido, listas, documentos, presupuesto y comidas de la familia en un solo lugar.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="fam">
+              <div class="fam-week">
+                <div class="fam-day" style="background:#FDE8E5"><b>Lun</b>Escuela</div>
+                <div class="fam-day" style="background:#FDF0D3"><b>Mar</b>Natación</div>
+                <div class="fam-day" style="background:#DDEEE2"><b>Mié</b>Compras</div>
+                <div class="fam-day" style="background:#E4ECFD"><b>Jue</b>Dentista</div>
+                <div class="fam-day" style="background:#FDE8E5"><b>Vie</b>Cumple</div>
+                <div class="fam-day" style="background:#E7F3F8"><b>Sáb</b>Paseo</div>
+                <div class="fam-day" style="background:#EFE9DC"><b>Dom</b>Casa</div>
+              </div>
+              <div class="fam-tiles">
+                <div class="fam-tile" style="background:#DDEEE2">Listas<small>Compras y pendientes</small></div>
+                <div class="fam-tile" style="background:#FDF0D3">Presupuesto<small>Gastos de la casa</small></div>
+                <div class="fam-tile" style="background:#E4ECFD">Documentos<small>Todo guardado</small></div>
+                <div class="fam-tile" style="background:#FDE8E5">Comidas<small>Menú de la semana</small></div>
+              </div>
+            </div>
+          </div>
+          <dl>
+            <div><dt>Qué problema resuelve</dt><dd>La carga mental y el desorden en casa: nadie sabe qué toca hoy ni dónde está cada documento.</dd></div>
+            <div><dt>Para quién sería</dt><dd>Familias con hijos y rutinas compartidas que hoy se coordinan por chats sueltos.</dd></div>
+          </dl>
+          <p class="pot"><b>Potencial: medio.</b> El mercado es amplio, pero cobrar a familias es más difícil que cobrar a negocios; por eso va como idea secundaria.</p>
         </article>
 
       </div>
@@ -515,120 +974,52 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     </div>
   </section>
 
-  <!-- DEMO -->
-  <section id="demo" style="padding-top:8px">
+  <!-- PILOTO: ANTES / DESPUÉS -->
+  <section id="piloto" style="padding-top:8px">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Ejemplo prefabricado ya armado: app de operaciones en campo</h2>
-        <p>Este es, por ahora, el <strong>único ejemplo prefabricado construido</strong> en la página; los demás conceptos de arriba están en preparación. Es una <strong>demo funcional</strong> pensada para una empresa ficticia, <strong>“Servicios Andina”</strong>, que coordina visitas en campo. Pruébala aquí mismo: cambia estados, filtra por responsable, crea un reporte y mira cómo se mueve el panel. Si te gusta para tu negocio, la adaptamos con tus nombres, tus colores y tus datos; y si necesitas algo totalmente distinto, lo creamos a pedido.</p>
+        <h2>Antes y después: lo que gana tu negocio</h2>
+        <p>La consola de arriba no es decoración. Esto es lo que cambia en el día a día cuando tu equipo deja las planillas, los papeles y los chats sueltos.</p>
       </div>
-
-      <div class="demo-shell" aria-label="Demo interactiva de la app de operaciones en campo">
-        <div class="demo-top">
-          <b>Servicios Andina · Miércoles</b>
-          <span class="demo-badge">DEMO — datos ficticios</span>
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <div class="card">
+          <span class="tag" style="background:var(--red-soft);color:var(--red)">Antes · a mano</span>
+          <h3>Planillas, papeles y chats sueltos</h3>
+          <ul class="xlist">
+            <li>Cuadrar la asistencia del mes toma horas y siempre falta un dato.</li>
+            <li>Los permisos se piden por chat y se pierden entre mensajes.</li>
+            <li>Clientes sin respuesta porque nadie vio su mensaje a tiempo.</li>
+            <li>Para saber cómo va el negocio, alguien arma el reporte a mano.</li>
+          </ul>
         </div>
-        <div class="demo-tabs" role="tablist" aria-label="Vistas de la demo">
-          <button class="dtab" role="tab" aria-selected="true" data-tab="hoy">Hoy</button>
-          <button class="dtab" role="tab" aria-selected="false" data-tab="semana">Semana</button>
-          <button class="dtab" role="tab" aria-selected="false" data-tab="equipo">Equipo</button>
-          <button class="dtab" role="tab" aria-selected="false" data-tab="reportes">Reportes</button>
-          <button class="dtab" role="tab" aria-selected="false" data-tab="panel">Panel</button>
-        </div>
-        <div class="demo-body">
-
-          <!-- HOY -->
-          <div class="demo-pane active" id="pane-hoy" role="tabpanel">
-            <div class="progress-row">
-              <strong id="progress-label">Avance del día</strong>
-              <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-              <span id="progress-num" style="font-weight:700"></span>
-            </div>
-            <div class="filters">
-              <label for="f-persona">Responsable</label>
-              <select id="f-persona"><option value="">Todo el equipo</option></select>
-              <label for="f-estado">Estado</label>
-              <select id="f-estado">
-                <option value="">Todos</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="curso">En curso</option>
-                <option value="completado">Completado</option>
-                <option value="novedad">Con novedad</option>
-              </select>
-            </div>
-            <div id="task-list"></div>
-            <p class="empty" id="task-empty" style="display:none">No hay visitas con ese filtro. Prueba con otro responsable o estado.</p>
-          </div>
-
-          <!-- SEMANA -->
-          <div class="demo-pane" id="pane-semana" role="tabpanel">
-            <p style="margin-top:0;color:var(--muted);font-size:14px">La semana completa de un vistazo. El día de hoy va marcado en verde.</p>
-            <div class="week" id="week-grid"></div>
-          </div>
-
-          <!-- EQUIPO -->
-          <div class="demo-pane" id="pane-equipo" role="tabpanel">
-            <div class="team-grid" id="team-grid"></div>
-          </div>
-
-          <!-- REPORTES -->
-          <div class="demo-pane" id="pane-reportes" role="tabpanel">
-            <div style="display:grid;gap:22px">
-              <form class="report" id="report-form">
-                <label>Visita o lugar
-                  <input type="text" id="r-lugar" required placeholder="Ej.: Local Centro — aire acondicionado" />
-                </label>
-                <label>Responsable
-                  <select id="r-persona" required></select>
-                </label>
-                <label>Tipo de novedad
-                  <select id="r-tipo">
-                    <option>Trabajo completado con observación</option>
-                    <option>Falta material o repuesto</option>
-                    <option>Cliente ausente / reagendar</option>
-                    <option>Daño o riesgo en el sitio</option>
-                    <option>Otro</option>
-                  </select>
-                </label>
-                <label>¿Qué pasó?
-                  <textarea id="r-texto" rows="3" required placeholder="Describe la novedad en una o dos líneas…"></textarea>
-                </label>
-                <label>Seguimiento
-                  <select id="r-seg">
-                    <option>Resuelta en sitio</option>
-                    <option>Lo sigue el responsable</option>
-                    <option>Se escala al administrador</option>
-                    <option>No requiere seguimiento</option>
-                  </select>
-                </label>
-                <div>
-                  <button class="btn btn-primary btn-sm" type="submit">Crear reporte (demo)</button>
-                  <span style="font-size:13px;color:var(--muted);margin-left:8px">En un proyecto real se adjunta la foto de evidencia.</span>
-                </div>
-              </form>
-              <div>
-                <h3 style="font-size:16px">Reportes de hoy</h3>
-                <div id="report-list"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL -->
-          <div class="demo-pane" id="pane-panel" role="tabpanel">
-            <div class="kpis">
-              <div class="kpi"><b id="kpi-total">0</b><span>Visitas de hoy</span></div>
-              <div class="kpi"><b id="kpi-done">0</b><span>Completadas</span></div>
-              <div class="kpi"><b id="kpi-nov">0</b><span>Con novedad</span></div>
-              <div class="kpi"><b id="kpi-rep">0</b><span>Reportes creados</span></div>
-            </div>
-            <h3 style="font-size:16px;margin-bottom:10px">Avance por persona</h3>
-            <div class="panel-grid" id="panel-grid"></div>
-            <p style="font-size:13px;color:var(--muted);margin-top:14px">En un proyecto real, el administrador descarga este resumen en PDF por rango de fechas (desde / hasta) para revisar la semana sin abrir visita por visita.</p>
-          </div>
-
+        <div class="card">
+          <span class="tag">Después · con tu panel</span>
+          <h3>Todo en un solo lugar, al día</h3>
+          <ul class="xlist ok">
+            <li>La asistencia se registra al marcar y el resumen sale solo.</li>
+            <li>Permisos aprobados en un clic, con registro de quién aprobó.</li>
+            <li>Bandeja de WhatsApp ordenada por etapa: ningún cliente se pierde.</li>
+            <li>Dashboard con ventas, asistencia y operación, siempre actualizado.</li>
+          </ul>
         </div>
       </div>
-      <p style="color:var(--muted);font-size:14px;margin:16px 2px 0"><strong style="color:var(--ink)">¿Buscas otro tipo de app?</strong> Revisa los <a href="#ideas">8 conceptos prefabricados en preparación</a>: ventas por WhatsApp, control de asistencia, organizador familiar y más. Cada uno se adapta a tu negocio con tus nombres, colores y datos.</p>
+      <div class="benefit"><strong>Tiempo ahorrado estimado: entre 6 y 10 horas por semana</strong> en registro, cuadre de asistencia y reportes, según el tamaño del equipo. Es una estimación ilustrativa: en el piloto lo medimos con los números reales de tu negocio, y ese tiempo recuperado es el retorno de tu inversión.</div>
+
+      <h3 style="font-size:20px;margin:30px 0 6px">Ruta de piloto: así empezamos, sin comprar a ciegas</h3>
+      <p style="color:var(--muted);margin:0 0 16px;max-width:44em">Empezamos con un piloto corto y medible en un área de tu negocio. Solo si el resultado te convence, lo extendemos.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Conversamos</h3><p>Una llamada o reunión corta, sin costo: entendemos cómo trabaja tu negocio y qué quieres ordenar primero.</p></div>
+        <div class="step"><div class="num">2</div><h3>Tu panel con tus datos de ejemplo</h3><p>Te mostramos la consola adaptada con nombres y procesos parecidos a los tuyos, para que la veas funcionando antes de decidir.</p></div>
+        <div class="step"><div class="num">3</div><h3>Piloto en un área</h3><p>Un equipo pequeño lo usa por un periodo corto y medimos juntos el tiempo ahorrado y los pedidos o visitas controlados.</p></div>
+        <div class="step"><div class="num">4</div><h3>Decides con números</h3><p>Con el resultado del piloto en la mano, decides si lo extendemos a todo el negocio, con precio cerrado por escrito.</p></div>
+      </div>
+
+      <div class="social-strip">
+        <div><b>Estudio en Guayaquil, Ecuador</b><span>Diseñamos y construimos aquí, en español y en tu mismo horario.</span></div>
+        <div><b>Buscamos nuestros primeros 3 pilotos</b><span>Estamos abriendo cupo para los primeros negocios que quieran probarlo con acompañamiento cercano del equipo.</span></div>
+        <div><b>Sin plantillas genéricas</b><span>Cada panel se adapta a tu negocio: tus nombres, tus procesos y tus datos.</span></div>
+      </div>
+      <p style="margin-top:22px"><a class="btn btn-primary" href="mailto:ventas@pixelandina.online?subject=Quiero%20un%20piloto%20para%20mi%20negocio&amp;body=Hola%20PixelAndina%2C%20quiero%20empezar%20con%20un%20piloto.%0A%0A-%20Mi%20negocio%20es%3A%0A-%20El%20%C3%A1rea%20que%20quiero%20ordenar%20primero%20es%3A%20(talento%20humano%20%2F%20WhatsApp%20%2F%20dashboards%20%2F%20operaciones)">Quiero mi piloto — escribir a ventas@pixelandina.online</a></p>
     </div>
   </section>
 
@@ -705,7 +1096,7 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
       </details>
       <details>
         <summary>¿Puedo ver algo funcionando antes de decidir?</summary>
-        <p>Sí: en esta misma página está el ejemplo prefabricado de operaciones en campo, una demo funcional que puedes probar completa —cambiar estados, crear reportes, ver el panel— y así imaginar cómo sería la tuya, ya sea adaptada o creada a pedido.</p>
+        <p>Sí: al inicio de esta misma página está la consola interactiva, con paneles web de talento humano, ventas por WhatsApp, dashboards y operaciones que puedes probar —aprobar permisos, confirmar pedidos, cambiar estados y ver cómo se mueven los indicadores— con datos ficticios de ejemplo. Así imaginas cómo sería la tuya, adaptada o creada a pedido.</p>
       </details>
       <details>
         <summary>Ya tengo una página web, ¿pueden mejorarla?</summary>
@@ -731,12 +1122,13 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
 </main>
 
 <footer>
-  <div class="wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJQaXhlbEFuZGluYSI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9InBhLWNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0Ii8+PC9jbGlwUGF0aD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMjVDMzkiLz4KICA8ZyBjbGlwLXBhdGg9InVybCgjcGEtY2xpcCkiPgogICAgPCEtLSBzb2w6IHVuIHDDrXhlbCDDoW1iYXIgLS0+CiAgICA8cmVjdCB4PSI0OCIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI0U4QTMxNyIvPgogICAgPCEtLSBtb250YcOxYSB0cmFzZXJhIC0tPgogICAgPGcgZmlsbD0iIzNEQkU3RSI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIzMiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMjQiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjMyIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQ4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjU2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIzMiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI1NiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMjQiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICA8L2c+CiAgICA8IS0tIG1vbnRhw7FhIGRlbGFudGVyYSAtLT4KICAgIDxnIGZpbGw9IiNFQUYyRUMiPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iOCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMCIgeT0iNDAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjE2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIwIiB5PSI0OCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjgiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMTYiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iOCIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICAgIDwhLS0gY3VtYnJlcyBuZXZhZGFzIC0tPgogICAgPGcgZmlsbD0iI0ZGRkZGRiI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Logo de PixelAndina: montañas andinas hechas de píxeles" width="44" height="44" style="display:block;margin:0 auto 10px" />PixelAndina — Diseño y creación de sitios web y apps a medida, y apps prefabricadas listas para adaptar.<br>La demo de operaciones en campo usa nombres, clientes y visitas ficticios.<br>Contacto: <a href="mailto:ventas@pixelandina.online">ventas@pixelandina.online</a> · <a href="https://pixelandina.online" target="_blank" rel="noopener">pixelandina.online</a></div>
+  <div class="wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJQaXhlbEFuZGluYSI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9InBhLWNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE0Ii8+PC9jbGlwUGF0aD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMjVDMzkiLz4KICA8ZyBjbGlwLXBhdGg9InVybCgjcGEtY2xpcCkiPgogICAgPCEtLSBzb2w6IHVuIHDDrXhlbCDDoW1iYXIgLS0+CiAgICA8cmVjdCB4PSI0OCIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI0U4QTMxNyIvPgogICAgPCEtLSBtb250YcOxYSB0cmFzZXJhIC0tPgogICAgPGcgZmlsbD0iIzNEQkU3RSI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIzMiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMjQiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjMyIiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjMyIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjQ4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjU2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIzMiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0MCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI0OCIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI1NiIgeT0iNDgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMjQiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMzIiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNDgiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iNTYiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICA8L2c+CiAgICA8IS0tIG1vbnRhw7FhIGRlbGFudGVyYSAtLT4KICAgIDxnIGZpbGw9IiNFQUYyRUMiPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMjQiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iOCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIyNCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgICAgPHJlY3QgeD0iMCIgeT0iNDAiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSI4IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjE2IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIwIiB5PSI0OCIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPjxyZWN0IHg9IjgiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iMTYiIHk9IjQ4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+CiAgICAgIDxyZWN0IHg9IjAiIHk9IjU2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ii8+PHJlY3QgeD0iOCIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz48cmVjdCB4PSIxNiIgeT0iNTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICAgIDwhLS0gY3VtYnJlcyBuZXZhZGFzIC0tPgogICAgPGcgZmlsbD0iI0ZGRkZGRiI+CiAgICAgIDxyZWN0IHg9IjQwIiB5PSIxNiIgd2lkdGg9IjgiIGhlaWdodD0iOCIvPgogICAgICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Logo de PixelAndina: montañas andinas hechas de píxeles" width="44" height="44" style="display:block;margin:0 auto 10px" />PixelAndina — Diseño y creación de sitios web y apps a medida, y apps prefabricadas listas para adaptar.<br>La consola interactiva usa nombres, clientes y cifras ficticios, solo como ejemplo.<br>Contacto: <a href="mailto:ventas@pixelandina.online">ventas@pixelandina.online</a> · <a href="https://pixelandina.online" target="_blank" rel="noopener">pixelandina.online</a></div>
 </footer>
 
 <script>
 (function(){
   "use strict";
+  if(!document.getElementById("task-list")){ return; }
   var PEOPLE = [
     {id:"valeria", name:"Valeria Ortiz", role:"Coordinadora de campo", initials:"VO"},
     {id:"marco", name:"Marco Paredes", role:"Técnico de mantenimiento", initials:"MP"},
@@ -923,6 +1315,172 @@ footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
 
   renderWeek();
   renderAll();
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function fmtVal(n, el){
+    var s = Math.round(n).toLocaleString("es-EC");
+    return el.getAttribute("data-fmt")==="money" ? "$"+s : s;
+  }
+  function runCounters(scope){
+    if(!scope) return;
+    var els = scope.querySelectorAll(".count");
+    for(var i=0;i<els.length;i++){
+      (function(el){
+        if(el.getAttribute("data-done")) return;
+        el.setAttribute("data-done","1");
+        var target = parseFloat(el.getAttribute("data-count"),10);
+        if(reduce){ el.textContent = fmtVal(target, el); return; }
+        var t0 = null, dur = 900;
+        function step(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts-t0)/dur, 1);
+          el.textContent = fmtVal(target*p, el);
+          if(p<1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      })(els[i]);
+    }
+  }
+
+  // Actividad simulada en vivo
+  var FEED = [
+    {t:"Ahora mismo", x:"<b>María Fernanda</b> marcó entrada · Local Centro"},
+    {t:"Hace 1 min", x:"<b>Pedido #104</b> confirmado por WhatsApp"},
+    {t:"Hace 2 min", x:"<b>Carlos Andrés</b> solicitó un permiso · En revisión"},
+    {t:"Hace 4 min", x:"Asistencia de hoy: <b>21 de 24</b> personas presentes"},
+    {t:"Hace 6 min", x:"<b>Lucía Paredes</b> completó su capacitación de la semana"},
+    {t:"Hace 8 min", x:"Visita completada · <b>Zona Norte</b>, con evidencia cargada"},
+    {t:"Hace 11 min", x:"<b>Nuevo chat</b> de cliente en la bandeja de WhatsApp"},
+    {t:"Hace 13 min", x:"Reporte del día generado · <b>Ventas y asistencia</b>"}
+  ];
+  var feedIdx = 0, feedTimer = null;
+  function pushFeed(){
+    var ul = document.getElementById("feed");
+    if(!ul) return;
+    var ev = FEED[feedIdx % FEED.length]; feedIdx++;
+    var li = document.createElement("li");
+    li.innerHTML = "<time>"+ev.t+"</time>"+ev.x;
+    ul.insertBefore(li, ul.firstChild);
+    while(ul.children.length > 5) ul.removeChild(ul.lastChild);
+  }
+  function startFeed(){
+    if(feedTimer) return;
+    var ul = document.getElementById("feed");
+    if(ul && !ul.children.length){ pushFeed(); pushFeed(); pushFeed(); }
+    if(reduce) return;
+    feedTimer = setInterval(pushFeed, 4200);
+  }
+  function stopFeed(){ if(feedTimer){ clearInterval(feedTimer); feedTimer = null; } }
+
+  // Pestañas de la consola
+  var ctabs = document.querySelectorAll(".ctab");
+  function activate(name){
+    for(var i=0;i<ctabs.length;i++) ctabs[i].setAttribute("aria-selected", ctabs[i].getAttribute("data-cpane")===name ? "true" : "false");
+    var panes = document.querySelectorAll(".cpane");
+    for(var j=0;j<panes.length;j++) panes[j].classList.toggle("active", panes[j].id==="cp-"+name);
+    runCounters(document.getElementById("cp-"+name));
+    if(name==="rrhh") startFeed(); else stopFeed();
+  }
+  for(var k=0;k<ctabs.length;k++){
+    ctabs[k].addEventListener("click", function(){ activate(this.getAttribute("data-cpane")); });
+  }
+
+  // Aprobaciones de permisos
+  var permEl = document.getElementById("kpi-permisos");
+  var apprBtns = document.querySelectorAll("[data-appr]");
+  for(var a=0;a<apprBtns.length;a++){
+    apprBtns[a].addEventListener("click", function(){
+      var row = this.closest(".c-appr");
+      if(row) row.classList.add("done");
+      var st = document.createElement("span");
+      st.className = "st"; st.textContent = "Aprobado ✓";
+      this.parentNode.replaceChild(st, this);
+      if(permEl){
+        var n = parseInt(permEl.textContent,10);
+        if(!isNaN(n) && n>0) permEl.textContent = n-1;
+      }
+    });
+  }
+
+  // Bandeja de WhatsApp
+  var waItems = document.querySelectorAll(".wa-item");
+  for(var w=0;w<waItems.length;w++){
+    waItems[w].addEventListener("click", function(){
+      for(var i=0;i<waItems.length;i++) waItems[i].setAttribute("aria-selected","false");
+      this.setAttribute("aria-selected","true");
+      var convs = document.querySelectorAll(".wa-conv");
+      for(var j=0;j<convs.length;j++) convs[j].classList.toggle("active", convs[j].id==="conv-"+this.getAttribute("data-conv"));
+    });
+  }
+  var confirmBtn = document.querySelector("[data-confirm]");
+  if(confirmBtn){
+    confirmBtn.addEventListener("click", function(){
+      this.textContent = "Pedido confirmado ✓";
+      this.setAttribute("disabled","");
+      var fn = document.getElementById("fn-pedido");
+      if(fn) fn.textContent = parseInt(fn.textContent,10)+1;
+    });
+  }
+
+  // Operaciones: visitas del día
+  var OP_STATUS = {
+    pendiente:{label:"Pendiente", cls:"p-pend"},
+    curso:{label:"En curso", cls:"p-curso"},
+    completado:{label:"Completado", cls:"p-done"},
+    novedad:{label:"Con novedad", cls:"p-nov"}
+  };
+  var opTasks = [
+    {id:1, title:"Mantenimiento de aire acondicionado", client:"Oficinas Prisma — Piso 3", person:"Marco Paredes", status:"completado"},
+    {id:2, title:"Instalación de cámara de seguridad", client:"Bodega El Faro", person:"Lucía Herrera", status:"curso"},
+    {id:3, title:"Reparación de bomba de agua", client:"Conjunto Los Almendros", person:"Diego Salazar", status:"novedad"},
+    {id:4, title:"Instalación de letrero luminoso", client:"Farmacia Vida+", person:"Andrés Molina", status:"pendiente"},
+    {id:5, title:"Limpieza profunda de local", client:"Cafetería Aroma", person:"Carmen Ruiz", status:"pendiente"}
+  ];
+  function esc2(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function renderOps(){
+    var list = document.getElementById("op-list");
+    if(!list) return;
+    list.innerHTML = "";
+    opTasks.forEach(function(t){
+      var st = OP_STATUS[t.status];
+      var actions = "";
+      Object.keys(OP_STATUS).forEach(function(key){
+        actions += '<button type="button" class="chip-btn'+(key===t.status?" is-on":"")+'" data-op="'+t.id+'" data-st="'+key+'">'+OP_STATUS[key].label+'</button>';
+      });
+      var div = document.createElement("div");
+      div.className = "task";
+      div.innerHTML = '<div class="task-head"><div><h3>'+esc2(t.title)+'</h3><div class="meta">'+esc2(t.client)+' · '+esc2(t.person)+'</div></div><span class="pill '+st.cls+'">'+st.label+'</span></div><div class="task-actions">'+actions+'</div>';
+      list.appendChild(div);
+    });
+    var done = opTasks.filter(function(t){ return t.status==="completado"; }).length;
+    var pct = Math.round(done/opTasks.length*100);
+    document.getElementById("op-fill").style.width = pct+"%";
+    document.getElementById("op-num").textContent = done+" de "+opTasks.length+" completadas ("+pct+"%)";
+    var btns = list.querySelectorAll("[data-op]");
+    for(var i=0;i<btns.length;i++){
+      btns[i].addEventListener("click", function(){
+        var id = parseInt(this.getAttribute("data-op"),10), ns = this.getAttribute("data-st");
+        opTasks.forEach(function(t){ if(t.id===id) t.status = ns; });
+        renderOps();
+      });
+    }
+  }
+  renderOps();
+
+  // Arranque cuando la consola entra en pantalla
+  var consoleEl = document.querySelector(".console");
+  function boot(){ runCounters(document.getElementById("cp-rrhh")); startFeed(); }
+  if(consoleEl && "IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){ boot(); io.disconnect(); }
+    }, {threshold:.2});
+    io.observe(consoleEl);
+  } else { boot(); }
 })();
 </script>
 </body>
