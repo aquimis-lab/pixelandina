@@ -254,16 +254,15 @@
 })();
 
 /* ============================================================
-   V2 · Formulario «Comunícate con ventas» + repositorio interno
-   de prospectos. VISTA PREVIA: el guardado usa un almacén local
-   del navegador (localStorage) SOLO como demostración de la
-   experiencia. En producción este mismo formulario se conecta a
-   la base de datos real (patrón Firebase de la casa) y la vista
-   de prospectos queda tras el acceso de Anthony.
+   PRODUCCIÓN · Formulario «Comunícate con ventas» + repositorio
+   interno de prospectos. Cada solicitud se escribe en Firestore,
+   colección «prospectos» (proyecto Firebase de PixelAndina, ver
+   assets/firebase-config.js y SETUP.md). La vista interna
+   prospectos.html lee esa misma colección tras el inicio de
+   sesión de Anthony (Firebase Auth).
    ============================================================ */
 (function(){
   "use strict";
-  var LS_KEY = "pa_prospects_v2";
 
   /* Página de entrada de la sesión (origen interno) */
   try{
@@ -273,15 +272,6 @@
     }
   }catch(e){}
 
-  function loadProspects(){
-    try{ var raw = localStorage.getItem(LS_KEY); var arr = raw ? JSON.parse(raw) : []; return Array.isArray(arr) ? arr : []; }
-    catch(e){ return []; }
-  }
-  function saveProspect(p){
-    var arr = loadProspects(); arr.unshift(p);
-    try{ localStorage.setItem(LS_KEY, JSON.stringify(arr)); }catch(e){}
-    return arr.length;
-  }
   function captureOrigin(){
     var entry = "", entryPage = "", ref = document.referrer || "";
     try{ entry = sessionStorage.getItem("pa_entry_url") || location.href; entryPage = sessionStorage.getItem("pa_entry_page") || (location.pathname.split("/").pop() || "index.html"); }catch(e){ entry = location.href; entryPage = location.pathname.split("/").pop() || "index.html"; }
@@ -302,6 +292,15 @@
     };
   }
 
+  function saveProspect(p){
+    /* Escribe el prospecto en Firestore. Devuelve una promesa. */
+    if(!window.PA_FIREBASE || !window.PA_FIREBASE.db){
+      return Promise.reject(new Error("firebase-no-disponible"));
+    }
+    p.creadoEn = firebase.firestore.FieldValue.serverTimestamp();
+    return window.PA_FIREBASE.db.collection("prospectos").add(p);
+  }
+
   var form = document.querySelector("[data-sales-form]");
   if(!form) return;
   var selected = { need:"", budget:"" };
@@ -317,8 +316,11 @@
   });
   var errBox = form.querySelector(".f-error");
   function fail(msg){ if(errBox){ errBox.textContent = msg; errBox.classList.add("show"); errBox.scrollIntoView({behavior:"smooth", block:"center"}); } }
+  var submitBtn = form.querySelector("button[type='submit']");
+  var sending = false;
   form.addEventListener("submit", function(e){
     e.preventDefault();
+    if(sending) return;
     var nombre = (form.querySelector("#sf-name").value || "").trim();
     var negocio = (form.querySelector("#sf-biz").value || "").trim();
     var contacto = (form.querySelector("#sf-contact").value || "").trim();
@@ -341,17 +343,25 @@
       origen: captureOrigin(),
       estado: "Nuevo"
     };
-    saveProspect(prospect);
-    /* Confirmación que hace sentir escuchado al visitante */
-    var wrap = document.getElementById("sf-form-wrap");
-    var conf = document.getElementById("sf-confirm");
-    if(wrap) wrap.style.display = "none";
-    if(conf){
-      conf.classList.add("show");
-      var map = { nombre: prospect.nombre, negocio: prospect.negocio, necesidad: prospect.necesidad, presupuesto: prospect.presupuesto, contacto: prospect.contacto };
-      conf.querySelectorAll("[data-cf]").forEach(function(el){ var k = el.getAttribute("data-cf"); if(map[k] != null) el.textContent = map[k]; });
-      conf.scrollIntoView({ behavior:"smooth", block:"start" });
-    }
+    sending = true;
+    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "Enviando…"; }
+    saveProspect(prospect).then(function(){
+      sending = false;
+      /* Confirmación que hace sentir escuchado al visitante */
+      var wrap = document.getElementById("sf-form-wrap");
+      var conf = document.getElementById("sf-confirm");
+      if(wrap) wrap.style.display = "none";
+      if(conf){
+        conf.classList.add("show");
+        var map = { nombre: prospect.nombre, negocio: prospect.negocio, necesidad: prospect.necesidad, presupuesto: prospect.presupuesto, contacto: prospect.contacto };
+        conf.querySelectorAll("[data-cf]").forEach(function(el){ var k = el.getAttribute("data-cf"); if(map[k] != null) el.textContent = map[k]; });
+        conf.scrollIntoView({ behavior:"smooth", block:"start" });
+      }
+    }).catch(function(){
+      sending = false;
+      if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = "Enviar mi solicitud"; }
+      fail("No pudimos registrar tu solicitud en este momento. Inténtalo de nuevo en un momento o escríbenos directo por WhatsApp con el botón de abajo.");
+    });
   });
   var again = document.getElementById("sf-again");
   if(again) again.addEventListener("click", function(){
@@ -359,5 +369,6 @@
     var wrap = document.getElementById("sf-form-wrap");
     if(conf) conf.classList.remove("show");
     if(wrap){ wrap.style.display = ""; form.reset(); form.querySelectorAll(".f-chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); }); }
+    if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = "Enviar mi solicitud"; }
   });
 })();
