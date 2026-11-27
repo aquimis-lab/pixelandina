@@ -28,20 +28,11 @@
 </head>
 <body>
 
-<header class="site-head">
-  <div class="head-in">
+<header class="panel-head">
+  <div class="panel-head-in">
     <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="Logo de PixelAndina"><span>Pixel<em>Andina</em></span></a>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="demos.html">Demos</a>
-      <a href="tienda.html">Tienda digital</a>
-      <a href="corporativo.html">Empresas</a>
-      <a href="ideas.html">Ideas para ti</a>
-      <a href="portafolio.html">Nuestro trabajo</a>
-      <a href="clientes.html" class="solo-movil">Ingreso de clientes</a>
-    </nav>
-    <div class="head-cta"><a class="btn btn-ghost btn-sm" href="clientes.html">Ingreso de clientes</a><a class="btn btn-ghost btn-sm" href="clientes.html">Ver el panel de clientes</a></div>
+    <span class="panel-tag">Vista interna · Clientes</span>
+    <a class="panel-back" href="index.html">← Volver a la web</a>
   </div>
 </header>
 
@@ -109,6 +100,35 @@
           <div class="f-field">
             <label for="pfDesc">Descripción / última novedad <small>(lo lee el cliente en su panel)</small></label>
             <textarea id="pfDesc" placeholder="Ej.: Ya está lista la primera versión de la página principal; revísala en los avances."></textarea>
+          </div>
+          <div class="f-field">
+            <label for="pfAcTotal">Acuerdos · Precio total <small>(opcional: el cliente lo ve en su panel)</small></label>
+            <input type="text" id="pfAcTotal" placeholder="Ej.: $199.96" autocomplete="off">
+          </div>
+          <div class="f-field">
+            <label for="pfAcAnticipo">Acuerdos · Anticipo</label>
+            <input type="text" id="pfAcAnticipo" placeholder="Ej.: $79.98 pagado" autocomplete="off">
+          </div>
+          <div class="f-field">
+            <label for="pfAcSaldo">Acuerdos · Saldo</label>
+            <input type="text" id="pfAcSaldo" placeholder="Ej.: $0 — pagado completo" autocomplete="off">
+          </div>
+          <div class="f-field">
+            <label for="pfAcEstadoPago">Acuerdos · Estado de pago</label>
+            <select id="pfAcEstadoPago">
+              <option value="">— Sin definir —</option>
+              <option>Pendiente</option>
+              <option>Anticipo pagado</option>
+              <option>Pagado completo</option>
+            </select>
+          </div>
+          <div class="f-field">
+            <label for="pfAcEntrega">Acuerdos · Entrega</label>
+            <input type="text" id="pfAcEntrega" placeholder="Ej.: Entregado el 26 de noviembre de 2026" autocomplete="off">
+          </div>
+          <div class="f-field">
+            <label for="pfAcIncluye">Acuerdos · Qué incluye</label>
+            <textarea id="pfAcIncluye" placeholder="Ej.: Web con catálogo y carrito por WhatsApp, panel de administración para las socias y dominio por 1 año."></textarea>
           </div>
           <p class="f-error" id="pfErr"></p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -181,7 +201,7 @@
     <div class="foot-bottom" style="border-top:none;padding-top:0">
       <span>© 2026 PixelAndina · Vista interna</span>
       <span>Hecho en Guayaquil, Ecuador · PixelAndina</span>
-      <span><a href="acceso-interno.html">Acceso interno</a></span>
+      <span><a href="index.html">pixelandina.online</a></span>
     </div>
   </div>
 </footer>
