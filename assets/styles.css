@@ -314,11 +314,11 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
   font-weight:600;font-size:14px;padding:12px 18px;border-radius:99px;box-shadow:0 14px 30px -10px rgba(14,90,46,.5)}
 .wa-float svg{width:19px;height:19px}
 .wa-float:hover{background:#17a355}
-.chat-btn{position:fixed;right:20px;bottom:78px;z-index:70;display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;
+.chat-btn{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;
   border:none;font-weight:600;font-size:14px;padding:12px 18px;border-radius:99px;box-shadow:0 14px 30px -10px rgba(20,83,45,.55)}
 .chat-btn svg{width:19px;height:19px}
 .chat-btn:hover{background:var(--green-l)}
-.chat-panel{position:fixed;right:20px;bottom:136px;z-index:71;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100dvh - 160px));
+.chat-panel{position:fixed;right:20px;bottom:78px;z-index:71;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100dvh - 160px));
   background:#ffffff;border:1px solid var(--line-2);border-radius:18px;display:none;flex-direction:column;overflow:hidden;
   box-shadow:var(--sh-lg)}
 .chat-panel.open{display:flex}
@@ -520,10 +520,10 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
   .wa-float{right:14px;bottom:14px;width:52px;height:52px;padding:0;border-radius:50%;
     justify-content:center;gap:0;font-size:0}
   .wa-float svg{width:24px;height:24px}
-  .chat-btn{right:14px;bottom:78px;width:52px;height:52px;padding:0;border-radius:50%;
+  .chat-btn{right:14px;bottom:14px;width:52px;height:52px;padding:0;border-radius:50%;
     justify-content:center;gap:0;font-size:0}
   .chat-btn svg{width:24px;height:24px}
-  .chat-panel{right:10px;bottom:142px;width:min(380px,calc(100vw - 20px));
+  .chat-panel{right:10px;bottom:78px;width:min(380px,calc(100vw - 20px));
     height:min(520px,72dvh);max-height:72dvh}
   footer{padding-bottom:110px}
   /* Modal de demos a pantalla casi completa */
