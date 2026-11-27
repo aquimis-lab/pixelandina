@@ -536,3 +536,9 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
 @media (max-width:480px){
   .pstat{grid-template-columns:1fr}
 }
+
+/* Encabezado: menú en una sola línea e Ingreso de clientes junto a Ventas */
+.main-nav a{white-space:nowrap}
+.main-nav a.solo-movil{display:none}
+.head-cta .btn{padding-left:15px;padding-right:15px}
+.site-head.nav-open .head-cta{flex-direction:column}
