@@ -77,6 +77,8 @@ button{font-family:inherit;cursor:pointer}
 .main-nav a:hover{color:var(--txt);background:var(--bg-3)}
 .main-nav a.on{color:var(--txt);font-weight:600}
 .head-cta{display:flex;gap:8px;align-items:center;white-space:nowrap}
+.nav-toggle{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line-2);background:#ffffff;border-radius:10px;color:var(--txt);place-items:center;box-shadow:var(--sh-sm);flex:none}
+.nav-toggle svg{width:22px;height:22px}
 
 /* ---------- Botones ---------- */
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:10px 18px;font-size:14.5px;font-weight:550;
@@ -463,7 +465,74 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
   .foot-grid{grid-template-columns:1fr 1fr}
   .form-card{padding:24px 20px}
   .head-in{gap:12px}
-  .brand span{display:none}
+  .brand{font-size:15px}
+  .brand img{width:26px;height:26px}
   .cta-band{padding:40px 22px}
   .ptable th,.ptable td{padding:13px 14px}
+}
+
+/* ---------- Responsive móvil reforzado (≤900 / ≤680 / ≤560 / ≤480) ----------
+   Solo móvil y tableta pequeña: el escritorio (>900 px) no cambia.
+   Referencia de Anthony: que en el celular se vea como Stripe. */
+@media (max-width:900px){
+  .nav-toggle{display:grid}
+  .head-in{flex-wrap:wrap}
+  .site-head .main-nav,.site-head .head-cta{display:none}
+  .site-head.nav-open .head-in{height:auto;padding-top:10px;padding-bottom:14px}
+  .site-head.nav-open .main-nav{display:flex;flex-direction:column;flex:1 1 100%;order:3;
+    margin:8px 0 4px;gap:2px;overflow:visible;background:#ffffff}
+  .site-head.nav-open .main-nav a{display:flex;align-items:center;min-height:48px;padding:0 12px;
+    font-size:15.5px;border-radius:10px}
+  .site-head.nav-open .head-cta{display:flex;flex:1 1 100%;order:4;margin-top:8px}
+  .site-head.nav-open .head-cta .btn{width:100%;min-height:48px}
+}
+@media (max-width:680px){
+  .wrap{padding:0 18px}
+  .head-in{padding:0 18px}
+  h1{font-size:clamp(32px,8.6vw,44px)}
+  h2{font-size:clamp(25px,6.6vw,34px)}
+  .lead{font-size:16px}
+  .btn{min-height:44px}
+  iframe,video{max-width:100%}
+  /* Aparición: más breve y con menos desplazamiento (nada de texto lavado) */
+  .rv{transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+  /* Marquesina: letra menor y desvanecido en ambos bordes */
+  .marquee{-webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
+           mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+  .marquee-in span{font-size:13.5px;padding:0 18px;gap:36px}
+  /* Filtros de demos: envuelven y se compactan */
+  .filters{flex-wrap:wrap;gap:7px}
+  .filters button{padding:7px 13px;font-size:13.5px}
+  /* Tabla de precios como tarjetas (usa data-label de servicios.html) */
+  .ptable{border:none;border-radius:0;box-shadow:none;background:transparent;overflow:visible}
+  .ptable table,.ptable tbody{display:block}
+  .ptable thead{display:none}
+  .ptable tr{display:block;border:1px solid var(--line);border-radius:var(--radius);
+    background:#ffffff;box-shadow:var(--sh-sm);padding:6px 18px;margin-bottom:14px}
+  .ptable tr.hl{background:rgba(20,83,45,.06)}
+  .ptable td{display:block;padding:11px 0;border-bottom:1px solid var(--line);text-align:left}
+  .ptable td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin-bottom:3px}
+  .ptable td:last-child{border-bottom:none}
+  .ptable td:last-child::before{display:none}
+  .ptable td .btn{width:100%}
+  /* Flotantes: círculos de solo icono, sin tapar el pie */
+  .wa-float{right:14px;bottom:14px;width:52px;height:52px;padding:0;border-radius:50%;
+    justify-content:center;gap:0;font-size:0}
+  .wa-float svg{width:24px;height:24px}
+  .chat-btn{right:14px;bottom:78px;width:52px;height:52px;padding:0;border-radius:50%;
+    justify-content:center;gap:0;font-size:0}
+  .chat-btn svg{width:24px;height:24px}
+  .chat-panel{right:10px;bottom:142px;width:min(380px,calc(100vw - 20px));
+    height:min(520px,72dvh);max-height:72dvh}
+  footer{padding-bottom:110px}
+  /* Modal de demos a pantalla casi completa */
+  .modal{padding:10px}
+  .modal-box{width:calc(100vw - 20px);height:86dvh}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .pstat{grid-template-columns:1fr}
 }

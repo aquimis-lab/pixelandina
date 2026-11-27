@@ -4,6 +4,24 @@
   var WA = "https://wa.me/593939462496?text=";
   function waLink(msg){ return WA + encodeURIComponent(msg); }
 
+  /* ---------- Menú móvil (hamburguesa) ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var siteHead = document.querySelector(".site-head");
+  if(navToggle && siteHead){
+    navToggle.addEventListener("click", function(){
+      var open = siteHead.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    });
+    siteHead.querySelectorAll(".main-nav a, .head-cta a").forEach(function(a){
+      a.addEventListener("click", function(){
+        siteHead.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Abrir menú");
+      });
+    });
+  }
+
   /* ---------- Reveal al scroll ---------- */
   var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
@@ -135,7 +153,7 @@
         var st = document.createElement("p"); st.innerHTML = "<b></b>"; st.querySelector("b").textContent = r.title; box.appendChild(st);
         var tx = document.createElement("p"); tx.textContent = r.text; box.appendChild(tx);
         var ctas = document.createElement("div"); ctas.className = "quiz-ctas";
-        var a1 = document.createElement("a"); a1.className = "btn btn-primary btn-sm"; a1.href = r.href; a1.textContent = r.cta; ctas.appendChild(a1);
+        var a1 = document.createElement("a"); a1.className = "btn btn-green btn-sm"; a1.href = r.href; a1.textContent = r.cta; ctas.appendChild(a1);
         var a2 = document.createElement("a"); a2.className = "btn btn-wa btn-sm"; a2.href = waLink(r.wa); a2.target = "_blank"; a2.rel = "noopener"; a2.textContent = "Pedirlo por WhatsApp"; ctas.appendChild(a2);
         var again = document.createElement("button"); again.type = "button"; again.className = "btn btn-ghost btn-sm"; again.textContent = "Repetir el test";
         again.addEventListener("click", function(){ step = 0; answers = []; render(); });
