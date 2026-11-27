@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/escena.css">
 <script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       <a href="tienda.html" class="on">Tienda digital</a>
       <a href="corporativo.html">Empresas</a>
       <a href="ideas.html">Ideas para ti</a>
-            <a href="portafolio.html">Portafolio</a>
+      <a href="portafolio.html">Nuestro trabajo</a>
       <a href="clientes.html" class="solo-movil">Ingreso de clientes</a>
     </nav>
     <div class="head-cta"><a class="btn btn-ghost btn-sm" href="clientes.html">Ingreso de clientes</a><a class="btn btn-white btn-sm" href="ventas.html">Comunícate con ventas</a></div>
@@ -39,6 +40,48 @@
     <h1 style="font-size:clamp(34px,4.6vw,52px)">Listo para usar <span class="grad">hoy</span></h1>
     <p class="lead">Kits de plantillas profesionales hechos en Ecuador, para Ecuador. Compras en línea en Hotmart, descargas al instante y empiezas hoy mismo. Sin esperas y sin instalaciones.</p>
     <p class="hero-note"><b>Compra protegida:</b> pago seguro procesado por Hotmart · descarga inmediata · garantía de 7 días en todos los kits</p>
+
+    <!-- ===== Escena 3D: compra realista ===== -->
+    <div class="esc-scene narrow">
+      <div class="esc-halo"></div>
+      <div class="esc-tilt">
+        <div class="esc-panel">
+          <div class="esc-buy">
+            <img src="assets/img/portada-ospyme.jpg" alt="Portada del Sistema Operativo Pyme">
+            <div>
+              <span class="badge">Para tu pyme</span>
+              <h3 style="margin:8px 0 4px">Sistema Operativo Pyme</h3>
+              <p class="small" style="margin-bottom:10px">Inventario, ventas y caja, clientes, cuentas por cobrar y control de tu equipo: 5 plantillas con las fórmulas ya hechas.</p>
+              <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+                <span class="price">$39 <small>pago único</small></span>
+                <a data-umami-event="clic-hotmart" class="btn btn-amber btn-sm" href="https://go.hotmart.com/C108689245U" target="_blank" rel="noopener">Comprar ahora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="esc-fcard pos-tr float-a" aria-hidden="true">
+          <div class="esc-done-row">
+            <span class="esc-ic shield"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.2 8.2-7 10-3.8-1.8-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <span>
+              <h4>Pago seguro con Hotmart</h4>
+              <span class="amt2">La plataforma procesa tu pago;<br>nosotros nunca vemos tu tarjeta.</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="esc-fcard pos-bl float-b" aria-hidden="true">
+          <div class="esc-done-row">
+            <span class="esc-ic ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></span>
+            <span>
+              <h4>Acceso inmediato</h4>
+              <span class="amt2">Descargas tu kit al instante<br>tras el pago, sin esperas.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="esc-floor"></div>
+    </div>
   </div>
 </section>
 
@@ -159,7 +202,7 @@
       </ul></div>
       <div><h4>Recursos</h4><ul>
         <li><a href="demos.html">17 demos en vivo</a></li>
-        <li><a href="portafolio.html">Portafolio y caso real</a></li>
+        <li><a href="portafolio.html">Nuestro trabajo y caso real</a></li>
         <li><a href="clientes.html">Compromiso con clientes</a></li>
         <li><a href="index.html#faq">Preguntas frecuentes</a></li>
         <li><a href="ventas.html">Comunícate con ventas</a></li>
@@ -190,5 +233,6 @@
 
 <script src="assets/app.js"></script>
 <script src="assets/chat.js"></script>
+<script src="assets/escena.js"></script>
 </body>
 </html>

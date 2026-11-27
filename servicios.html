@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/escena.css">
 <script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       <a href="tienda.html">Tienda digital</a>
       <a href="corporativo.html">Empresas</a>
       <a href="ideas.html">Ideas para ti</a>
-            <a href="portafolio.html">Portafolio</a>
+      <a href="portafolio.html">Nuestro trabajo</a>
       <a href="clientes.html" class="solo-movil">Ingreso de clientes</a>
     </nav>
     <div class="head-cta"><a class="btn btn-ghost btn-sm" href="clientes.html">Ingreso de clientes</a><a class="btn btn-white btn-sm" href="ventas.html">Comunícate con ventas</a></div>
@@ -38,6 +39,37 @@
     <span class="pill"><span class="dot"></span> Servicios y precios</span>
     <h1 style="font-size:clamp(34px,4.6vw,52px)">Precios claros, <span class="grad">sin letra pequeña</span></h1>
     <p class="lead">Eliges el punto de partida y te confirmamos el precio cerrado por escrito antes de empezar. Cotizar no cuesta nada y no pagas nada antes de ver tu propuesta.</p>
+
+    <!-- ===== Escena 3D: así avanza tu proyecto ===== -->
+    <div class="esc-scene narrow">
+      <div class="esc-halo"></div>
+      <div class="esc-tilt">
+        <div class="esc-panel">
+          <div class="esc-p-head">
+            <span class="esc-ic panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <b>Así avanza tu proyecto, paso a paso</b>
+          </div>
+          <div class="esc-steps" data-esc-steps>
+            <div class="esc-step"><span class="dotp">1</span><span>Recibido</span></div>
+            <div class="esc-step"><span class="dotp">2</span><span>En diseño</span></div>
+            <div class="esc-step"><span class="dotp">3</span><span>En desarrollo</span></div>
+            <div class="esc-step"><span class="dotp">4</span><span>En revisión</span></div>
+            <div class="esc-step"><span class="dotp">5</span><span>Entregado</span></div>
+          </div>
+          <p class="small" style="margin-top:16px">Tu panel de cliente muestra este avance en vivo mientras trabajamos — igual que el de nuestro primer proyecto entregado.</p>
+        </div>
+
+        <div class="esc-fcard pos-br float-c" aria-hidden="true">
+          <div class="fc-head">
+            <span class="esc-ic panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span>
+            <span class="esc-app">Precios de lanzamiento</span>
+          </div>
+          <h4>Precios claros desde el inicio</h4>
+          <p>Landing desde <b>$29</b> · Web de negocio desde <b>$69</b><br>Tablero o app desde <b>$129</b> · Soporte $5/mes</p>
+        </div>
+      </div>
+      <div class="esc-floor"></div>
+    </div>
   </div>
 </section>
 
@@ -211,7 +243,7 @@
       </ul></div>
       <div><h4>Recursos</h4><ul>
         <li><a href="demos.html">17 demos en vivo</a></li>
-        <li><a href="portafolio.html">Portafolio y caso real</a></li>
+        <li><a href="portafolio.html">Nuestro trabajo y caso real</a></li>
         <li><a href="clientes.html">Compromiso con clientes</a></li>
         <li><a href="index.html#faq">Preguntas frecuentes</a></li>
         <li><a href="ventas.html">Comunícate con ventas</a></li>
@@ -242,5 +274,6 @@
 
 <script src="assets/app.js"></script>
 <script src="assets/chat.js"></script>
+<script src="assets/escena.js"></script>
 </body>
 </html>

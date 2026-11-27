@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/escena.css">
 <script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
@@ -25,7 +26,7 @@
       <a href="tienda.html">Tienda digital</a>
       <a href="corporativo.html" class="on">Empresas</a>
       <a href="ideas.html">Ideas para ti</a>
-            <a href="portafolio.html">Portafolio</a>
+      <a href="portafolio.html">Nuestro trabajo</a>
       <a href="clientes.html" class="solo-movil">Ingreso de clientes</a>
     </nav>
     <div class="head-cta"><a class="btn btn-ghost btn-sm" href="clientes.html">Ingreso de clientes</a><a class="btn btn-white btn-sm" href="ventas.html">Diagnóstico sin costo</a></div>
@@ -41,6 +42,50 @@
     <div class="hero-ctas">
       <a class="btn btn-white btn-lg" href="ventas.html">Pedir el diagnóstico sin costo</a>
       <a class="btn btn-ghost btn-lg" href="demos.html">Ver las demos corporativas</a>
+    </div>
+
+    <!-- ===== Escena 3D: dashboard «un solo número» ===== -->
+    <div class="esc-scene narrow">
+      <div class="esc-halo"></div>
+      <div class="esc-tilt">
+        <div class="esc-panel">
+          <div class="esc-p-head">
+            <span class="esc-ic panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <b>Tu empresa en un solo número</b>
+            <span class="esc-live"><i></i>EN VIVO</span>
+          </div>
+          <div class="esc-big"><span data-esc-count="68">0</span>%</div>
+          <p class="esc-big-sub">Adopción real de IA en tu equipo · subió 24 puntos en 60 días</p>
+          <p class="small" style="margin:20px 0 4px">Uso semanal por área (%)</p>
+          <div class="bars"><i data-h="45"></i><i data-h="58"></i><i data-h="52"></i><i data-h="71"></i><i data-h="84"></i><i class="hot" data-h="38"></i></div>
+          <p class="fig">Ventas · Adm. · RR. HH. · Operaciones · Gerencia · Bodega</p>
+          <span class="esc-sim">Simulación: así se ve el dashboard que entregamos a tu gerencia</span>
+        </div>
+
+        <div class="esc-fcard pos-tr float-a" aria-hidden="true">
+          <div class="fc-head">
+            <span class="esc-ic alert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3z"/><path d="M12 10v4M12 17.5v.5"/></svg></span>
+            <span class="esc-app">Alerta del día</span>
+            <span class="esc-time">hoy</span>
+          </div>
+          <h4>12 licencias de IA sin uso este mes</h4>
+          <p>Están pagadas y nadie las abre: el rescate de adopción empieza ahí.</p>
+          <span class="esc-sim">Simulación</span>
+        </div>
+
+        <div class="esc-fcard pos-bl float-b" aria-hidden="true">
+          <div class="fc-head">
+            <span class="esc-ic ok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.4"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/><path d="M16 4.5a3.4 3.4 0 0 1 0 7M17.5 14.6c1.9.5 3.2 1.9 3.7 4.4"/></svg></span>
+            <span class="esc-app">Capacitación por rol</span>
+            <span class="esc-time">esta semana</span>
+          </div>
+          <h4>Equipo formado por rol: 4 de 5 áreas</h4>
+          <span class="esc-pbar" style="width:100%"><i data-esc-w="80"></i></span>
+          <p style="margin-top:6px">Falta bodega: su jornada ya está agendada.</p>
+          <span class="esc-sim">Simulación</span>
+        </div>
+      </div>
+      <div class="esc-floor"></div>
     </div>
   </div>
 </section>
@@ -166,7 +211,7 @@
       </ul></div>
       <div><h4>Recursos</h4><ul>
         <li><a href="demos.html">17 demos en vivo</a></li>
-        <li><a href="portafolio.html">Portafolio y caso real</a></li>
+        <li><a href="portafolio.html">Nuestro trabajo y caso real</a></li>
         <li><a href="clientes.html">Compromiso con clientes</a></li>
         <li><a href="index.html#faq">Preguntas frecuentes</a></li>
         <li><a href="ventas.html">Comunícate con ventas</a></li>
@@ -197,5 +242,6 @@
 
 <script src="assets/app.js"></script>
 <script src="assets/chat.js"></script>
+<script src="assets/escena.js"></script>
 </body>
 </html>
