@@ -537,8 +537,17 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
   .pstat{grid-template-columns:1fr}
 }
 
-/* Encabezado: menú en una sola línea e Ingreso de clientes junto a Ventas */
+/* ---------- v4 · Encabezado de una línea e ingreso de clientes ----------
+   Menú de 7 ítems sin saltos de línea; «Ingreso de clientes» vive en el
+   head-cta (escritorio) y como enlace solo-movil en el desplegable. */
+.main-nav{gap:18px}
 .main-nav a{white-space:nowrap}
-.main-nav a.solo-movil{display:none}
+.head-cta{display:flex;gap:8px;align-items:center}
+.solo-movil{display:none}
+@media (max-width:900px){
+  .site-head.nav-open .head-cta .btn{flex:1}
+}
+
+/* Ajuste final del encabezado (igual que la v3 en vivo) */
 .head-cta .btn{padding-left:15px;padding-right:15px}
 .site-head.nav-open .head-cta{flex-direction:column}
