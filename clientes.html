@@ -3,35 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clientes: tu proyecto en vivo y nuestro compromiso — PixelAndina</title>
-<meta name="description" content="Panel privado de clientes de PixelAndina: el estado de tu proyecto paso a paso, los avances para revisar y el soporte directo, en un solo lugar. Y nuestro compromiso: entrega en 1 semana o menos, pago 40/60 por transferencia y precio cerrado por escrito.">
+<title>Clientes: nuestro compromiso contigo — PixelAndina</title>
+<meta name="description" content="El compromiso de PixelAndina con sus clientes: entrega en 1 semana o menos, pago 40/60 por transferencia, precio cerrado por escrito, garantía de 7 días en productos digitales y soporte de $5/mes. Sin letra pequeña.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
-<style>
-/* Panel de clientes: barra de pasos, hilo de soporte y avances.
-   Solo lo que styles.css no trae; todo lo demás reusa el v3. */
-.psteps{display:flex;margin:24px 0 8px}
-.pstep{flex:1;text-align:center;position:relative;padding-top:24px;font-size:12.5px;color:var(--mut)}
-.pstep::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:#ffffff;border:2px solid var(--line-2);z-index:1}
-.pstep::after{content:"";position:absolute;top:14px;left:calc(-50% + 11px);right:calc(50% + 11px);height:2px;background:var(--line-2)}
-.pstep:first-child::after{display:none}
-.pstep.done{color:var(--green-xl);font-weight:580}
-.pstep.done::before{background:var(--green-l);border-color:var(--green-l)}
-.pstep.done::after{background:var(--green-l)}
-.pstep.now{color:var(--amber-l);font-weight:650}
-.pstep.now::before{border-color:var(--amber);background:#fdf3e3;box-shadow:0 0 0 5px rgba(217,119,6,.15)}
-.hilo{display:flex;flex-direction:column;gap:10px;max-height:440px;overflow-y:auto;padding:6px 2px}
-.msg .mf{display:block;font-size:11px;opacity:.75;margin-top:5px}
-.av-list{display:grid;gap:12px}
-.av-item{border:1px solid var(--line);border-radius:var(--radius-s);padding:16px 18px;background:#ffffff;box-shadow:var(--sh-sm)}
-.av-item h4{font-size:15.5px;margin-bottom:4px}
-.av-item p{color:var(--sub);font-size:14.5px}
-.av-item .av-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px}
-@media (max-width:680px){.pstep{font-size:10.5px}}
-</style>
+<script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
 
@@ -56,75 +35,14 @@
 <section class="hero" style="padding-bottom:56px">
   <div class="glow"></div><div class="gridbg"></div>
   <div class="wrap">
-    <span class="pill"><span class="dot"></span> Clientes · Panel privado y compromiso PixelAndina</span>
-    <h1 style="font-size:clamp(34px,4.6vw,52px)">Tu proyecto, <span class="grad">en vivo y en un solo lugar</span></h1>
-    <p class="lead">Si ya eres cliente, entra a tu panel privado: el estado de tu pedido paso a paso, los avances para revisar y el soporte directo con PixelAndina. Y si aún no lo eres, aquí está también nuestro compromiso, por escrito.</p>
+    <span class="pill"><span class="dot"></span> Clientes · Compromiso PixelAndina</span>
+    <h1 style="font-size:clamp(34px,4.6vw,52px)">Nuestro compromiso <span class="grad">contigo</span></h1>
+    <p class="lead">Antes de pedirte un dólar, queremos que sepas exactamente cómo trabajamos. Esto es lo que PixelAndina promete a cada cliente — y lo que cumplimos en el primer proyecto que entregamos.</p>
   </div>
 </section>
 
-<!-- ============ PANEL DE CLIENTES ============ -->
-<section class="sec" style="padding-top:48px" id="panel">
+<section class="sec" style="padding-top:48px">
   <div class="wrap">
-    <!-- Ingreso (sin sesión) -->
-    <div class="lock-box" id="lockBox">
-      <div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-      <h2 style="font-size:24px;margin-bottom:8px">Panel de clientes</h2>
-      <p class="small" style="font-size:14px">Espacio privado para clientes de PixelAndina: el estado de tu pedido, los avances para revisar y el soporte directo, todo en un solo lugar.</p>
-      <form id="lockForm">
-        <input type="email" id="loginEmail" placeholder="Tu correo" autocomplete="username" aria-label="Tu correo" style="margin-bottom:10px">
-        <input type="password" id="loginPass" placeholder="Tu contraseña" autocomplete="current-password" aria-label="Tu contraseña">
-        <p class="f-error" id="lockErr"></p>
-        <button type="submit" class="btn btn-amber" style="width:100%">Entrar a mi panel</button>
-      </form>
-      <p class="small" style="margin-top:16px">Tu acceso se activa cuando empieza tu proyecto: te entregamos el correo y la contraseña por WhatsApp. Sin esa sesión, este panel no muestra ningún dato.</p>
-      <div class="form-alt" style="justify-content:center">
-        <p>¿Prefieres escribirnos directo?</p>
-        <a class="btn btn-wa btn-sm" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20soy%20cliente%20y%20quiero%20revisar%20el%20estado%20de%20mi%20proyecto." target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a>
-      </div>
-    </div>
-
-    <!-- Vista del cliente (con sesión) -->
-    <div id="clientView" style="display:none">
-      <div class="admin-bar">
-        <div>
-          <p class="eyebrow" style="margin-bottom:6px">Panel de clientes · Solo tú ves esto</p>
-          <h2 style="font-size:30px">Hola, <span id="cliNombre">cliente</span></h2>
-          <p class="small" style="margin-top:6px">Sesión iniciada como <b style="color:var(--sub)" id="cliEmail"></b> · Todo se actualiza en vivo, sin recargar la página.</p>
-        </div>
-        <div class="admin-tools">
-          <a class="btn btn-wa btn-sm" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20soy%20cliente%20y%20escribo%20desde%20mi%20panel." target="_blank" rel="noopener">WhatsApp directo</a>
-          <button type="button" class="btn btn-ghost btn-sm" id="btnLogout">Cerrar sesión</button>
-        </div>
-      </div>
-
-      <div id="proyWrap"></div>
-
-      <div class="card" style="margin-top:26px"><div class="body">
-        <span class="badge live">Soporte directo</span>
-        <h3>Conversación con PixelAndina</h3>
-        <p>Déjanos aquí tus dudas, cambios o comentarios sobre tu proyecto. Te respondemos en este mismo hilo y también nos tienes por WhatsApp.</p>
-        <div class="hilo" id="hilo" style="margin-top:16px"></div>
-        <form id="supForm" style="margin-top:14px">
-          <div class="f-field" style="margin-bottom:12px">
-            <label for="supMsg">Tu mensaje</label>
-            <textarea id="supMsg" placeholder="Escribe tu mensaje para PixelAndina…" aria-label="Tu mensaje"></textarea>
-          </div>
-          <p class="f-error" id="supErr"></p>
-          <button type="submit" class="btn btn-green">Enviar mensaje</button>
-        </form>
-      </div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMPROMISO ============ -->
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Nuestro compromiso</p>
-      <h2>Antes de pedirte un dólar: <span class="grad">así trabajamos</span></h2>
-      <p class="lead">Esto es lo que PixelAndina promete a cada cliente — y lo que cumplimos en el primer proyecto que entregamos.</p>
-    </div>
     <div class="cells c3">
       <div class="cell">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
@@ -191,16 +109,16 @@
   <div class="wrap">
     <div class="cells c2 rv">
       <div class="cell">
+        <span class="badge amber">Muy pronto</span>
+        <h3 style="margin-top:14px">Panel de clientes</h3>
+        <p>Estamos preparando un espacio privado para nuestros clientes: el estado de tu pedido, los avances para revisar y el soporte directo, todo en un solo lugar. Mientras lo terminamos, el seguimiento de tu proyecto lo hacemos por WhatsApp y correo, con respuesta personal.</p>
+        <a class="more" data-wa="Hola PixelAndina, quiero que me avisen cuando esté listo el Panel de clientes.">Avísenme cuando esté listo →</a>
+      </div>
+      <div class="cell">
         <span class="badge">Tu información</span>
         <h3 style="margin-top:14px">Tus datos son tuyos</h3>
         <p>Textos, fotos y datos de tu negocio se usan solo para tu proyecto. En integraciones con sistemas de tu empresa, las credenciales siempre quedan en manos de tu empresa: PixelAndina nunca se queda con tus claves.</p>
         <a class="more" href="ventas.html">Hablar con ventas →</a>
-      </div>
-      <div class="cell">
-        <span class="badge amber">Sin panel, también te atendemos</span>
-        <h3 style="margin-top:14px">Seguimiento por WhatsApp y correo</h3>
-        <p>Si prefieres no usar el panel, el seguimiento de tu proyecto lo hacemos como siempre: por WhatsApp y correo, con respuesta personal de lunes a sábado, de 9:00 a 18:00.</p>
-        <a class="more" href="https://wa.me/593939462496" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
       </div>
     </div>
   </div>
@@ -249,7 +167,7 @@
       </ul></div>
       <div><h4>Contacto</h4><ul>
         <li><a href="mailto:ventas@pixelandina.online">ventas@pixelandina.online</a></li>
-        <li><a href="https://wa.me/593939462496" target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a></li>
+        <li><a data-umami-event="clic-whatsapp" href="https://wa.me/593939462496" target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a></li>
         <li><a href="ventas.html">Guayaquil, Ecuador</a></li>
         <li><a href="ventas.html">Lun a sáb · 9:00 a 18:00</a></li>
       </ul></div>
@@ -257,7 +175,7 @@
     <div class="foot-bottom">
       <span>© 2026 PixelAndina</span>
       <span>Hecho en Guayaquil, Ecuador · PixelAndina</span>
-      <span><a href="prospectos.html">Acceso interno · Prospectos</a> · <a href="admin-clientes.html">Acceso interno · Clientes</a></span>
+      <span><a href="prospectos.html">Acceso interno · Prospectos</a></span>
     </div>
   </div>
 </footer>
@@ -271,12 +189,7 @@
   <form class="chat-form" id="chatForm"><input id="chatInput" type="text" placeholder="Escribe tu duda…" autocomplete="off" aria-label="Escribe tu duda"><button type="submit">Enviar</button></form>
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-<script src="assets/firebase-config.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/chat.js"></script>
-<script src="assets/clientes.js"></script>
 </body>
 </html>

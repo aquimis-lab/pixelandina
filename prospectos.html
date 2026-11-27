@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
 
@@ -33,18 +34,17 @@
 
 <section class="sec" style="padding-top:64px;min-height:70vh">
   <div class="wrap">
-    <!-- Acceso de administrador (Firebase Auth) -->
+    <!-- Candado de demostración -->
     <div class="lock-box" id="lockBox">
       <div class="ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
       <h2 style="font-size:24px;margin-bottom:8px">Repositorio de prospectos</h2>
       <p class="small" style="font-size:14px">Vista interna de PixelAndina: aquí llegan las solicitudes del formulario «Comunícate con ventas», con su origen. Acceso solo para Anthony.</p>
       <form id="lockForm">
-        <input type="email" id="loginEmail" placeholder="Tu correo" autocomplete="username" aria-label="Tu correo" style="margin-bottom:10px">
-        <input type="password" id="loginPass" placeholder="Tu contraseña" autocomplete="current-password" aria-label="Tu contraseña">
+        <input type="password" id="lockCode" placeholder="Código de acceso" autocomplete="off" aria-label="Código de acceso">
         <p class="f-error" id="lockErr"></p>
         <button type="submit" class="btn btn-amber" style="width:100%">Entrar</button>
       </form>
-      <p class="small" style="margin-top:16px">Acceso con el correo y la contraseña de administrador de PixelAndina. Sin esa sesión, esta vista no muestra ningún dato.</p>
+      <p class="small" style="margin-top:16px">Vista previa: el código de demostración es <b style="color:var(--sub)">pixelandina</b>. En producción esta vista queda tras el acceso real de Anthony y lee la base de datos real (patrón Firebase).</p>
     </div>
 
     <!-- Vista interna -->
@@ -57,7 +57,7 @@
         </div>
         <div class="admin-tools">
           <button type="button" class="btn btn-ghost btn-sm" id="btnCsv">Exportar CSV</button>
-          <button type="button" class="btn btn-ghost btn-sm" id="btnLogout">Cerrar sesión</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnWipe">Borrar datos de demo</button>
           <a class="btn btn-white btn-sm" href="ventas.html">Probar el formulario</a>
         </div>
       </div>
@@ -75,12 +75,12 @@
           </table>
         </div>
         <div class="empty-box" id="emptyBox">
-          <p style="font-size:16px;color:var(--sub);margin-bottom:8px">Todavía no hay solicitudes.</p>
-          <p>Cuando alguien envíe el formulario de ventas, su solicitud aparecerá aquí con todos sus datos de origen.</p>
+          <p style="font-size:16px;color:var(--sub);margin-bottom:8px">Todavía no hay solicitudes en este navegador.</p>
+          <p>Envía una desde el formulario de ventas y vuelve: aparecerá aquí con todos sus datos de origen.</p>
           <p style="margin-top:16px"><a class="btn btn-white btn-sm" href="ventas.html">Ir al formulario de ventas</a></p>
         </div>
       </div>
-      <p class="small" style="margin-top:16px">Datos en vivo: esta vista lee la base de datos real de prospectos de PixelAndina y solo se abre con tu sesión de administrador.</p>
+      <p class="small" style="margin-top:16px">Nota de la vista previa: los datos se guardan en el almacén local de este navegador (demostración de la experiencia). En producción el formulario escribe en la base de datos real y esta vista la lee con el acceso de Anthony.</p>
     </div>
   </div>
 </section>
@@ -95,10 +95,6 @@
   </div>
 </footer>
 
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-<script src="assets/firebase-config.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/prospectos.js"></script>
 </body>

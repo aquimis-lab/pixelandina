@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script defer src="https://umami-pixelandina.vercel.app/script.js" data-website-id="78d59000-011a-4c44-9c90-a9eae71046f2"></script>
 </head>
 <body>
 
@@ -45,7 +46,7 @@
           <li><span><b>Diagnóstico de 30 minutos sin costo</b> para empresas que evalúan IA, dashboards o herramientas internas.</span></li>
           <li><span><b>Acompañamiento en la entrega y después</b>: capacitación corta incluida y soporte de $5/mes si lo quieres.</span></li>
         </ul>
-        <p class="small">¿Prefieres escribirnos directo? También estamos en <a href="https://wa.me/593939462496" target="_blank" rel="noopener" style="color:var(--green-xl)">WhatsApp +593 93 946 2496</a> y en <a href="mailto:ventas@pixelandina.online" style="color:var(--green-xl)">ventas@pixelandina.online</a>. Atendemos lunes a sábado, de 9:00 a 18:00 (hora de Ecuador).</p>
+        <p class="small">¿Prefieres escribirnos directo? También estamos en <a data-umami-event="clic-whatsapp" href="https://wa.me/593939462496" target="_blank" rel="noopener" style="color:var(--green-xl)">WhatsApp +593 93 946 2496</a> y en <a href="mailto:ventas@pixelandina.online" style="color:var(--green-xl)">ventas@pixelandina.online</a>. Atendemos lunes a sábado, de 9:00 a 18:00 (hora de Ecuador).</p>
         <div class="res-list">
           <a href="demos.html"><span><b>Demos en vivo</b><span>Prueba los 17 sistemas antes de cotizar</span></span><span class="arr">→</span></a>
           <a href="tienda.html"><span><b>Tienda digital</b><span>Kits listos desde $15, con garantía de 7 días</span></span><span class="arr">→</span></a>
@@ -104,7 +105,7 @@
           </form>
           <div class="form-alt">
             <p>¿Prefieres escribirnos directo?</p>
-            <a class="btn btn-wa btn-sm" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20quiero%20cotizar%20una%20web%20o%20app%20para%20mi%20negocio." target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a>
+            <a data-umami-event="clic-whatsapp" class="btn btn-wa btn-sm" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20quiero%20cotizar%20una%20web%20o%20app%20para%20mi%20negocio." target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a>
             <a class="btn btn-ghost btn-sm" href="mailto:ventas@pixelandina.online">ventas@pixelandina.online</a>
           </div>
         </div>
@@ -126,7 +127,7 @@
             <li>Solo si la aceptas, empezamos con el anticipo del 40% por transferencia. El 60% restante se paga a la entrega.</li>
           </ol>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn btn-wa" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20acabo%20de%20enviar%20mi%20solicitud%20en%20la%20web." target="_blank" rel="noopener">¿Prefieres adelantar por WhatsApp?</a>
+            <a data-umami-event="clic-whatsapp" class="btn btn-wa" href="https://wa.me/593939462496?text=Hola%20PixelAndina%2C%20acabo%20de%20enviar%20mi%20solicitud%20en%20la%20web." target="_blank" rel="noopener">¿Prefieres adelantar por WhatsApp?</a>
             <button type="button" class="btn btn-ghost" id="sf-again">Enviar otra solicitud</button>
           </div>
         </div>
@@ -165,7 +166,7 @@
       </ul></div>
       <div><h4>Contacto</h4><ul>
         <li><a href="mailto:ventas@pixelandina.online">ventas@pixelandina.online</a></li>
-        <li><a href="https://wa.me/593939462496" target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a></li>
+        <li><a data-umami-event="clic-whatsapp" href="https://wa.me/593939462496" target="_blank" rel="noopener">WhatsApp +593 93 946 2496</a></li>
         <li><a href="ventas.html">Guayaquil, Ecuador</a></li>
         <li><a href="ventas.html">Lun a sáb · 9:00 a 18:00</a></li>
       </ul></div>
@@ -193,5 +194,11 @@
 <script src="assets/firebase-config.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/chat.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var f = document.querySelector('[data-sales-form]');
+  if (f) { f.addEventListener('submit', function () { if (window.umami) { umami.track('envio-formulario'); } }); }
+});
+</script>
 </body>
 </html>
