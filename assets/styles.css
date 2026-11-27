@@ -551,3 +551,7 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34
 /* Ajuste final del encabezado (igual que la v3 en vivo) */
 .head-cta .btn{padding-left:15px;padding-right:15px}
 .site-head.nav-open .head-cta{flex-direction:column}
+
+
+/* Ajuste de ancho (Anthony, 27 nov): aprovechar mejor los laterales, menos vacío a los lados */
+:root{--max:1360px}
