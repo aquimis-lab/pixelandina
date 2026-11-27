@@ -1,14 +1,15 @@
-/* PixelAndina · Acceso interno (puerta única a los dos paneles).
-   acceso-interno.html: login de Firebase Auth; solo el correo del
-   administrador ve las dos puertas (prospectos y clientes). No lee
-   Firestore: la seguridad real de cada panel vive en sus reglas. */
+/* PixelAndina · Acceso interno (acceso-interno.html).
+   Puerta única interna: solo Firebase Auth (sin Firestore).
+   Si el correo de la sesión es el del administrador, muestra las
+   dos puertas (Prospectos y Clientes); otro correo ve el aviso de
+   zona restringida; sin sesión, solo el formulario de ingreso. */
 (function(){
   "use strict";
 
   var ADMIN_EMAIL = "tonnylve2@gmail.com";
 
   var lock = document.getElementById("lockBox");
-  var hub = document.getElementById("hubView");
+  var admin = document.getElementById("adminView");
   var denied = document.getElementById("deniedView");
   var lockForm = document.getElementById("lockForm");
   var lockErr = document.getElementById("lockErr");
@@ -16,16 +17,17 @@
   function showErr(msg){ if(lockErr){ lockErr.textContent = msg; lockErr.classList.add("show"); } }
   function hideErr(){ if(lockErr){ lockErr.textContent = ""; lockErr.classList.remove("show"); } }
 
+  function show(el){
+    [lock, admin, denied].forEach(function(v){ if(v) v.style.display = "none"; });
+    if(el) el.style.display = "block";
+  }
+
   if(!window.PA_FIREBASE || !window.PA_FIREBASE.auth){
     if(lockForm) lockForm.style.display = "none";
-    showErr("La conexión con el acceso no está configurada todavía.");
+    showErr("La conexión con el acceso no está configurada todavía. Revisa assets/firebase-config.js.");
     return;
   }
   var auth = window.PA_FIREBASE.auth;
-
-  function showOnly(el){
-    [lock, hub, denied].forEach(function(x){ if(x) x.style.display = (x === el) ? "block" : "none"; });
-  }
 
   var AUTH_ERRORS = {
     "auth/invalid-credential": "Correo o contraseña incorrectos. Revisa los datos e inténtalo de nuevo.",
@@ -53,12 +55,19 @@
   }
 
   auth.onAuthStateChanged(function(user){
-    if(!user){ showOnly(lock); return; }
-    if((user.email || "").toLowerCase() === ADMIN_EMAIL) showOnly(hub);
-    else showOnly(denied);
+    if(!user){ show(lock); return; }
+    if((user.email || "").toLowerCase() === ADMIN_EMAIL){
+      var who = document.getElementById("adminEmail");
+      if(who) who.textContent = user.email;
+      show(admin);
+    } else {
+      var de = document.getElementById("deniedEmail");
+      if(de) de.textContent = user.email || "una cuenta de cliente";
+      show(denied);
+    }
   });
 
-  ["btnLogout", "btnLogout2"].forEach(function(id){
+  ["btnLogout", "btnSwitchAdmin"].forEach(function(id){
     var b = document.getElementById(id);
     if(b) b.addEventListener("click", function(){ auth.signOut(); });
   });

@@ -123,6 +123,13 @@
     document.getElementById("pfProyecto").value = p.proyecto || "";
     document.getElementById("pfEstado").value = p.estado || "Recibido";
     document.getElementById("pfDesc").value = p.descripcion || "";
+    var ac = p.acuerdo || {};
+    document.getElementById("pfAcTotal").value = ac.total || "";
+    document.getElementById("pfAcAnticipo").value = ac.anticipo || "";
+    document.getElementById("pfAcSaldo").value = ac.saldo || "";
+    document.getElementById("pfAcEstadoPago").value = ac.estadoPago || "";
+    document.getElementById("pfAcEntrega").value = ac.entrega || "";
+    document.getElementById("pfAcIncluye").value = ac.incluye || "";
     document.getElementById("pfTitle").textContent = "Editar proyecto";
     document.getElementById("pfSave").textContent = "Guardar cambios";
     document.getElementById("pfCancel").style.display = "";
@@ -142,6 +149,14 @@
         proyecto: (document.getElementById("pfProyecto").value || "").trim(),
         estado: document.getElementById("pfEstado").value,
         descripcion: (document.getElementById("pfDesc").value || "").trim(),
+        acuerdo: {
+          total: (document.getElementById("pfAcTotal").value || "").trim(),
+          anticipo: (document.getElementById("pfAcAnticipo").value || "").trim(),
+          saldo: (document.getElementById("pfAcSaldo").value || "").trim(),
+          estadoPago: document.getElementById("pfAcEstadoPago").value,
+          entrega: (document.getElementById("pfAcEntrega").value || "").trim(),
+          incluye: (document.getElementById("pfAcIncluye").value || "").trim()
+        },
         actualizadoEn: stamp()
       };
       if(!datos.clienteEmail) return formErr("pfErr", "Escribe el correo del cliente: es la llave con la que verá su proyecto.");

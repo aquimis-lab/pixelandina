@@ -47,6 +47,23 @@
   var mensajes = [];    /* [{ docId, ...datos }] ordenados por fecha */
   var unsubProy = null, unsubSop = null;
 
+  function acuerdosHTML(p){
+    var a = p.acuerdo || {};
+    var filas = [
+      ["Precio total", a.total], ["Anticipo", a.anticipo], ["Saldo", a.saldo],
+      ["Estado de pago", a.estadoPago], ["Entrega", a.entrega]
+    ].filter(function(f){ return f[1]; });
+    if(!filas.length && !a.incluye) return "";
+    var out = "<div class='acuerdos'><h4>Acuerdos del proyecto</h4>";
+    if(filas.length){
+      out += "<div class='ac-grid'>" + filas.map(function(f){
+        return "<div><b>" + esc(f[0]) + "</b><span>" + esc(f[1]) + "</span></div>";
+      }).join("") + "</div>";
+    }
+    if(a.incluye) out += "<p class='ac-incluye'>" + esc(a.incluye) + "</p>";
+    return out + "</div>";
+  }
+
   /* ---------- Render del proyecto y los avances ---------- */
   function pasosHTML(estado){
     var idx = ESTADOS.indexOf(estado || "Recibido");
@@ -90,6 +107,7 @@
         "<h3 style='font-size:23px'>" + esc(p.proyecto || "Mi proyecto") + "</h3>" +
         pasosHTML(p.estado) +
         (p.descripcion ? "<p style='margin-top:14px'><b style='color:var(--txt)'>Última novedad:</b> " + esc(p.descripcion) + "</p>" : "") +
+        acuerdosHTML(p) +
         avHTML +
         "</div>";
       wrap.appendChild(card);
@@ -145,6 +163,8 @@
     if(nombre) nombre.textContent = (user.email || "").split("@")[0] || "cliente";
     if(lock) lock.style.display = "none";
     if(view) view.style.display = "block";
+    var an = document.getElementById("adminNote");
+    if(an) an.style.display = (miEmail === "tonnylve2@gmail.com") ? "block" : "none";
     startListening(miEmail);
   }
   function showLock(){

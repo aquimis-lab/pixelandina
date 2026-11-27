@@ -124,7 +124,3 @@
   .esc-pbar i{transition:none}
 }
 
-
-/* Ajuste de ancho (Anthony, 27 nov): escenas más anchas, que tapen mejor los laterales */
-.esc-scene{max-width:1260px}
-.esc-scene.narrow{max-width:1100px}
