@@ -111,12 +111,12 @@
       calma:"Perfecto: trabajamos con avances revisables, para que ajustes sobre la marcha y no al final."
     }[kind] || "";
     state.detail = {empieza:"Estoy empezando.", equipo:"Ya tengo equipo o varios locales.", pronto:"Lo necesito pronto.", calma:"No tengo apuro; quiero hacerlo bien."}[kind] || "";
-    botSay("<p>" + extra + "</p><p>Recuerda: el <b>precio final se cierra por escrito antes de empezar</b>, pagas <b>40% de anticipo y 60% a la entrega</b> por transferencia, y el soporte mensual, si lo quieres, es <b>$5/mes</b>.</p>");
+    botSay("<p>" + extra + "</p><p>Recuerda: el <b>precio final se cierra por escrito antes de empezar</b>, pagas <b>40% de anticipo y 60% a la entrega</b> por transferencia, y los planes de cuidado, si los quieres, van desde <b>$9/mes</b>.</p>");
     closeOffer();
   }
   function topic(t){
     if(t === "precios"){
-      botSay("<p>Precios de lanzamiento, claros desde el inicio:</p><p>· <b>Landing</b> desde <b>$29</b> · entrega 2 a 3 días<br>· <b>Web de negocio</b> desde <b>$69</b> · entrega 3 a 5 días<br>· <b>Ventas por WhatsApp</b> desde <b>$69</b> · entrega 2 a 4 días<br>· <b>Tablero / app simple</b> desde <b>$129</b> (talento humano, dashboards, operaciones) · entrega 5 a 7 días<br>· <b>Soporte</b> mensual <b>$5/mes</b></p><p>Y en la <a href=\"tienda.html\">tienda digital</a> hay kits listos desde <b>$15</b> que se compran en línea. Los valores “desde” son el punto de partida: tu precio final queda cerrado en una cotización sin costo, antes de decidir. El pago de servicios es por <b>transferencia bancaria</b>: <b>40% de anticipo para empezar y 60% restante a la entrega</b>.</p>");
+      botSay("<p>Precios de lanzamiento, claros desde el inicio:</p><p>· <b>Landing</b> desde <b>$29</b> · entrega 2 a 3 días<br>· <b>Web de negocio</b> desde <b>$69</b> · entrega 3 a 5 días<br>· <b>Ventas por WhatsApp</b> desde <b>$69</b> · entrega 2 a 4 días<br>· <b>Tablero / app simple</b> desde <b>$129</b> (talento humano, dashboards, operaciones) · entrega 5 a 7 días<br>· <b>Planes de cuidado</b> desde <b>$9/mes</b> (Esencial $9 · Emprendedor $19 · Tienda $29)<br>· <b>Auditoría digital exprés</b> <b>$19</b>: informe en 48 h y se descuenta completa si contratas tu proyecto<br>· <b>Paquetes por nicho</b>: restaurantes <b>$99</b> · clínicas <b>$119</b> · tiendas desde <b>$69</b></p><p>Y en la <a href=\"tienda.html\">tienda digital</a> hay kits listos desde <b>$15</b> que se compran en línea. Los valores “desde” son el punto de partida: tu precio final queda cerrado en una cotización sin costo, antes de decidir. El pago de servicios es por <b>transferencia bancaria</b>: <b>40% de anticipo para empezar y 60% restante a la entrega</b>.</p>");
       setChips(MAIN_CHIPS);
     } else if(t === "kits"){
       state.reco = { servicio:"Un kit digital de la tienda", precio:"desde $15" };

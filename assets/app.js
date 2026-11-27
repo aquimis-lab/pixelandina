@@ -176,19 +176,19 @@
     function total(){ var t = state.base + extrasTotal(); if(state.urgent) t = Math.round(t * 1.3); return t; }
     function render(){
       var t = total();
-      out.textContent = "$" + t + (state.support ? " + $5/mes" : "");
+      out.textContent = "$" + t + (state.support ? " + $9/mes" : "");
       anticipo.textContent = "Anticipo del 40% para empezar: $" + Math.round(t * 0.4) + " · Saldo a la entrega: $" + Math.round(t * 0.6);
       list.innerHTML = "";
       function row(name, val){ var li = document.createElement("li"); var s1 = document.createElement("span"); s1.textContent = name; var s2 = document.createElement("span"); s2.textContent = val; li.appendChild(s1); li.appendChild(s2); list.appendChild(li); }
       row(state.baseName, "$" + state.base);
       Object.keys(state.extras).forEach(function(k){ if(state.extras[k].on) row(state.extras[k].name, "+$" + state.extras[k].price); });
       if(state.urgent) row("Entrega prioritaria", "×1,3");
-      if(state.support) row("Soporte mensual opcional", "$5/mes");
+      if(state.support) row("Plan de cuidado Esencial", "$9/mes");
       var parts = ["Hola PixelAndina, usé la calculadora de su web y quiero cotizar: " + state.baseName + " (desde $" + state.base + ")"];
       var ex = Object.keys(state.extras).filter(function(k){ return state.extras[k].on; }).map(function(k){ return state.extras[k].name; });
       if(ex.length) parts.push("con extras: " + ex.join(", "));
       if(state.urgent) parts.push("con entrega prioritaria");
-      if(state.support) parts.push("con soporte de $5/mes");
+      if(state.support) parts.push("con plan de cuidado Esencial de $9/mes");
       parts.push("— total estimado $" + t + ". Quiero confirmar el precio cerrado.");
       waBtn.href = waLink(parts.join(" "));
     }
